@@ -304,8 +304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b6d5410dd5982498c5503b398d2ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nombreVerrou: 5
+  myVerrouBouton: {fileID: 4159672471701026577, guid: 9cf5f95e2c003ab489e6a6a76f369af7, type: 3}
   myVerrouDroite: {fileID: 2436868199118044587, guid: 1892cb398a2203042bd2dc0bcdbfd222, type: 3}
   myVerrouGauche: {fileID: 7168859290617621819, guid: eb673bf251eacd4458267f7b4e500479, type: 3}
+  myVerrouHaut: {fileID: 8477741266948042709, guid: 4bc7ed01c8b69e649be1b50e722c928a, type: 3}
+  myVerrouBas: {fileID: 2201157071185487496, guid: c7d4280b8ac7f8b4fbb113a0d19e82d9, type: 3}
 --- !u!1 &1630651690
 GameObject:
   m_ObjectHideFlags: 0
