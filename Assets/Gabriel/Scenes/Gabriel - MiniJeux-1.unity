@@ -181,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d48ed38065d541459761691a6f2c7f2, type: 3}
   m_Color: {r: 0.5, g: 0.3985849, b: 0.3985849, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -200,8 +200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878709455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.287, y: -0.4777, z: -13.617845}
-  m_LocalScale: {x: 3.8967848, y: 7.78506, z: 1}
+  m_LocalPosition: {x: 0.03, y: -0.3012, z: -13.617845}
+  m_LocalScale: {x: 1.6624664, y: 1.4073555, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b6d5410dd5982498c5503b398d2ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreVerrou: 5
+  nombreVerrou: 6
   myVerrouBouton: {fileID: 4159672471701026577, guid: 9cf5f95e2c003ab489e6a6a76f369af7, type: 3}
   myVerrouDroite: {fileID: 2436868199118044587, guid: 1892cb398a2203042bd2dc0bcdbfd222, type: 3}
   myVerrouGauche: {fileID: 7168859290617621819, guid: eb673bf251eacd4458267f7b4e500479, type: 3}
