@@ -9,6 +9,8 @@ namespace victor {
             
         public  float speed = 1f;
 
+        public bool inTarget = false;
+
 
         // Start is called before the first frame update
         void Start()
@@ -65,6 +67,11 @@ namespace victor {
         }
         public void Action()
         {
+
+            if (inTarget == true)
+            {
+
+            }
 
         }
     }
