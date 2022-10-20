@@ -1,42 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-public class ItemCollector : MonoBehaviour
+
+namespace Osborne
 {
-    int balloons = 0;
 
-    [SerializeField] Text balloonsText;
-    [SerializeField] AudioSource popSound;
-    
-    public GameObject Balloon;
-
-    private void OnMouseDown()
+    public class ItemCollector : MonoBehaviour
     {
-        if (gameObject.CompareTag("Green"))
+        public BaloonManager baloonManager;
+        public GameObject Balloon;
+        [SerializeField] AudioSource popSound;
+
+        private void Start()
         {
-            Destroy(gameObject);
-            balloons++;
-            balloonsText.text = "BALLOONS : " + balloons;
-            popSound.Play();
+            baloonManager = FindObjectOfType<BaloonManager>(); // detect Object type
+            popSound = GetComponent<AudioSource>(); //detect audio source
         }
 
-        if (gameObject.CompareTag("Gold"))
+        private void OnMouseDown()
         {
+
             Destroy(gameObject);
-            balloons++;
-            balloonsText.text = "BALLOONS : " + balloons * 2;
+            baloonManager.OnBaloonPop(gameObject.tag);
             popSound.Play();
+
         }
 
-        if (gameObject.CompareTag("Red"))
-        {
-            Destroy(gameObject);
-            balloons++;
-            balloonsText.text = "BALLOONS : " +- balloons;
-            popSound.Play();
-        }
+        // Find instance randomizer for balloons //
+
+        /*
+            var joystick = new Joystick(directInput, joystickGuid);
+            Console.WriteLine("Found Joystick/Gamepad with GUID: {0}", joystickGuid);
+            var allEffects = joystick.GetEffects();
+            foreach (var effectInfo in allEffects)
+            Console.WriteLine("Effect available {0}", effectInfo.Name);
+         */
+
     }
 
-   
 }

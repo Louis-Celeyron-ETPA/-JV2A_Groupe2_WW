@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Osborne {
+
 public class Waypoint : MonoBehaviour
 {
     [SerializeField] GameObject[] waypoints;
@@ -22,4 +24,6 @@ public class Waypoint : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
     }
+}
+
 }
