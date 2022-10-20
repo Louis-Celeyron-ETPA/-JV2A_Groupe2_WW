@@ -10,10 +10,11 @@ namespace Brandon
 
         public Transform myTransform;
         public float speed = 0.1f;
-        public float descendingSpeed = 0.01f;
+        public float descendingSpeed = 0.05f;
         public int direction;
         public bool gameOver = false;
         public bool descending = false;
+        public bool catching = false;
 
 
         // Start is called before the first frame update
@@ -27,7 +28,7 @@ namespace Brandon
         {
             if (!gameOver)
             {
-                if (!descending)
+                if (!descending && !catching)
                 {
                     myTransform.position += myTransform.right * speed * direction;
                 }
@@ -36,6 +37,10 @@ namespace Brandon
                 {
                     myTransform.position -= myTransform.up * descendingSpeed;
          
+                }
+                else if (catching)
+                {
+                    myTransform.position += myTransform.up * descendingSpeed;
                 }
             }
             

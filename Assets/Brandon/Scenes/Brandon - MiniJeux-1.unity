@@ -1216,10 +1216,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTransform: {fileID: 1189387358}
   speed: 0.2
-  descendingSpeed: 0.01
+  descendingSpeed: 0.05
   direction: 1
   gameOver: 0
   descending: 0
+  catching: 0
 --- !u!114 &1189387363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,6 +1246,7 @@ GameObject:
   - component: {fileID: 1524685287}
   - component: {fileID: 1524685289}
   - component: {fileID: 1524685290}
+  - component: {fileID: 1524685291}
   m_Layer: 0
   m_Name: Treasure
   m_TagString: Untagged
@@ -1331,6 +1333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bcb28bcbd85f74ba10487ee82d48b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  voleur: {fileID: 1189387362}
+  treasure: {fileID: 1524685288}
+  treasureSpeed: 0.05
 --- !u!61 &1524685290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1357,6 +1362,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1524685291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524685286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bcb28bcbd85f74ba10487ee82d48b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voleur: {fileID: 0}
+  treasure: {fileID: 0}
+  treasureSpeed: 0.1
 --- !u!1 &1759287849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,8 +1387,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1759287852}
   - component: {fileID: 1759287851}
-  - component: {fileID: 1759287850}
   - component: {fileID: 1759287853}
+  - component: {fileID: 1759287854}
   m_Layer: 0
   m_Name: FailZoneRight
   m_TagString: Untagged
@@ -1376,19 +1396,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1759287850
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759287849}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1759287851
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1468,6 +1475,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64140d7f464a1b645a183f7e921a71c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1759287854
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759287849}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &2078187287
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,15 +6,26 @@ namespace Brandon
 {
     public class Treasure : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        public Voleur voleur;
+        public Transform treasure;
+        public float treasureSpeed = 0.05f;
 
-        }
-
-        // Update is called once per frame
         void Update()
         {
+            if (voleur.catching)
+            {
+                treasure.position += treasure.up * treasureSpeed;
+            }
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Voleur voleurTriggered = collision.GetComponent<Voleur>();
+            if (voleurTriggered != null)
+            {
+                voleur.catching = true;
+                voleur.descending = false;
+                
+            }
 
         }
     }
