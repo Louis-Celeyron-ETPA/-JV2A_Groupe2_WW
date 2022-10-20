@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace Alexian
 {
-    public class TEMPOTOUCHES : MonoBehaviour
+    public class TEMPOTOUCHES2 : MonoBehaviour
     {
         public Player player;
         public bool actionButton;
         public float difficulty = 1f;
+
         // Start is called before the first frame update
         void Start()
         {
