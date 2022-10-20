@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 78900272}
   - component: {fileID: 78900271}
-  - component: {fileID: 78900270}
+  - component: {fileID: 78900273}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Untagged
@@ -141,22 +141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &78900270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78900269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e986d2ca3b68444ad1cc1b1fe9091d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mytransform: {fileID: 78900272}
-  Followtransform: {fileID: 546867661}
-  speed: 0.5
-  Myvector: {x: 0, y: 0, z: 0}
 --- !u!212 &78900271
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -224,6 +208,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &78900273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78900269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c409be5233315c44b53dd97484048f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  targetTransform: {fileID: 0}
+  originVector: {x: 0, y: 0, z: 0}
+  destinationVector: {x: 0, y: 0, z: 0}
+  shouldGo: 0
+  isArrived: 0
 --- !u!1 &546867658
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54324826b655b7746870c5ab8027fcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyTransform: {fileID: 0}
+  MyTransform: {fileID: 546867661}
   speed: 0.9
 --- !u!212 &546867660
 SpriteRenderer:
@@ -333,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 955663043}
   - component: {fileID: 955663042}
-  - component: {fileID: 955663041}
+  - component: {fileID: 955663044}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -341,22 +343,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &955663041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955663040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e986d2ca3b68444ad1cc1b1fe9091d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mytransform: {fileID: 955663043}
-  Followtransform: {fileID: 546867661}
-  speed: 0.5
-  Myvector: {x: 0, y: 0, z: 0}
 --- !u!212 &955663042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -424,6 +410,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955663044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955663040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c409be5233315c44b53dd97484048f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  targetTransform: {fileID: 0}
+  originVector: {x: 0, y: 0, z: 0}
+  destinationVector: {x: 0, y: 0, z: 0}
+  shouldGo: 0
+  isArrived: 0
 --- !u!1 &1023752066
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1023752069}
   - component: {fileID: 1023752068}
-  - component: {fileID: 1023752067}
+  - component: {fileID: 1023752070}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -442,22 +446,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1023752067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023752066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e986d2ca3b68444ad1cc1b1fe9091d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mytransform: {fileID: 1023752069}
-  Followtransform: {fileID: 546867661}
-  speed: 0.5
-  Myvector: {x: 0, y: 0, z: 0}
 --- !u!212 &1023752068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -525,6 +513,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1023752070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023752066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c409be5233315c44b53dd97484048f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  targetTransform: {fileID: 0}
+  originVector: {x: 0, y: 0, z: 0}
+  destinationVector: {x: 0, y: 0, z: 0}
+  shouldGo: 0
+  isArrived: 0
 --- !u!1 &1474379549
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474379552}
   - component: {fileID: 1474379551}
-  - component: {fileID: 1474379550}
+  - component: {fileID: 1474379553}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -543,22 +549,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1474379550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474379549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e986d2ca3b68444ad1cc1b1fe9091d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mytransform: {fileID: 1474379552}
-  Followtransform: {fileID: 546867661}
-  speed: 0.5
-  Myvector: {x: 0, y: 0, z: 0}
 --- !u!212 &1474379551
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -626,6 +616,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1474379553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474379549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c409be5233315c44b53dd97484048f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  targetTransform: {fileID: 0}
+  originVector: {x: 0, y: 0, z: 0}
+  destinationVector: {x: 0, y: 0, z: 0}
+  shouldGo: 0
+  isArrived: 0
 --- !u!1 &1492534335
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1610739521}
   - component: {fileID: 1610739520}
-  - component: {fileID: 1610739519}
+  - component: {fileID: 1610739522}
   m_Layer: 0
   m_Name: Square (4)
   m_TagString: Untagged
@@ -728,22 +736,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1610739519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610739518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e986d2ca3b68444ad1cc1b1fe9091d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mytransform: {fileID: 1610739521}
-  Followtransform: {fileID: 546867661}
-  speed: 0.5
-  Myvector: {x: 0, y: 0, z: 0}
 --- !u!212 &1610739520
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -811,6 +803,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1610739522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610739518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c409be5233315c44b53dd97484048f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  targetTransform: {fileID: 0}
+  originVector: {x: 0, y: 0, z: 0}
+  destinationVector: {x: 0, y: 0, z: 0}
+  shouldGo: 0
+  isArrived: 0
 --- !u!1 &1953133541
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1971577265}
   - component: {fileID: 1971577264}
-  - component: {fileID: 1971577263}
+  - component: {fileID: 1971577266}
   m_Layer: 0
   m_Name: Square (5)
   m_TagString: Untagged
@@ -923,22 +933,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1971577263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971577262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e986d2ca3b68444ad1cc1b1fe9091d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mytransform: {fileID: 1971577265}
-  Followtransform: {fileID: 546867661}
-  speed: 0.5
-  Myvector: {x: 0, y: 0, z: 0}
 --- !u!212 &1971577264
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1006,6 +1000,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1971577266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971577262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c409be5233315c44b53dd97484048f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  targetTransform: {fileID: 0}
+  originVector: {x: 0, y: 0, z: 0}
+  destinationVector: {x: 0, y: 0, z: 0}
+  shouldGo: 0
+  isArrived: 0
 --- !u!1 &2095627501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2095627504}
   - component: {fileID: 2095627503}
-  - component: {fileID: 2095627502}
+  - component: {fileID: 2095627505}
   m_Layer: 0
   m_Name: Square (6)
   m_TagString: Untagged
@@ -1024,22 +1036,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2095627502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095627501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e986d2ca3b68444ad1cc1b1fe9091d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mytransform: {fileID: 2095627504}
-  Followtransform: {fileID: 546867661}
-  speed: 0.5
-  Myvector: {x: 0, y: 0, z: 0}
 --- !u!212 &2095627503
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1107,3 +1103,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2095627505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095627501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c409be5233315c44b53dd97484048f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  targetTransform: {fileID: 0}
+  originVector: {x: 0, y: 0, z: 0}
+  destinationVector: {x: 0, y: 0, z: 0}
+  shouldGo: 0
+  isArrived: 0
