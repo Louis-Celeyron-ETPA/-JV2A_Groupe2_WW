@@ -10,7 +10,6 @@ namespace Alexian
         public Transform player;
         public Transform ennemy;
         public bool canMove;
-        public TEMPOTOUCHES difficulty;
         public Ending end;
         public Music audios;
 
@@ -36,7 +35,7 @@ namespace Alexian
             {
                 return;
             }
-            player.position += Vector3.up * (0.5f * difficulty.difficulty);
+            player.position += Vector3.up * 0.5f;
         }
     }
 }

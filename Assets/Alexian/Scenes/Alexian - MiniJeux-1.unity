@@ -209,10 +209,9 @@ MonoBehaviour:
   player: {fileID: 230187945}
   ennemy: {fileID: 2063681226}
   canMove: 0
-  difficulty: {fileID: 230187950}
   end: {fileID: 1505913858}
   audios: {fileID: 828548753}
---- !u!114 &230187950
+--- !u!114 &230187952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

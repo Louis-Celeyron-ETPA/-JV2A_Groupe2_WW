@@ -23,7 +23,7 @@ namespace Alexian{
                 return;
             }
 
-            ennemy.position += Vector3.up * (0.055f * difficulty.difficulty);
+            ennemy.position += Vector3.up * (0.055f + 0.02f * difficulty.difficulty);
 
             if (player.position.y >= 15 || ennemy.position.y >= 15)
             {
