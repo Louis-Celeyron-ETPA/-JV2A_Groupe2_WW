@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gabriel
 {
-    public class verrouDelock : MonoBehaviour
+    public class VerrouDelock : MonoBehaviour
     {
 
         private List<int> sensVerrou = new List<int>();
