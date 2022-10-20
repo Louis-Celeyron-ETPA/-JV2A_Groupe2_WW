@@ -221,11 +221,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  targetTransform: {fileID: 0}
-  originVector: {x: 0, y: 0, z: 0}
-  destinationVector: {x: 0, y: 0, z: 0}
-  shouldGo: 0
-  isArrived: 0
+  targetTransform: {fileID: 546867661}
+  direction: {x: 0, y: 0, z: 0}
+  isStart: 0
+  next: {fileID: 1610739522}
 --- !u!1 &546867658
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,11 +422,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  targetTransform: {fileID: 0}
-  originVector: {x: 0, y: 0, z: 0}
-  destinationVector: {x: 0, y: 0, z: 0}
-  shouldGo: 0
-  isArrived: 0
+  targetTransform: {fileID: 546867661}
+  direction: {x: 0, y: 0, z: 0}
+  isStart: 1
+  next: {fileID: 1474379553}
 --- !u!1 &1023752066
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,11 +524,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  targetTransform: {fileID: 0}
-  originVector: {x: 0, y: 0, z: 0}
-  destinationVector: {x: 0, y: 0, z: 0}
-  shouldGo: 0
-  isArrived: 0
+  targetTransform: {fileID: 546867661}
+  direction: {x: 0, y: 0, z: 0}
+  isStart: 0
+  next: {fileID: 78900273}
 --- !u!1 &1474379549
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,11 +626,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  targetTransform: {fileID: 0}
-  originVector: {x: 0, y: 0, z: 0}
-  destinationVector: {x: 0, y: 0, z: 0}
-  shouldGo: 0
-  isArrived: 0
+  targetTransform: {fileID: 546867661}
+  direction: {x: 0, y: 0, z: 0}
+  isStart: 0
+  next: {fileID: 1023752070}
 --- !u!1 &1492534335
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,11 +812,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  targetTransform: {fileID: 0}
-  originVector: {x: 0, y: 0, z: 0}
-  destinationVector: {x: 0, y: 0, z: 0}
-  shouldGo: 0
-  isArrived: 0
+  targetTransform: {fileID: 546867661}
+  direction: {x: 0, y: 0, z: 0}
+  isStart: 0
+  next: {fileID: 1971577266}
 --- !u!1 &1953133541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,11 +1008,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  targetTransform: {fileID: 0}
-  originVector: {x: 0, y: 0, z: 0}
-  destinationVector: {x: 0, y: 0, z: 0}
-  shouldGo: 0
-  isArrived: 0
+  targetTransform: {fileID: 546867661}
+  direction: {x: 0, y: 0, z: 0}
+  isStart: 0
+  next: {fileID: 2095627505}
 --- !u!1 &2095627501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,8 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  targetTransform: {fileID: 0}
-  originVector: {x: 0, y: 0, z: 0}
-  destinationVector: {x: 0, y: 0, z: 0}
-  shouldGo: 0
-  isArrived: 0
+  targetTransform: {fileID: 546867661}
+  direction: {x: 0, y: 0, z: 0}
+  isStart: 0
+  next: {fileID: 0}
