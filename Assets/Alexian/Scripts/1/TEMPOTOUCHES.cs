@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Alexian
 {
-    public class TEMPOTOUCHES2 : MonoBehaviour
+    public class TEMPOTOUCHES : MonoBehaviour
     {
         public Player player;
         public bool actionButton;

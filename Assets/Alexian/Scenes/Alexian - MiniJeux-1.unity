@@ -134,6 +134,106 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6461909354196144301, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354196144302, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354541160364, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354541160364, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354541160364, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354541160364, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354541160364, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354541160364, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354541160364, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909354541160364, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099528, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099528, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099528, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099528, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099528, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099528, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099528, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099528, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_fontSize
+      value: 63.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_margin.w
+      value: -91.2742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_margin.x
+      value: -108.3006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_margin.z
+      value: -129.55176
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_verticalMapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_horizontalMapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7461893091724572370, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
       propertyPath: m_RootOrder
       value: 1

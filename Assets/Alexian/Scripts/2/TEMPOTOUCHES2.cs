@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace Alexian
 {
-    public class TEMPOTOUCHES : MonoBehaviour
+    public class TEMPOTOUCHES2 : MonoBehaviour
     {
-        public Player player;
-        public bool actionButton;
+        public PlayerHead player;
         public float difficulty = 1f;
+        public float leftBouton;
+        public float rightBouton;
         // Start is called before the first frame update
         void Start()
         {
@@ -18,9 +19,13 @@ namespace Alexian
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space) == true)
+            if (Input.GetKeyDown(KeyCode.S) == true)
             {
-                player.Move();
+                player.MoveLeft();
+            }
+            if (Input.GetKeyDown(KeyCode.S) == true)
+            {
+                player.MoveRight();
             }
         }
     }
