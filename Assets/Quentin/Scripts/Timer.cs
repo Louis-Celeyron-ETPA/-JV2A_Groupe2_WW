@@ -21,17 +21,19 @@ public class Timer : MonoBehaviour
         {
             Go();
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(shouldGo)
+        
+        if (shouldGo)
         {
             time += Time.deltaTime;
             transform.position +=  direction*speed;
                 //Vector3.MoveTowards (transform.position, destinationVector, speed);
-            if(time>=1)
+            if(time>=0.7)
             {
                 if(next!=null)
                 {
