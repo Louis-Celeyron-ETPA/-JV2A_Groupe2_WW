@@ -1244,9 +1244,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1524685288}
   - component: {fileID: 1524685287}
-  - component: {fileID: 1524685289}
   - component: {fileID: 1524685290}
-  - component: {fileID: 1524685291}
+  - component: {fileID: 1524685292}
   m_Layer: 0
   m_Name: Treasure
   m_TagString: Untagged
@@ -1321,21 +1320,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1524685289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524685286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47bcb28bcbd85f74ba10487ee82d48b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voleur: {fileID: 1189387362}
-  treasure: {fileID: 1524685288}
-  treasureSpeed: 0.05
 --- !u!61 &1524685290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1362,7 +1346,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1524685291
+--- !u!114 &1524685292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1374,9 +1358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bcb28bcbd85f74ba10487ee82d48b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voleur: {fileID: 0}
-  treasure: {fileID: 0}
-  treasureSpeed: 0.1
+  voleur: {fileID: 1189387362}
+  treasure: {fileID: 1524685288}
+  treasureSpeed: 0.05
 --- !u!1 &1759287849
 GameObject:
   m_ObjectHideFlags: 0
