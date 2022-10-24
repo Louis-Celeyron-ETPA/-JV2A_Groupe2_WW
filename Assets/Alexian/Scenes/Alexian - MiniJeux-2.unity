@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df05c09b62d65c94483a298d74599c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lamp: {fileID: 7672527503534851226, guid: 42630939ad5d81647bae1d9b8faa4a1d, type: 3}
+  lamp: {fileID: 2473992250841785878}
 --- !u!114 &163879712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  timeMax: 10
+  timeMax: 5
   lampie: {fileID: 163879711}
 --- !u!114 &163879713
 MonoBehaviour:
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d1011ae9849cc4283b5e7ef2046a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 0
+  canMove: 1
 --- !u!114 &163879714
 MonoBehaviour:
   m_ObjectHideFlags: 0

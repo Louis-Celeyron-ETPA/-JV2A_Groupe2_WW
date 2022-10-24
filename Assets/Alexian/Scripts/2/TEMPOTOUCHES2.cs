@@ -8,8 +8,8 @@ namespace Alexian
     {
         public PlayerHead player;
         public float difficulty = 1f;
-        public float leftBouton;
-        public float rightBouton;
+        public bool leftBouton;
+        public bool rightBouton;
         // Start is called before the first frame update
         void Start()
         {
