@@ -7,7 +7,9 @@ namespace Gabriel
     public class SelectionCase : MonoBehaviour
     {
 
+        public ListeLettre mesCases;
         public int positionCurseur;
+        public int currentLettre = 0;
         // Start is called before the first frame update
         void Start()
         {
@@ -29,6 +31,15 @@ namespace Gabriel
             }
 
             transform.position = new Vector3(-8f + (positionCurseur)*5f, 5f, -10f);
+
+            if (currentLettre <= mesCases.nombreLettre - 1)
+            {
+                if ((Input.GetKeyDown(KeyCode.Space)) && (mesCases.couleurLettre[currentLettre] == positionCurseur))
+                {
+                    mesCases.listeDesLettres[currentLettre].mr.enabled = false;
+                    currentLettre++;
+                }
+            }
         }
     }
 }
