@@ -66,14 +66,14 @@ namespace victor {
         {
             subject.position -= subject.right * speed;
         }
-        public void Action(fenetreTirer)
-        {
+        public void Action() { }
+        //{
 
-            if (listfenetre.isGood == true)
-            {
-                fenetreTirer.mr
-            }
+            //if (listfenetre.isGood == true)
+            //{
+                
+            //}
 
-        }
+        //}
     }
 }

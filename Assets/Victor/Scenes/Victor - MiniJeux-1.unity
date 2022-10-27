@@ -500,13 +500,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1911762899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3021c5332271f3c48b078c77a6c51070, type: 3}
+  m_Script: {fileID: 11500000, guid: b75d5a49d308a2c41aeddbfd4da03528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subject: {fileID: 1911762903}
-  mainCamera: {fileID: 1492534337}
-  speed: 0.1
-  inTarget: 0
+  keyUp: z
+  keyDown: s
+  keyRight: d
+  keyLeft: q
+  keyAction: 32
+  move: {fileID: 1911762905}
 --- !u!114 &1911762905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,15 +518,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1911762899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b75d5a49d308a2c41aeddbfd4da03528, type: 3}
+  m_Script: {fileID: 11500000, guid: 3021c5332271f3c48b078c77a6c51070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyUp: z
-  keyDown: s
-  keyRight: d
-  keyLeft: q
-  keyAction: 32
-  move: {fileID: 1911762904}
+  subject: {fileID: 1911762903}
+  mainCamera: {fileID: 1492534337}
+  listfenetre: {fileID: 6077330846115017821, guid: ab380365faf56ce4fb9e1e588cb18b03, type: 3}
+  speed: 1
+  inTarget: 0
 --- !u!1 &1953133541
 GameObject:
   m_ObjectHideFlags: 0

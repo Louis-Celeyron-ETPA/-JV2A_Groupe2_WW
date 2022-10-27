@@ -44,7 +44,7 @@ namespace victor
             Debug.Log("coucou");
             if (Input.GetKey(KeyCode.Space))
             {
-                Action(other);
+                //Action(other);
             }
            
         }
