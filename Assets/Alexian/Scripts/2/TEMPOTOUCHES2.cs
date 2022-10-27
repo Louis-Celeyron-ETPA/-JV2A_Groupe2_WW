@@ -19,11 +19,11 @@ namespace Alexian
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.S) == true)
+            if (Input.GetKeyDown(KeyCode.Q) == true)
             {
                 player.MoveLeft();
             }
-            if (Input.GetKeyDown(KeyCode.S) == true)
+            if (Input.GetKeyDown(KeyCode.D) == true)
             {
                 player.MoveRight();
             }
