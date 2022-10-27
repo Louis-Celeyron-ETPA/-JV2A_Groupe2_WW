@@ -55,7 +55,7 @@ namespace victor
             if (Input.GetKey(keyAction))
             {
 
-                move.MoveUp();
+                move.Action();
 
             }
         }

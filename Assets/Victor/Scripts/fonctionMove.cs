@@ -6,7 +6,8 @@ namespace victor {
     {
         public Transform subject ;
         public Camera mainCamera;
-            
+        public targetValidation listfenetre;
+
         public  float speed = 1f;
 
         public bool inTarget = false;
@@ -65,12 +66,12 @@ namespace victor {
         {
             subject.position -= subject.right * speed;
         }
-        public void Action()
+        public void Action(fenetreTirer)
         {
 
-            if (inTarget == true)
+            if (listfenetre.isGood == true)
             {
-
+                fenetreTirer.mr
             }
 
         }

@@ -6,6 +6,8 @@ namespace victor {
     {
         public int numeroFenetre;
         public generateWindow listFenetre;
+        public bool isGood;
+        public MeshRenderer mr;
 
         // Start is called before the first frame update
         void Awake()
@@ -21,9 +23,9 @@ namespace victor {
         private void OnTriggerEnter(Collider other)
         {
             Debug.Log("coucou");
-            if (listFenetre.typeWindow[numeroFenetre] == 1)
+            if (isGood == true)
             {
-                Debug.Log("cla bone");
+                Debug.Log("c la bonne");
             }
         }
     }

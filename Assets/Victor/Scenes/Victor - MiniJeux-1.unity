@@ -386,7 +386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maFenetre: {fileID: 6077330846115017821, guid: ab380365faf56ce4fb9e1e588cb18b03, type: 3}
-  typeWindow: 
+  typeFenetre: 
+  toutesMesFenetres: []
   nombreColonne: 3
   nombreLigne: 3
   nombreBonneFenetre: 1
