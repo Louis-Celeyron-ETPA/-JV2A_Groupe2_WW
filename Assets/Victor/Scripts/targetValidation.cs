@@ -4,10 +4,13 @@ using UnityEngine;
 namespace victor {
     public class targetValidation : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        public int numeroFenetre;
+        public generateWindow listFenetre;
 
+        // Start is called before the first frame update
+        void Awake()
+        {
+            listFenetre = Camera.main.GetComponent<generateWindow>();
         }
 
         // Update is called once per frame
@@ -17,8 +20,11 @@ namespace victor {
         }
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("dans la cible");
-
+            Debug.Log("coucou");
+            if (listFenetre.typeWindow[numeroFenetre] == 1)
+            {
+                Debug.Log("cla bone");
+            }
         }
     }
 }
