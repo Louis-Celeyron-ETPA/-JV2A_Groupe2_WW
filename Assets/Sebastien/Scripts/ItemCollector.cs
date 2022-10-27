@@ -7,13 +7,16 @@ namespace Osborne
 
     public class ItemCollector : MonoBehaviour
     {
-        public BaloonManager baloonManager;
+        public BalloonManager balloonManager;
+        public BalloonSpawner balloonSpawner;
         public GameObject Balloon;
+        
         [SerializeField] AudioSource popSound;
 
         private void Start()
         {
-            baloonManager = FindObjectOfType<BaloonManager>(); // detect Object type
+            balloonManager = FindObjectOfType<BalloonManager>(); // detect Object type
+            balloonSpawner = FindObjectOfType<BalloonSpawner>();
             popSound = GetComponent<AudioSource>(); //detect audio source
         }
 
@@ -21,7 +24,7 @@ namespace Osborne
         {
 
             Destroy(gameObject);
-            baloonManager.OnBaloonPop(gameObject.tag);
+            balloonManager.OnBalloonPop(gameObject.tag);
             popSound.Play();
 
         }

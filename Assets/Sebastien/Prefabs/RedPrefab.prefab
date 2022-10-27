@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 4066772549427460532}
   - component: {fileID: 4066772549427460533}
   m_Layer: 0
-  m_Name: Balloon Red
+  m_Name: RedPrefab
   m_TagString: Green
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
