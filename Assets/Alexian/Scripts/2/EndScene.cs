@@ -7,14 +7,11 @@ namespace Alexian {
     public class EndScene : MonoBehaviour
     {
         public PlayerHead canMove;
-        public Timing currentTime;
         public bool gameEnd = true;
-        public TEMPOTOUCHES2 difficulty;
         public float gameTime;
         public TextMeshProUGUI text;
         public GameObject UI;
         private bool isShowing;
-        public Timing time;
         // Start is called before the first frame update
         void Start()
         {

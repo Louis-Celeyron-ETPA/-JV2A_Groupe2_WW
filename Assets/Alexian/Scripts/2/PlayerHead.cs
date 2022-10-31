@@ -9,6 +9,8 @@ namespace Alexian
         public bool canMove;
         public int coin;
         public EndScene end;
+        public bool right;
+        public bool left;
         // Start is called before the first frame update
         void Start()
         {
@@ -22,10 +24,6 @@ namespace Alexian
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
             }
-            if (transform.eulerAngles.z < 320 && transform.rotation.eulerAngles.z > 40)
-            {
-                end.Defeat();
-            }
         }
 
         public void MoveLeft()
@@ -34,7 +32,7 @@ namespace Alexian
             {
                 return;
             }
-            transform.eulerAngles += new Vector3(0, 0, 20);
+            left = true;
         }
 
         public void MoveRight()
@@ -43,7 +41,7 @@ namespace Alexian
             {
                 return;
             }
-            transform.eulerAngles += new Vector3(0, 0, -20);
+            right = true;
         }
 
         public void Falling()
@@ -51,11 +49,29 @@ namespace Alexian
             coin = Random.Range(1, 3);
             if(coin == 1)
             {
-                MoveRight();
+                right = true;
+                MoveReset();
             }
             else
             {
-                MoveLeft();
+                left = true;
+                MoveReset();
+            }
+        }
+
+        public void MoveReset()
+        {
+            if(right == true && left == false)
+            {
+                transform.eulerAngles += new Vector3(0, 0, 20);
+                right = false;
+                left = false;
+            }
+            if (left == true && right == false)
+            {
+                transform.eulerAngles += new Vector3(0, 0, -20);
+                left = false;
+                right = false;
             }
         }
     }
