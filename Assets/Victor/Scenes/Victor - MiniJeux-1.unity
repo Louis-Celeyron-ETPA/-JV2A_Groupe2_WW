@@ -524,7 +524,7 @@ MonoBehaviour:
   subject: {fileID: 1911762903}
   mainCamera: {fileID: 1492534337}
   listfenetre: {fileID: 6077330846115017821, guid: ab380365faf56ce4fb9e1e588cb18b03, type: 3}
-  speed: 1
+  speed: 0.05
   inTarget: 0
 --- !u!1 &1953133541
 GameObject:
