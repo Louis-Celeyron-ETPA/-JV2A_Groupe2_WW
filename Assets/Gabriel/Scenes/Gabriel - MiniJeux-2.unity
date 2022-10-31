@@ -670,6 +670,7 @@ GameObject:
   - component: {fileID: 2050574890}
   - component: {fileID: 2050574889}
   - component: {fileID: 2050574891}
+  - component: {fileID: 2050574892}
   m_Layer: 0
   m_Name: Selection
   m_TagString: Untagged
@@ -759,6 +760,96 @@ MonoBehaviour:
   mesCases: {fileID: 163879711}
   positionCurseur: 0
   currentLettre: 0
+--- !u!114 &2050574892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050574888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e91d22c0a753c24492bb6028290bde1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directions:
+    left:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2050574891}
+          m_TargetAssemblyTypeName: Gabriel.SelectionCase, Assembly-CSharp
+          m_MethodName: CaseGauche
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    right:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2050574891}
+          m_TargetAssemblyTypeName: Gabriel.SelectionCase, Assembly-CSharp
+          m_MethodName: CaseDroite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    down:
+      m_PersistentCalls:
+        m_Calls: []
+    up:
+      m_PersistentCalls:
+        m_Calls: []
+  pointsMorts:
+    horizontal:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2050574891}
+          m_TargetAssemblyTypeName: Gabriel.SelectionCase, Assembly-CSharp
+          m_MethodName: ResetInput
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    vertical:
+      m_PersistentCalls:
+        m_Calls: []
+  action:
+    onPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2050574891}
+          m_TargetAssemblyTypeName: Gabriel.SelectionCase, Assembly-CSharp
+          m_MethodName: ValideCase
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onUp:
+      m_PersistentCalls:
+        m_Calls: []
+    onStayed:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &2123686654
 GameObject:
   m_ObjectHideFlags: 0

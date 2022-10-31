@@ -16,6 +16,8 @@ namespace Gabriel
         public GameObject myVerrouHaut;
         public GameObject myVerrouBas;
         private int myVerrou = 0;
+
+        private bool didLeftInput, didRightInput, didUpInput, didDownInput;
         // Start is called before the first frame update
         void Start()
         {
@@ -48,41 +50,79 @@ namespace Gabriel
 
         // Update is called once per frame
         void Update()
-        {   
+        {
+           
+        }
+
+        public void VerrouCentre()
+        {
             if (myVerrou < sensVerrou.Count)
             {
-
-                if ((Input.GetKeyDown(KeyCode.Space)) && (sensVerrou[myVerrou] == 0))
-                {
-                    transform.position += Vector3.down;
-                    myVerrou++;
-                }
-
-                if ((Input.GetKeyDown(KeyCode.RightArrow)) && (sensVerrou[myVerrou] == 1))
-                {
-                    transform.position += Vector3.down;
-                    myVerrou++;
-                }
-
-                if ((Input.GetKeyDown(KeyCode.LeftArrow)) && (sensVerrou[myVerrou] == 2))
-                {
-                    transform.position += Vector3.down;
-                    myVerrou++;
-                }
-
-                if ((Input.GetKeyDown(KeyCode.UpArrow)) && (sensVerrou[myVerrou] == 3))
-                {
-                    transform.position += Vector3.down;
-                    myVerrou++;
-                }
-
-                if ((Input.GetKeyDown(KeyCode.DownArrow)) && (sensVerrou[myVerrou] == 4))
+                if ((sensVerrou[myVerrou] == 0))
                 {
                     transform.position += Vector3.down;
                     myVerrou++;
                 }
             }
-            
+        }
+        public void VerrouDroite()
+        {
+            if (myVerrou < sensVerrou.Count)
+            {
+                if ((sensVerrou[myVerrou] == 1) && (didRightInput == false))
+                {
+                    transform.position += Vector3.down;
+                    myVerrou++;
+                    didRightInput = true;
+                }
+            }
+        }
+        public void VerrouLeft()
+        {
+            if (myVerrou < sensVerrou.Count)
+            {
+                if ((sensVerrou[myVerrou] == 2) && (didLeftInput == false))
+                {
+                    transform.position += Vector3.down;
+                    myVerrou++;
+                    didLeftInput = true;
+                }
+            }
+        }
+        public void VerrouHaut()
+        {
+            if (myVerrou < sensVerrou.Count)
+            {
+                if ((sensVerrou[myVerrou] == 3) && (didUpInput == false))
+                {
+                    transform.position += Vector3.down;
+                    myVerrou++;
+                    didUpInput = true;
+                }
+            }
+        }
+        public void VerrouBas()
+        {
+            if (myVerrou < sensVerrou.Count)
+            {
+                if ((sensVerrou[myVerrou] == 4) && (didDownInput == false))
+                {
+                    transform.position += Vector3.down;
+                    myVerrou++;
+                    didDownInput = true;
+                }
+            }
+        }
+
+        public void ResetInputH()
+        {
+            didLeftInput = false;
+            didRightInput = false;
+        }
+        public void ResetInputV()
+        {
+            didUpInput = false;
+            didDownInput = false;
         }
     }
 }
