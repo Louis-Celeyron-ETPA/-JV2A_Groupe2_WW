@@ -338,7 +338,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 484562576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01655b6afa6507f4eb61ad02585405a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f62cf8755d9be744bbd8dc20c584bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
@@ -478,7 +478,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: edae2308eaeade04e9441b98352a6e52, type: 2}
+  - {fileID: 2100000, guid: c80187ba2419be74c8855323cce1bc1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -562,7 +562,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: edae2308eaeade04e9441b98352a6e52, type: 2}
+  - {fileID: 2100000, guid: c80187ba2419be74c8855323cce1bc1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 610246995}
   - component: {fileID: 610246994}
   m_Layer: 0
-  m_Name: Sky
+  m_Name: Mur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +631,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3615925f87caec149ad61348dcd65565, type: 2}
+  - {fileID: 2100000, guid: 9120ed27c8328e44188887f2d9ae1718, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -715,7 +715,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a86d44691c5b92048a5bb00223c3512b, type: 2}
+  - {fileID: 2100000, guid: acce721c9ce0c97409add067407c82dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -814,7 +814,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 11d637d3f3f279d4e9627ef472d03605, type: 2}
+  - {fileID: 2100000, guid: 0a72fa8f5f971d346b749441042c7144, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1074,10 +1074,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1189387358}
   - component: {fileID: 1189387357}
-  - component: {fileID: 1189387362}
   - component: {fileID: 1189387361}
   - component: {fileID: 1189387360}
   - component: {fileID: 1189387363}
+  - component: {fileID: 1189387364}
   m_Layer: 0
   m_Name: Voleur
   m_TagString: Untagged
@@ -1105,7 +1105,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c012cff8199006244ac6aaa2faf6bc8e, type: 2}
+  - {fileID: 2100000, guid: df53b1d0140c66c479da34ae648c7c9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1202,25 +1202,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1189387362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189387356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4893fd43d1d432441bdf47d76db720d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 1189387358}
-  speed: 0.2
-  descendingSpeed: 0.05
-  direction: 1
-  gameOver: 0
-  descending: 0
-  catching: 0
 --- !u!114 &1189387363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,7 +1214,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ff2d62cea7e6b42a3d4d31f4273b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voleur: {fileID: 1189387362}
+  voleur: {fileID: 1189387364}
+--- !u!114 &1189387364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189387356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1222043b07884f543bd76e77bd6f1600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 1189387358}
+  speed: 0.1
+  descendingSpeed: 0.05
+  direction: 1
+  gameOver: 0
+  descending: 0
+  catching: 0
 --- !u!1 &1524685286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,7 +1273,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aaa483fd63f09f24198a825198b59399, type: 2}
+  - {fileID: 2100000, guid: b6d499e6b68bfe942a1c9d9239c40af6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1355,10 +1355,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1524685286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47bcb28bcbd85f74ba10487ee82d48b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 35ee8e6d4c2101349983efd88b13d235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voleur: {fileID: 1189387362}
+  voleur: {fileID: 1189387364}
   treasure: {fileID: 1524685288}
   treasureSpeed: 0.05
 --- !u!1 &1759287849
@@ -1373,6 +1373,7 @@ GameObject:
   - component: {fileID: 1759287851}
   - component: {fileID: 1759287853}
   - component: {fileID: 1759287854}
+  - component: {fileID: 1759287855}
   m_Layer: 0
   m_Name: FailZoneRight
   m_TagString: Untagged
@@ -1485,6 +1486,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1759287855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759287849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64140d7f464a1b645a183f7e921a71c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2078187287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,7 +1619,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2078187287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01655b6afa6507f4eb61ad02585405a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f62cf8755d9be744bbd8dc20c584bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   direction: -1
