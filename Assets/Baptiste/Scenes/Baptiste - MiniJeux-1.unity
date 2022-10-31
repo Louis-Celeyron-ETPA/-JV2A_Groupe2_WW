@@ -888,33 +888,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e91d22c0a753c24492bb6028290bde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onRight:
-    m_PersistentCalls:
-      m_Calls: []
-  onLeft:
-    m_PersistentCalls:
-      m_Calls: []
-  onUp:
-    m_PersistentCalls:
-      m_Calls: []
-  onDown:
-    m_PersistentCalls:
-      m_Calls: []
-  onAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 71a8e2c901b717b4eb56b8c19b6d8cef, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Twerking
-          m_BoolArgument: 0
-        m_CallState: 2
+  directions:
+    left:
+      m_PersistentCalls:
+        m_Calls: []
+    right:
+      m_PersistentCalls:
+        m_Calls: []
+    down:
+      m_PersistentCalls:
+        m_Calls: []
+    up:
+      m_PersistentCalls:
+        m_Calls: []
+  pointsMorts:
+    horizontal:
+      m_PersistentCalls:
+        m_Calls: []
+    vertical:
+      m_PersistentCalls:
+        m_Calls: []
+  action:
+    onPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 247463064}
+          m_TargetAssemblyTypeName: Baptiste.ThiccHandler, Assembly-CSharp
+          m_MethodName: Twerking
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onUp:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 247463064}
+          m_TargetAssemblyTypeName: Baptiste.ThiccHandler, Assembly-CSharp
+          m_MethodName: NoTwerking
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onStayed:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1713830135
 GameObject:
   m_ObjectHideFlags: 0

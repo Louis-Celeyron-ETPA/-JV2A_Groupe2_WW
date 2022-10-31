@@ -39,12 +39,14 @@ namespace Baptiste {
 
         public void Twerking()
         {
+            Debug.Log("prout");
             transform.position = omniThick;
             twerking = true;
         }
 
         public void NoTwerking()
         {
+            Debug.Log("skwalala");
             transform.position = omniThinn;
             twerking = false;
         }
