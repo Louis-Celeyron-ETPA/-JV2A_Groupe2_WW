@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace Brandon
 {
     public class Trigger : MonoBehaviour
@@ -30,5 +31,4 @@ namespace Brandon
         }
     }
 }
-
 
