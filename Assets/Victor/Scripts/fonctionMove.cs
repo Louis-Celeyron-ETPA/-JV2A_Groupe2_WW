@@ -69,14 +69,16 @@ namespace victor {
         }
         public void Action()
         {
+
             if(listfenetre.isGood == true)
             {
                 Debug.Log("Victoire");
             }
-            if (listfenetre.isGood == false)
+            else
             {
                 Debug.Log("Perdu");
             }
+
         }
       
     }
