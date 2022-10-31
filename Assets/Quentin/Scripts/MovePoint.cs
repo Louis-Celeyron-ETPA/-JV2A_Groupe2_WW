@@ -15,39 +15,31 @@ namespace Quentin
 
         private void Start()
         {
+            
+
+
 
         }
+        public void MoveUp()
+        {
+            MyTransform.position += MyTransform.up * speed / 2;
+        }
+        public void MoveLeft()
+        {
+            MyTransform.position -= MyTransform.right * speed / 2;
+        }
+        public void MoveDown()
+        {
+            MyTransform.position -= MyTransform.up * speed / 2;
+        }
+        public void MoveRight()
+        {
+            MyTransform.position += MyTransform.right * speed / 2;
+        }
 
-        // Update is called once per frame
+
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Z))
-            {
-                MyTransform.position += MyTransform.up * speed / 2;
-            }
-            if (Input.GetKey(KeyCode.Q))
-            {
-                MyTransform.position -= MyTransform.right * speed / 2;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                MyTransform.position -= MyTransform.up * speed / 2;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                MyTransform.position += MyTransform.right * speed / 2;
-            }
-
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                speed = speed / 4;
-            }
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                speed = speed * 4;
-            }
-
 
 
         }
