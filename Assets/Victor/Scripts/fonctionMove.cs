@@ -8,9 +8,9 @@ namespace victor {
         public Camera mainCamera;
         public targetValidation listfenetre;
 
-        public  float speed = 1f;
+        public  float speed = 10f;
 
-        public bool inTarget = false;
+        public bool inAction = false;
 
 
         // Start is called before the first frame update
@@ -48,6 +48,7 @@ namespace victor {
 
                 transform.position = new Vector3(transform.position.x, tempVectorOne.y, transform.position.z);
             }
+
         }
 
         public void MoveUp()
@@ -66,14 +67,17 @@ namespace victor {
         {
             subject.position -= subject.right * speed;
         }
-        public void Action() { }
-        //{
-
-            //if (listfenetre.isGood == true)
-            //{
-                
-            //}
-
-        //}
+        public void Action()
+        {
+            if(listfenetre.isGood == true)
+            {
+                Debug.Log("Victoire");
+            }
+            if (listfenetre.isGood == false)
+            {
+                Debug.Log("Perdu");
+            }
+        }
+      
     }
 }
