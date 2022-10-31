@@ -9,7 +9,7 @@ namespace Brandon
     {
 
         public Transform myTransform;
-        public Light SpotVoleur;
+        public Light spotVoleur;
         public float speed = 0.1f;
         public float descendingSpeed = 0.05f;
         public int direction;
@@ -47,7 +47,7 @@ namespace Brandon
 
             else
             {
-                SpotVoleur.enabled = true;
+                spotVoleur.enabled = true;
             }
             
             
