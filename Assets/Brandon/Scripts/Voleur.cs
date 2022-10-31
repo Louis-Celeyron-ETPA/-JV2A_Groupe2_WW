@@ -9,6 +9,7 @@ namespace Brandon
     {
 
         public Transform myTransform;
+        public Light SpotVoleur;
         public float speed = 0.1f;
         public float descendingSpeed = 0.05f;
         public int direction;
@@ -20,7 +21,7 @@ namespace Brandon
         // Start is called before the first frame update
         void Start()
         {
-
+            
         }
 
         // Update is called once per frame
@@ -42,6 +43,11 @@ namespace Brandon
                 {
                     myTransform.position += myTransform.up * descendingSpeed;
                 }
+            }
+
+            else
+            {
+                SpotVoleur.enabled = true;
             }
             
             
