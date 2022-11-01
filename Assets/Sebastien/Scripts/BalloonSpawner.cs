@@ -4,30 +4,28 @@ using UnityEngine;
 
 namespace Osborne
 {
+
     public class BalloonSpawner : MonoBehaviour
     {
-        public GameObject[] balloonPrefab;
+        public float delay = 1f;
+        public GameObject greenPrefab;
+        public GameObject redPrefab;
+        public GameObject goldPrefab;
 
-        public Transform spawnPos;
 
-        int randomInt;
-           
-        void Update()
+        // Start is called before the first frame update
+        void Start()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SpawnRandom();
-            }
+            InvokeRepeating("Spawn", delay, delay);
         }
 
-        void SpawnRandom ()
+        void Spawn()
         {
-            Vector3 randomSpawnPosition = new Vector3(Random.Range(-10, 10), 5, Random.Range(-10, 10));
-            Instantiate(balloonPrefab[randomInt], spawnPos.position, Quaternion.identity);
-            //Quaternion = no rotation//
-            //spawnPos.rotation
-            
+            Instantiate(greenPrefab, new Vector3(Random.Range(-4, 4), -5, 0), Quaternion.identity); // Quaternion prevents rotation
+            Instantiate(redPrefab, new Vector3(Random.Range(-4, 4), -7, 0), Quaternion.identity);
+            Instantiate(goldPrefab, new Vector3(Random.Range(-4, 4), -10, 0), Quaternion.identity);
         }
+
     }
 
 }

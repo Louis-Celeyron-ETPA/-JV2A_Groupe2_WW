@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Osborne {
 
-public class Waypoint : MonoBehaviour
+public class BalloonWaypoint : MonoBehaviour
 {
     [SerializeField] GameObject[] waypoints;
     int currentWaypointIndex = 0;
