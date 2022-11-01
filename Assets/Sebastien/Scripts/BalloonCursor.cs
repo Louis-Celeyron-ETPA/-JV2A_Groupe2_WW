@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Osborne
 {
-    public class CursorControl : MonoBehaviour
+    public class BalloonCursor : MonoBehaviour
     {
         // Update is called once per frame
        /* void Update()

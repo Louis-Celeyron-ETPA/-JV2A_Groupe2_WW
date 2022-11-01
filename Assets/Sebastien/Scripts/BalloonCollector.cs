@@ -4,11 +4,9 @@ using UnityEngine;
 
 namespace Osborne
 {
-
     public class BalloonCollector : MonoBehaviour
     {
         public BalloonManager balloonManager;
- 
         public GameObject Balloon;
         
         [SerializeField] AudioSource popSound;
@@ -17,7 +15,7 @@ namespace Osborne
         {
             balloonManager = FindObjectOfType<BalloonManager>(); // detect Object type
             
-            //popSound = GetComponent<AudioSource>(); //detect audio source
+            popSound = GetComponent<AudioSource>(); //detect audio source
         }
 
         private void OnMouseDown()
@@ -25,10 +23,9 @@ namespace Osborne
 
             Destroy(gameObject);
             balloonManager.OnBalloonPop(gameObject.tag);
-            //popSound.Play();
+            popSound.Play();
 
         }
-
 
     }
 
