@@ -4,7 +4,7 @@ using UnityEngine;
 namespace victor {
     public class fonctionMove : MonoBehaviour
     {
-        public Transform subject ;
+        public RectTransform subject ;
         public Camera mainCamera;
         public targetValidation listfenetre;
 
@@ -12,41 +12,40 @@ namespace victor {
 
         public bool inAction = false;
 
+        private Vector3 positionTemporaire;
+
 
         // Start is called before the first frame update
         void Start()
         {
             mainCamera = Camera.main;
+            subject = transform as RectTransform;
         }
 
         // Update is called once per frame
         void Update()
         {
+            var rectTransform = (transform as RectTransform);
+            positionTemporaire = new Vector3(
+                rectTransform.anchoredPosition.x / Camera.main.pixelWidth,
+                rectTransform.anchoredPosition.y / Camera.main.pixelHeight * -1,
+                Camera.main.nearClipPlane);
 
-            if(mainCamera.WorldToViewportPoint(transform.position).x> 1)
+            if (positionTemporaire.x> 1)
             {
-                var tempVectorZero = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, mainCamera.farClipPlane));
-
-                transform.position = new Vector3(tempVectorZero.x, transform.position.y, transform.position.z);
+                subject.anchoredPosition = new Vector3(0, subject.anchoredPosition.y);
             }
-            if (mainCamera.WorldToViewportPoint(transform.position).x < 0)
+            if (positionTemporaire.x < 0)
             {
-                var tempVectorOne = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, mainCamera.farClipPlane));
-
-                transform.position = new Vector3(tempVectorOne.x, transform.position.y, transform.position.z);
+                subject.anchoredPosition = new Vector3(mainCamera.pixelWidth, subject.anchoredPosition.y);
             }
-
-            if (mainCamera.WorldToViewportPoint(transform.position).y > 1)
+            if (positionTemporaire.y > 1)
             {
-                var tempVectorZero = mainCamera.ViewportToWorldPoint(new Vector3(0, 0, mainCamera.farClipPlane));
-
-                transform.position = new Vector3(transform.position.x, tempVectorZero.y, transform.position.z);
+                subject.anchoredPosition = new Vector3(subject.anchoredPosition.x, 0);
             }
-            if (mainCamera.WorldToViewportPoint(transform.position).y < 0)
+            if (positionTemporaire.y < 0)
             {
-                var tempVectorOne = mainCamera.ViewportToWorldPoint(new Vector3(1, 1, mainCamera.farClipPlane));
-
-                transform.position = new Vector3(transform.position.x, tempVectorOne.y, transform.position.z);
+                subject.anchoredPosition = new Vector3(subject.anchoredPosition.x, -mainCamera.pixelHeight);
             }
 
         }
@@ -70,14 +69,22 @@ namespace victor {
         public void Action()
         {
 
-            if(listfenetre.isGood == true)
-            {
-                Debug.Log("Victoire");
+            var convertedPosition = Camera.main.ViewportToWorldPoint(positionTemporaire);
+            var positionDansLeMonde = new Vector3(convertedPosition.x, -convertedPosition.y, convertedPosition.z);
+
+            if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info)) {
+                var isGood = info.transform.GetComponent<targetValidation>();
+                if (isGood != null)
+                {
+                    Debug.Log(isGood);
+                }
+                else
+                {
+                    Debug.Log("Perdu");
+                }
             }
-            else
-            {
-                Debug.Log("Perdu");
-            }
+
+
 
         }
       
