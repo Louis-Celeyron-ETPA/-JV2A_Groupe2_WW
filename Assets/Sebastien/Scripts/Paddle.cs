@@ -20,27 +20,11 @@ public class Paddle : MonoBehaviour
             {
                 mouvement = Input.GetAxisRaw("Vertical");
             }
-            else
-            {
-                mouvement = Input.GetAxisRaw("Vertical2");
-            }
 
             rb.velocity = new Vector3(rb.velocity.x, mouvement * speed);
 
         }
 
-        /*
-                if (player2)
-                {
-                    mouvement = Input.GetAxisRaw("Horizontal");
-                }
-                else
-                {
-                    mouvement = Input.GetAxisRaw("Horizontal2");
-                }
-
-                rb.velocity = new Vector3(rb.velocity.y, mouvement * speed);
-        */
 
         }
 
