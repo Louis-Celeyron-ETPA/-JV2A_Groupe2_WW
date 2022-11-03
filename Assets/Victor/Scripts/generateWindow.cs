@@ -38,16 +38,6 @@ namespace victor
         {
 
         }
-        private void OnTriggerEnter(Collider other)
-        {
-
-            Debug.Log("coucou");
-            if (Input.GetKey(KeyCode.Space))
-            {
-                Action(other);
-            }
-           
-        }
     }
 
 }

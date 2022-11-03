@@ -405,7 +405,8 @@ GameObject:
   - component: {fileID: 1911762901}
   - component: {fileID: 1911762900}
   - component: {fileID: 1911762905}
-  - component: {fileID: 1911762904}
+  - component: {fileID: 1911762906}
+  - component: {fileID: 1911762907}
   m_Layer: 0
   m_Name: traget
   m_TagString: Untagged
@@ -491,7 +492,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1911762904
+--- !u!114 &1911762905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -505,9 +506,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subject: {fileID: 1911762903}
   mainCamera: {fileID: 1492534337}
-  speed: 0.1
-  inTarget: 0
---- !u!114 &1911762905
+  listfenetre: {fileID: 6077330846115017821, guid: ab380365faf56ce4fb9e1e588cb18b03, type: 3}
+  speed: 0.05
+  inAction: 0
+--- !u!114 &1911762906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -516,15 +518,115 @@ MonoBehaviour:
   m_GameObject: {fileID: 1911762899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b75d5a49d308a2c41aeddbfd4da03528, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e91d22c0a753c24492bb6028290bde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyUp: z
-  keyDown: s
-  keyRight: d
-  keyLeft: q
-  keyAction: 32
-  move: {fileID: 1911762904}
+  directions:
+    left:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1911762905}
+          m_TargetAssemblyTypeName: victor.fonctionMove, Assembly-CSharp
+          m_MethodName: MoveLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    right:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1911762905}
+          m_TargetAssemblyTypeName: victor.fonctionMove, Assembly-CSharp
+          m_MethodName: MoveRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    down:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1911762905}
+          m_TargetAssemblyTypeName: victor.fonctionMove, Assembly-CSharp
+          m_MethodName: MoveDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    up:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1911762905}
+          m_TargetAssemblyTypeName: victor.fonctionMove, Assembly-CSharp
+          m_MethodName: MoveUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  pointsMorts:
+    horizontal:
+      m_PersistentCalls:
+        m_Calls: []
+    vertical:
+      m_PersistentCalls:
+        m_Calls: []
+  action:
+    onPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1911762905}
+          m_TargetAssemblyTypeName: victor.fonctionMove, Assembly-CSharp
+          m_MethodName: Action
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onUp:
+      m_PersistentCalls:
+        m_Calls: []
+    onStayed:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1911762907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911762899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0728fb344a91c4ba3bd9d9cc988e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numeroFenetre: 0
+  listFenetre: {fileID: 1492534339}
+  isGood: 0
+  mr: {fileID: 1911762901}
 --- !u!1 &1953133541
 GameObject:
   m_ObjectHideFlags: 0

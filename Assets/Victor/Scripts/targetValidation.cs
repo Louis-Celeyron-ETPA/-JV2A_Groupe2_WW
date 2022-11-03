@@ -22,7 +22,7 @@ namespace victor {
         }
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("coucou");
+            
             if (isGood == true)
             {
                 Debug.Log("c la bonne");
@@ -30,5 +30,3 @@ namespace victor {
         }
     }
 }
-
-
