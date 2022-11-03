@@ -61,13 +61,13 @@ namespace Alexian
 
         public void MoveReset()
         {
-            if(right == true && left == false)
+            if(left == true && right == false)
             {
                 transform.eulerAngles += new Vector3(0, 0, 20);
                 right = false;
                 left = false;
             }
-            if (left == true && right == false)
+            if (right == true && left == false)
             {
                 transform.eulerAngles += new Vector3(0, 0, -20);
                 left = false;
