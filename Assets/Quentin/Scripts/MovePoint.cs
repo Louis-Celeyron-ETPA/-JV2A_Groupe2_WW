@@ -2,49 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePoint : MonoBehaviour
 
+namespace Quentin
 {
-    // Start is called before the first frame update
-    public Transform MyTransform;
-    public float speed = 0.9f;
+    public class MovePoint : MonoBehaviour
 
-    private void Start()
+
     {
+        // Start is called before the first frame update
+        public Transform MyTransform;
+        public float speed = 0.9f;
 
-    }
+        private void Start()
+        {
+            
 
-    // Update is called once per frame
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Z))
+
+
+        }
+        public void MoveUp()
         {
             MyTransform.position += MyTransform.up * speed / 2;
         }
-        if (Input.GetKey(KeyCode.Q))
+        public void MoveLeft()
         {
             MyTransform.position -= MyTransform.right * speed / 2;
         }
-        if (Input.GetKey(KeyCode.S))
+        public void MoveDown()
         {
             MyTransform.position -= MyTransform.up * speed / 2;
         }
-        if (Input.GetKey(KeyCode.D))
+        public void MoveRight()
         {
             MyTransform.position += MyTransform.right * speed / 2;
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        private void Update()
         {
-            speed = speed / 4;
+
+
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            speed = speed * 4;
-        }
-
-
-
     }
 }
