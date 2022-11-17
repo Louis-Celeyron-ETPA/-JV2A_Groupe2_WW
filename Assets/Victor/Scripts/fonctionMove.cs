@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace victor {
+namespace victor
+{
     public class fonctionMove : MonoBehaviour
     {
-        public RectTransform subject ;
+        public RectTransform subject;
         public Camera mainCamera;
         public targetValidation listfenetre;
 
-        public  float speed = 10f;
+        public float speed = 10f;
 
         public bool inAction = false;
 
@@ -31,7 +32,7 @@ namespace victor {
                 rectTransform.anchoredPosition.y / Camera.main.pixelHeight * -1,
                 Camera.main.nearClipPlane);
 
-            if (positionTemporaire.x> 1)
+            if (positionTemporaire.x > 1)
             {
                 subject.anchoredPosition = new Vector3(0, subject.anchoredPosition.y);
             }
@@ -68,25 +69,31 @@ namespace victor {
         }
         public void Action()
         {
-
+            var rectTransform = (transform as RectTransform);
+            var positionTemporaire = new Vector3(
+                rectTransform.anchoredPosition.x / Camera.main.pixelWidth,
+                rectTransform.anchoredPosition.y / Camera.main.pixelHeight * -1,
+                Camera.main.nearClipPlane);
             var convertedPosition = Camera.main.ViewportToWorldPoint(positionTemporaire);
+
             var positionDansLeMonde = new Vector3(convertedPosition.x, -convertedPosition.y, convertedPosition.z);
 
-            if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info)) {
-                var isGood = info.transform.GetComponent<targetValidation>();
-                if (isGood != null)
+            if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info))
+            {
+                var censoredWindow = info.transform.GetComponent<targetValidation>();
+
+                if (censoredWindow != null)
                 {
-                    Debug.Log(isGood);
-                }
-                else
-                {
-                    Debug.Log("Perdu");
+                    if (censoredWindow.isGood == true)
+                    {
+                        Debug.Log("bien jouer FDP");
+                    }
+                    else
+                    {
+                        Debug.Log("perdu");
+                    }
                 }
             }
-
-
-
         }
-      
     }
 }
