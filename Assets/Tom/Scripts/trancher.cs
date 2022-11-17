@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class trancher : MonoBehaviour
 {
+    public transform Slide;
+    float speed = 2f;
+    float height = 0.05f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,13 +16,15 @@ public class trancher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        maxFallDistance = 0,394;
-
-        if (transform.position.y <= maxFallDistance)
         {
-            Debug.Log("Out of bounds!");
+            Vector3 pos = Slide.position;
 
+            float newY = Mathf.Sin(Time.time * speed);
 
+            newY = newY * height;
+
+            Slide.position = new Vector3(pos.x, newY, pos.z);
         }
     }
+}
 }
