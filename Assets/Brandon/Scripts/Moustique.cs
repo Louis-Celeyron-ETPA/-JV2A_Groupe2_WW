@@ -6,17 +6,29 @@ public class Moustique : MonoBehaviour
 {
     public Transform moustique;
     public float speed = 0.1f;
+    public float radius = 20;
     public Vector2 direction;
+    private Vector2 positionInitiale;
 
     // Start is called before the first frame update
     void Start()
     {
-        direction = (new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f))).normalized;
+        LaunchMovement();
     }
 
     // Update is called once per frame
     void Update()
     {
-        moustique.position += moustique.position * speed;
+        moustique.position = Vector2.MoveTowards(moustique.position, direction, speed);   
+        if(Vector3.Distance(direction, moustique.position)<=0.1f)
+        {
+            LaunchMovement();
+        }
+    }
+
+    private void LaunchMovement()
+    {
+        direction = Random.insideUnitSphere * 20;
+        positionInitiale = moustique.position;
     }
 }
