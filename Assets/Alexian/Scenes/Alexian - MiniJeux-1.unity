@@ -207,8 +207,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+      propertyPath: m_text
+      value: Spam Action !
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
       propertyPath: m_fontSize
-      value: 63.8
+      value: 70.05
       objectReference: {fileID: 0}
     - target: {fileID: 6461909355361099529, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
       propertyPath: m_margin.w
