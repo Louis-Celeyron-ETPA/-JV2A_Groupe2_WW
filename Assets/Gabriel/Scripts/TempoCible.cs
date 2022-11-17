@@ -2,36 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TempoCible : MonoBehaviour
+namespace Gabriel
 {
-    // Start is called before the first frame update
-    void Start()
+    public class TempoCible : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        TempoRythm monTempo = other.GetComponent<TempoRythm>();
-
-        if (monTempo != null)
+        // Start is called before the first frame update
+        void Start()
         {
-            monTempo.tempoState = 1;
-            Debug.Log("coucou 1");
+
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        TempoRythm monTempo = other.GetComponent<TempoRythm>();
+        // Update is called once per frame
+        void Update()
+        {
 
-        monTempo.tempoState = 2;
-        Debug.Log("coucou 2");
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            TempoRythm monTempo = other.GetComponent<TempoRythm>();
+
+            if (monTempo != null)
+            {
+                if (monTempo.tempoState != 3)
+                {
+                    monTempo.tempoState = 1;
+                    Debug.Log("coucou 1");
+                }
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            TempoRythm monTempo = other.GetComponent<TempoRythm>();
+
+            if (monTempo.tempoState != 3)
+            {
+                monTempo.tempoState = 2;
+                Debug.Log("coucou 2");
+            }
+        }
     }
 }

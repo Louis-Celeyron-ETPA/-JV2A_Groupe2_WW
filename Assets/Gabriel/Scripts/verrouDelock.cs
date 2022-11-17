@@ -6,7 +6,6 @@ namespace Gabriel
 {
     public class VerrouDelock : MonoBehaviour
     {
-
         private List<int> sensVerrou = new List<int>();
         public int nombreVerrou;
 
@@ -51,7 +50,7 @@ namespace Gabriel
         // Update is called once per frame
         void Update()
         {
-           
+
         }
 
         public void VerrouCentre()
