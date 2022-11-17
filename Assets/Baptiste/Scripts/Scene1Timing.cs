@@ -34,8 +34,8 @@ namespace Baptiste {
         {
             listReturn = new List<mailManReturn>();
 
-            mailManHide = new Vector3(22f, 0f, 0f);
-            mailManShow = new Vector3(11f, 0f, 0f);
+            mailManHide = new Vector3(22f, 1f, 0f);
+            mailManShow = new Vector3(6f, 1f, -2f);
 
             listReturn.Add(new mailManReturn(1.42f, 2.34f, true));
             listReturn.Add(new mailManReturn(2.34f, 4.62f, false));

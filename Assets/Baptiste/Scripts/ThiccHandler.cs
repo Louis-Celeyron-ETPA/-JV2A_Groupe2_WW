@@ -19,18 +19,18 @@ namespace Baptiste {
         void Start()
         {
             score = 0;
-            omniThick = new Vector3(0f, 0f, -1f);
-            omniThinn = new Vector3(0f, -12f, -1f);
+            omniThick = new Vector3(0f, 0f, 0f);
+            omniThinn = new Vector3(0f, -12f, 0f);
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (twerking && mailManBack.transform.position.x == 11)
+            if (twerking && mailManBack.transform.position.x == 6)
             {
                 score += 10;
             }
-            else if (twerking && mailManBack.transform.position.x != 11)
+            else if (twerking && mailManBack.transform.position.x != 6)
             {
                 score -= 10;
             }
@@ -39,14 +39,12 @@ namespace Baptiste {
 
         public void Twerking()
         {
-            Debug.Log("prout");
             transform.position = omniThick;
             twerking = true;
         }
 
         public void NoTwerking()
         {
-            Debug.Log("skwalala");
             transform.position = omniThinn;
             twerking = false;
         }
