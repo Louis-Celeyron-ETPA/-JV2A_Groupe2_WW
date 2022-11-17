@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     public InputStruct4 directions;
     public InputStruct2 pointsMorts;
     public InputStruct3  action;
-    private float deadZone = 0.4f;
+    private float deadZone = 0.1f;
     private bool isPointMortH = true, isPointMortV = true;
     private void Update()
     {

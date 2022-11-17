@@ -236,7 +236,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.94884753, y: -1.164495}
@@ -252,9 +252,11 @@ GameObject:
   m_Component:
   - component: {fileID: 546867661}
   - component: {fileID: 546867660}
-  - component: {fileID: 546867659}
+  - component: {fileID: 546867666}
   - component: {fileID: 546867662}
   - component: {fileID: 546867663}
+  - component: {fileID: 546867664}
+  - component: {fileID: 546867665}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -262,20 +264,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &546867659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546867658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54324826b655b7746870c5ab8027fcca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyTransform: {fileID: 546867661}
-  speed: 0.5
 --- !u!212 &546867660
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -359,7 +347,7 @@ MonoBehaviour:
     left:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 546867659}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Quentin.MovePoint, Assembly-CSharp
           m_MethodName: MoveLeft
           m_Mode: 1
@@ -374,7 +362,7 @@ MonoBehaviour:
     right:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 546867659}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Quentin.MovePoint, Assembly-CSharp
           m_MethodName: MoveRight
           m_Mode: 1
@@ -389,7 +377,7 @@ MonoBehaviour:
     down:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 546867659}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Quentin.MovePoint, Assembly-CSharp
           m_MethodName: MoveDown
           m_Mode: 1
@@ -404,7 +392,7 @@ MonoBehaviour:
     up:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 546867659}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Quentin.MovePoint, Assembly-CSharp
           m_MethodName: MoveUp
           m_Mode: 1
@@ -443,7 +431,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -460,28 +448,85 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 0.39262277, y: -0.3530323}
       - {x: 0.45803243, y: -0.35598338}
-      - {x: 0.5414749, y: -0.35286897}
+      - {x: 0.5469189, y: -0.32020468}
       - {x: 0.5549465, y: -0.15414938}
-      - {x: 0.34927204, y: 0.03985449}
+      - {x: 0.3247855, y: 0.06026002}
+      - {x: 0.34079587, y: 0.12960434}
       - {x: 0.37529153, y: 0.17330109}
-      - {x: 0.4083981, y: 0.33791277}
-      - {x: 0.25302064, y: 0.44849354}
-      - {x: 0.21080431, y: 0.5480744}
+      - {x: 0.41247916, y: 0.24404764}
+      - {x: 0.41656023, y: 0.35423705}
+      - {x: 0.37903237, y: 0.345824}
+      - {x: 0.3604405, y: 0.38234758}
+      - {x: 0.35023785, y: 0.41091466}
+      - {x: 0.2818097, y: 0.40991282}
+      - {x: 0.2563728, y: 0.44152308}
+      - {x: 0.2473576, y: 0.5042367}
+      - {x: 0.21425033, y: 0.5464397}
+      - {x: 0.1883584, y: 0.5603177}
       - {x: 0.1628747, y: 0.57540655}
       - {x: 0.03878115, y: 0.5819375}
       - {x: -0.089593716, y: 0.5066251}
-      - {x: -0.17069459, y: 0.46054482}
-      - {x: -0.2877502, y: 0.4092813}
-      - {x: -0.42081243, y: 0.30887502}
-      - {x: -0.35919142, y: 0.062095404}
-      - {x: -0.5346876, y: -0.16112494}
-      - {x: -0.56081253, y: -0.29928145}
-      - {x: -0.39121896, y: -0.37621897}
+      - {x: -0.1688956, y: 0.44075537}
+      - {x: -0.28595123, y: 0.3894921}
+      - {x: -0.3434385, y: 0.31809163}
+      - {x: -0.42081243, y: 0.3211183}
+      - {x: -0.34286702, y: 0.062095165}
+      - {x: -0.5367281, y: -0.13051677}
+      - {x: -0.5342855, y: -0.31968686}
+      - {x: -0.3646918, y: -0.35377294}
       - {x: -0.29387492, y: -0.5300939}
       - {x: -0.053656667, y: -0.5923438}
       - {x: 0.05245854, y: -0.42434323}
       - {x: 0.24442545, y: -0.5715571}
       - {x: 0.3759014, y: -0.5589345}
+--- !u!114 &546867664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546867658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb95a7cabde4b844b26b026833634a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: 0
+--- !u!50 &546867665
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546867658}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &546867666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546867658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54324826b655b7746870c5ab8027fcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyTransform: {fileID: 546867661}
+  speed: 0.5
 --- !u!1 &955663040
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +742,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.89485645, y: -1.1357784}
@@ -715,6 +760,7 @@ GameObject:
   - component: {fileID: 1474379551}
   - component: {fileID: 1474379553}
   - component: {fileID: 1474379554}
+  - component: {fileID: 1474379555}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -822,6 +868,19 @@ CircleCollider2D:
   m_Offset: {x: -0.9209089, y: -1.0141935}
   serializedVersion: 2
   m_Radius: 2.7410278
+--- !u!114 &1474379555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474379549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb95a7cabde4b844b26b026833634a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: 0
 --- !u!1 &1492534335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1078,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.97722054, y: -1.1315184}
@@ -1131,6 +1190,8 @@ GameObject:
   - component: {fileID: 1956803781}
   - component: {fileID: 1956803780}
   - component: {fileID: 1956803783}
+  - component: {fileID: 1956803784}
+  - component: {fileID: 1956803785}
   m_Layer: 0
   m_Name: Square (7)
   m_TagString: Untagged
@@ -1238,6 +1299,40 @@ CircleCollider2D:
   m_Offset: {x: -0.97722006, y: -1.1315184}
   serializedVersion: 2
   m_Radius: 2.8170485
+--- !u!114 &1956803784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956803779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb95a7cabde4b844b26b026833634a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: 0
+--- !u!50 &1956803785
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956803779}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1971577262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1446,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.9257889, y: -1.0286527}
@@ -1470,7 +1565,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.9772211, y: -1.1829512}
