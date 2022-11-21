@@ -18,13 +18,16 @@ public class Collision : MonoBehaviour
         
         if ( gameOver == true)
         {
-            Debug.Log("Yo");
+            Debug.Log("T'as perdu");
         }
     }
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        gameOver = true;
-        Destroy(this);
+        if (collision.gameObject.tag == "Bomb")
+        {
+            gameOver = true;
+        }
     }
     
+
 }
