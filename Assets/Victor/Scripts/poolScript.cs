@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class poolScript : MonoBehaviour
 {
+
+    public Transform positionPlateform;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        positionPlateform.position = new Vector3(Random.Range(-10, 10), positionPlateform.position.y, positionPlateform.position.z);
+
     }
 
     // Update is called once per frame
@@ -18,7 +23,7 @@ public class poolScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("bien jouer");
+        Debug.Log("TSu a gagner.");
         return;
 
 
