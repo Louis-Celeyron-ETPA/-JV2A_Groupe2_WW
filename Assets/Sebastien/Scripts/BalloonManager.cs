@@ -6,12 +6,12 @@ using UnityEngine.UI;
 namespace Osborne
 {
 
-    public class BaloonManager : MonoBehaviour
+    public class BalloonManager : MonoBehaviour
     {
         int balloons = 0;
         [SerializeField] Text balloonsText;
 
-        public void OnBaloonPop(string color)
+        public void OnBalloonPop(string color)
         {
             if (color == "Green")
             {

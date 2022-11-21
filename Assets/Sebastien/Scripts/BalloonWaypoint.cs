@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Osborne {
 
-public class Waypoint : MonoBehaviour
+public class BalloonWaypoint : MonoBehaviour
 {
     [SerializeField] GameObject[] waypoints;
     int currentWaypointIndex = 0;
@@ -24,6 +24,8 @@ public class Waypoint : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
     }
+
 }
+
 
 }
