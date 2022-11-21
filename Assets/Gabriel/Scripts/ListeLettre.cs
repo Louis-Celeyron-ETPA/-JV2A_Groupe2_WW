@@ -10,7 +10,7 @@ namespace Gabriel
 
         public List<MesLettres> listeDesLettres = new List<MesLettres>();
 
-        public List<Color> couleursDispo = new List<Color>();
+        public List<Material> textureDispo = new List<Material>();
         public int nombreLettre;
         public MesLettres maLettre;
         // Start is called before the first frame update
@@ -22,9 +22,10 @@ namespace Gabriel
 
                 couleurLettre.Add(colorPick);
 
-                MesLettres lettreCree = Instantiate(maLettre, new Vector3(-10 + (i * 2), -2, -13), Quaternion.identity);
+                MesLettres lettreCree = Instantiate(maLettre, new Vector3(-10 + (i * 2), -4, -13), Quaternion.identity);
 
-                lettreCree.mr.material.color = couleursDispo[colorPick];
+                lettreCree.transform.rotation = Quaternion.Euler(0, 180, 0);
+                lettreCree.mr.material = textureDispo[colorPick];
                 listeDesLettres.Add(lettreCree);
             }
         }
