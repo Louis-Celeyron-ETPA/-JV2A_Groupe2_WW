@@ -2712,6 +2712,10 @@ PrefabInstance:
       propertyPath: balloonsText
       value: 
       objectReference: {fileID: 411808501}
+    - target: {fileID: 7498152233989845099, guid: 005cad21c6b367242a535b585d717abe, type: 3}
+      propertyPath: baloonManager
+      value: 
+      objectReference: {fileID: 567245388}
     - target: {fileID: 7498152233989845100, guid: 005cad21c6b367242a535b585d717abe, type: 3}
       propertyPath: m_Name
       value: Balloon Green
