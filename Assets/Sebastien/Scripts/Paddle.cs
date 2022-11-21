@@ -21,10 +21,7 @@ public class Paddle : MonoBehaviour
             }
 
             rb.velocity = new Vector3(rb.velocity.x, mouvement * speed);
-
         }
-
-    
 
         }
 

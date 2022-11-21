@@ -21,16 +21,10 @@ namespace Osborne
         {
             transform.RotateAround(Vector3.zero, Vector3.forward, mouvement * Time.deltaTime * -moveSpeed);
         }
-        private void OnCollisionEnter2D(Collision2D collision)
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-      
-            if (collision.gameObject.CompareTag("Hexagon"))
-            {
-                Destroy(collision.transform.gameObject);
-                Debug.Log("test");
-
-            }
+            Destroy(gameObject);
         }
-
     }
 }
