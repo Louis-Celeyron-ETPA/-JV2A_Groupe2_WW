@@ -2,46 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cursor : MonoBehaviour
+namespace Alexian
 {
-    public CensoredObject censoredObject;
-
-    // Start is called before the first frame update
-    void Start()
+    public class CursorRay : MonoBehaviour
     {
+        public CensoredObject censoredObject;
+        public RectTransform cursorPlayer;
+        public float speed = 10f;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    public void click()
-    {
-        var rectTransform = (transform as RectTransform);
-        var positionTemporaire = new Vector3(
-            rectTransform.anchoredPosition.x / Camera.main.pixelWidth,
-            rectTransform.anchoredPosition.y / Camera.main.pixelHeight * -1,
-            Camera.main.nearClipPlane);
-        var convertedPosition = Camera.main.ViewportToWorldPoint(positionTemporaire);
-
-        var positionDansLeMonde = new Vector3(convertedPosition.x, -convertedPosition.y, convertedPosition.z);
-
-        if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info))
+        // Start is called before the first frame update
+        void Start()
         {
-            var censoredWindow = info.transform.GetComponent<CensoredObject>();
-            if (censoredWindow != null)
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+        public void MoveUp()
+        {
+            cursorPlayer.position += cursorPlayer.up * speed;
+        }
+        public void MoveDown()
+        {
+            cursorPlayer.position -= cursorPlayer.up * speed;
+        }
+        public void MoveRight()
+        {
+            cursorPlayer.position += cursorPlayer.right * speed;
+        }
+        public void MoveLeft()
+        {
+            cursorPlayer.position -= cursorPlayer.right * speed;
+        }
+        public void click()
+        {
+            var rectTransform = (transform as RectTransform);
+            var positionTemporaire = new Vector3(
+                rectTransform.anchoredPosition.x / Camera.main.pixelWidth,
+                rectTransform.anchoredPosition.y / Camera.main.pixelHeight * -1,
+                Camera.main.nearClipPlane);
+            var convertedPosition = Camera.main.ViewportToWorldPoint(positionTemporaire);
+
+            var positionDansLeMonde = new Vector3(convertedPosition.x, -convertedPosition.y, convertedPosition.z);
+
+            if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info))
             {
-                censoredObject.isMoving = true;
-                if(censoredObject.firstClick == false)
+                var censoredWindow = info.transform.GetComponent<CensoredObject>();
+                if (censoredWindow != null)
                 {
-                    censoredObject.firstClick = true;
-                }
-                else
-                {
-                    censoredObject.firstClick = false;
-                    censoredObject.positionObject.position = positionDansLeMonde;
+                    censoredObject.isMoving = true;
+                    if (censoredObject.firstClick == false)
+                    {
+                        censoredObject.firstClick = true;
+                    }
+                    else
+                    {
+                        censoredObject.firstClick = false;
+                        censoredObject.positionObject.position = positionDansLeMonde;
+                    }
                 }
             }
         }
