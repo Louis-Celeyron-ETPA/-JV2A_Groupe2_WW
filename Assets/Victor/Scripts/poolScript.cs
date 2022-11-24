@@ -11,7 +11,7 @@ public class poolScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        positionPlateform.position = new Vector3(Random.Range(-10, 10), positionPlateform.position.y, positionPlateform.position.z);
+        positionPlateform.position = new Vector3(Random.Range(-6, 6), positionPlateform.position.y, positionPlateform.position.z);
 
     }
 
