@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class Difficulty : MonoBehaviour
 {
-    public static Difficulty Instance;
-    private void Awake()
-    {
-        if(Difficulty.Instance != null)
-        {
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(this);
-    }
+    public int maxDifficulty = 9;
+    public int minDifficulty = 0;
 
     private int currentDifficulty = 1;
     public void RiseDifficulty()
     {
         currentDifficulty++;
+        currentDifficulty = Mathf.Clamp(currentDifficulty, minDifficulty, maxDifficulty);
     }
     public void DowngradeDifficulty()
     {
         currentDifficulty--;
+        currentDifficulty = Mathf.Clamp(currentDifficulty, minDifficulty, maxDifficulty);
     }
     public int GetDifficulty()
     {
