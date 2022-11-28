@@ -20,6 +20,7 @@ namespace Brandon
         public bool leftArrow = false;
         public bool rightArrow = false;
         public float speed = 0.5f;
+        public float slapSpeed = 0.7f;
         public bool gameOver = false;
 
 
@@ -67,7 +68,7 @@ namespace Brandon
 
                 if (slap)
                 {
-                    tapetteSlap.position = Vector2.MoveTowards(tapetteSlap.position, tapetteOmbreTransform.position, speed);
+                    tapetteSlap.position = Vector2.MoveTowards(tapetteSlap.position, tapetteOmbreTransform.position, slapSpeed);
                     if(tapetteSlap.position.x == tapetteOmbreTransform.position.x)
                     {
                         tapetteOmbre.enabled = false;
@@ -77,6 +78,7 @@ namespace Brandon
             }
             
         }
+
     }
 
 }
