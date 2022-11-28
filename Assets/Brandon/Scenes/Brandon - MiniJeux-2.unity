@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moustique: {fileID: 475308489}
-  speed: 0.5
+  speed: 0.45
   radius: 20
   direction: {x: 0, y: 0}
 --- !u!82 &475308491
