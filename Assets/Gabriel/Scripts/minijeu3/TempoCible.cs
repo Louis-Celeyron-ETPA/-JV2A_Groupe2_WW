@@ -27,7 +27,6 @@ namespace Gabriel
                 if (monTempo.tempoState != 3)
                 {
                     monTempo.tempoState = 1;
-                    Debug.Log("coucou 1");
                 }
             }
         }
@@ -39,7 +38,6 @@ namespace Gabriel
             if (monTempo.tempoState != 3)
             {
                 monTempo.tempoState = 2;
-                Debug.Log("coucou 2");
             }
         }
     }

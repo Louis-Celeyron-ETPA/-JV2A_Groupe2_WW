@@ -21,7 +21,10 @@ namespace Gabriel
         // Update is called once per frame
         void Update()
         {
-            
+            if (currentLettre >= mesCases.nombreLettre)
+            {
+                Debug.Log("Bravo à toi !");
+            }
         }
 
         public void ValideCase()

@@ -735,6 +735,10 @@ PrefabInstance:
       value: SpawnTempo
       objectReference: {fileID: 0}
     - target: {fileID: 2816854470374245870, guid: c998927c891c6984fb85d7b2e7a9ef19, type: 3}
+      propertyPath: tempoTotal
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816854470374245870, guid: c998927c891c6984fb85d7b2e7a9ef19, type: 3}
       propertyPath: delaisTempo
       value: 20
       objectReference: {fileID: 0}

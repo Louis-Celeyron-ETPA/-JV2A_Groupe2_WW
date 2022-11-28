@@ -28,6 +28,7 @@ namespace Gabriel
             {
                 mr.material.color = Color.red;
                 IDchecker.rythmNumber++;
+                IDchecker.errorCheck++;
                 tempoState++;
             }
         }
@@ -36,11 +37,10 @@ namespace Gabriel
         {
             if (tempoState == 0)
             {
-                Debug.Log(IDchecker.rythmNumber);
-                Debug.Log(noteID);
                 if (IDchecker.rythmNumber == noteID)
                 {
                     mr.material.color = Color.red;
+                    IDchecker.errorCheck++;
                     tempoState = 3;
                 }
             }

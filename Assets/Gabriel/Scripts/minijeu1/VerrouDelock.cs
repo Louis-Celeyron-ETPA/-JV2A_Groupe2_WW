@@ -26,23 +26,23 @@ namespace Gabriel
                 sensVerrou.Add(verrouRandom);
                 if (verrouRandom == 0)
                 {
-                    Instantiate(myVerrouBouton, new Vector3(2, 2 - i, -13), Quaternion.identity);
+                    Instantiate(myVerrouBouton, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
                 }
                 else if (verrouRandom == 1)
                 {
-                    Instantiate(myVerrouDroite, new Vector3(2, 2 - i, -13), Quaternion.identity);
+                    Instantiate(myVerrouDroite, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
                 }
                 else if (verrouRandom == 2)
                 {
-                    Instantiate(myVerrouGauche, new Vector3(2, 2 - i, -13), Quaternion.identity);
+                    Instantiate(myVerrouGauche, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
                 }
                 else if (verrouRandom == 3)
                 {
-                    Instantiate(myVerrouHaut, new Vector3(2, 2 - i, -13), Quaternion.identity);
+                    Instantiate(myVerrouHaut, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
                 }
                 else if (verrouRandom == 4)
                 {
-                    Instantiate(myVerrouBas, new Vector3(2, 2 - i, -13), Quaternion.identity);
+                    Instantiate(myVerrouBas, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
                 }
             }
         }
@@ -50,7 +50,10 @@ namespace Gabriel
         // Update is called once per frame
         void Update()
         {
-
+            if (myVerrou >= nombreVerrou)
+            {
+                Debug.Log("T'es vraiment trop fort toi dit donc");
+            }
         }
 
         public void VerrouCentre()

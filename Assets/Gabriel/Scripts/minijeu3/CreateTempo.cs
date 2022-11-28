@@ -6,6 +6,8 @@ namespace Gabriel
 {
     public class CreateTempo : MonoBehaviour
     {
+        public int tempoTotal;
+        public int errorCheck;
 
         public float delaisTempo;
         public int timerTempo;
@@ -28,7 +30,7 @@ namespace Gabriel
         {
             timerTempo++;
 
-            if (timerTempo > variableTimer * delaisTempo)
+            if ((timerTempo > variableTimer * delaisTempo) && (tempoTotal != noteNumber-1))
             {
                 variableTimer = Random.Range(1, 3);
                 timerTempo = 0;
@@ -38,11 +40,20 @@ namespace Gabriel
                 noteTempo.noteID = noteNumber;
                 noteNumber++;
             }
+
+            if (errorCheck >= 3)
+            {
+                Debug.Log("défaite");
+            }
         }
 
         public void rythmAugmentation()
         {
             rythmNumber++;
+            if ((rythmNumber > 19) && (errorCheck < 3))
+            {
+                Debug.Log("victoire !");
+            }
         }
     }
 }
