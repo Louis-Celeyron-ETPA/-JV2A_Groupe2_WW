@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using Baptiste;
 
 namespace Baptiste
@@ -23,7 +24,12 @@ namespace Baptiste
             }
         }
         private GameObject newObject;
+        private List<GameObject> margoulist;
+        private int rm;
 
+        public int score;
+        public TMP_Text textScore;
+        public GameObject baptiste;
         public GameObject beer;
         public GameObject receiptUp;
         public GameObject receiptDown;
@@ -31,12 +37,13 @@ namespace Baptiste
 
         public List<GameObject> gameObjectList;
         public List<ReceiptBeer> receiptToSpawnList;
+        public BaptisteControl baptisteController;
         // Start is called before the first frame update
         void Start()
         {
             receiptToSpawnList = new List<ReceiptBeer>();
             gameObjectList = new List<GameObject>();
-
+            rm = -1;
 
             receiptToSpawnList.Add(new ReceiptBeer(0, 0.5f));
             receiptToSpawnList.Add(new ReceiptBeer(0, 1f));
@@ -69,6 +76,13 @@ namespace Baptiste
         void Update()
         {
             currentTime += Time.deltaTime;
+            margoulist = baptisteController.gameObjectList;
+
+            if (rm != -1)
+            {
+                gameObjectList.RemoveAt(rm);
+                rm = -1;
+            }
 
             foreach (ReceiptBeer item in receiptToSpawnList)
             {
@@ -96,8 +110,41 @@ namespace Baptiste
                         gameObjectList.Add(newObject);
                     }
                 }
-
             }
+            foreach (GameObject item in gameObjectList)
+            {
+                if (item != null)
+                {
+                    foreach (GameObject margou in margoulist)
+                    {
+                        if (margou != null)
+                        {
+                            if (item.transform.position.x > margou.transform.position.x - 0.3 && item.transform.position.x < margou.transform.position.x + 0.3 && item.transform.position.y > margou.transform.position.y - 0.7 && item.transform.position.y < margou.transform.position.y + 0.7)
+                            {
+                                {
+                                    score += 200;
+                                    rm = gameObjectList.IndexOf(item);
+                                    Destroy(item);
+                                }
+                            }
+                        }
+                    }
+                    if (item.transform.position.x > baptiste.transform.position.x - 0.3 && item.transform.position.x < baptiste.transform.position.x + 0.3 && item.transform.position.y > baptiste.transform.position.y - 0.7 && item.transform.position.y < baptiste.transform.position.y + 0.7)
+                    {
+                        score -= 1000;
+                        rm = gameObjectList.IndexOf(item);
+                        Destroy(item);
+                    }
+                    if (item.transform.position.x < -10)
+                    {
+                        score -= 100;
+                        rm = gameObjectList.IndexOf(item);
+                        Destroy(item);
+                    }
+                }
+            }
+
+            textScore.text = "" + score;
         }
     }
 }

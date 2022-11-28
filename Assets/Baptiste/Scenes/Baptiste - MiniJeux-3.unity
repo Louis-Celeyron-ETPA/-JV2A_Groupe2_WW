@@ -300,11 +300,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
+  score: 0
+  textScore: {fileID: 1876844415}
+  baptiste: {fileID: 1837473395}
   beer: {fileID: 684151719185282965, guid: d4dc8d8fb90c83c4a808eca562b02589, type: 3}
   receiptUp: {fileID: 3692297737316450539, guid: 57e6251dd9906914e8d355f4454a5896, type: 3}
   receiptDown: {fileID: 375440597745525423, guid: cccd12345554cc3438c2f2682f442a14, type: 3}
   receiptLeft: {fileID: 625430043201744642, guid: 6b659c562f060154b8aec99d36d921dc, type: 3}
   gameObjectList: []
+  baptisteController: {fileID: 1837473396}
 --- !u!1 &877912056
 GameObject:
   m_ObjectHideFlags: 0
