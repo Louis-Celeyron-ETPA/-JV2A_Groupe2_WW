@@ -2,25 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BalloonMouvement : MonoBehaviour
+namespace Osborne
 {
 
-    [SerializeField] float mouvementSpeed = 1f;
-    
+    public class BalloonMouvement : MonoBehaviour
+    {
+        [SerializeField] float speed = 1f;
 
     // Update is called once per frame
-    void Update()
-    {
-        transform.position += new Vector3(Input.GetAxis("Horizontal") * mouvementSpeed, 0, 0);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
-        if (collision.gameObject.CompareTag("Cube"))
+        void Update()
         {
-            Destroy(collision.gameObject);
+            transform.position += new Vector3(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed, 0);
         }
 
+
     }
+
 }

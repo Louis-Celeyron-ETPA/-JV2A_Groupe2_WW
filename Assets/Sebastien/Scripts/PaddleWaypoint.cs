@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Osborne
 {
 
-    public class PaddleWaypoint : MonoBehaviour
+    public class PaddleWaypoint : MonoBehaviour 
     {
         [SerializeField] GameObject[] waypoints;
         int currentWaypointIndex = 0;
@@ -16,7 +16,7 @@ namespace Osborne
             if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].transform.position) < .1f)
             {
                 currentWaypointIndex++;
-               
+
                 if (currentWaypointIndex >= waypoints.Length)
                 {
                     currentWaypointIndex = 0;
@@ -30,3 +30,4 @@ namespace Osborne
 
 
 }
+

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Osborne
-{
-
 public class BalloonCursor : MonoBehaviour
 {
+
+    //public BalloonCollector balloonCollector;
+
     // Update is called once per frame
     void Update()
     {
@@ -23,14 +23,12 @@ public class BalloonCursor : MonoBehaviour
 
             if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info))
             {
-                var ball = info.transform.GetComponent<BalloonCollector>();
-                if (ball != null)
+                /*var cube = info.transform.GetComponent<BalloonCollector>();
+                if (cube != null)
                 {
-                    //Debug.Log(ball.alacon);
-                }
+                    Debug.Log(balloonCollector.alacon);
+                }*/
             }
-          }
         }
     }
-
 }

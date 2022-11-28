@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace Osborne
 {
-    public class Paddle : MonoBehaviour
-    {
-        public bool player;
-        public float speed;
-        public Rigidbody rb;
+public class Paddle : MonoBehaviour
+{
+    public bool player;
+    public float speed;
+    public Rigidbody rb;
 
-        private float mouvement;
+    private float mouvement;
 
         // Update is called once per frame
         void Update()
@@ -23,6 +23,6 @@ namespace Osborne
             rb.velocity = new Vector3(rb.velocity.x, mouvement * speed);
         }
 
-    }
+        }
 
 }
