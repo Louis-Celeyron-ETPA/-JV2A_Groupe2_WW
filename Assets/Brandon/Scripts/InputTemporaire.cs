@@ -20,7 +20,7 @@ public class InputTemporaire : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) == true)
         {
-            voleur.descending = true;
+            //voleur.descending = true;
             tapette.slap = true;
         }
 

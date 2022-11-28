@@ -10,6 +10,10 @@ namespace Brandon
     {
 
         public Transform tapetteTransform;
+        public Transform tapetteOmbreTransform;
+        public SpriteRenderer tapetteOmbre;
+        public Transform tapetteSlap;
+        public Rigidbody2D rgbd;
         public bool slap = false;
         public bool upArrow = false;
         public bool downArrow = false;
@@ -34,26 +38,40 @@ namespace Brandon
 
                 if (leftArrow)
                 {
-                    tapetteTransform.position -= tapetteTransform.right * speed;
+                    //tapetteTransform.position -= tapetteTransform.right * speed;
+                    rgbd.MovePosition(tapetteTransform.position+tapetteTransform.right * -speed);
                     
                 }
 
                 if (rightArrow)
                 {
-                    tapetteTransform.position += tapetteTransform.right * speed;
-                   
+                    //tapetteTransform.position += tapetteTransform.right * speed;
+                    rgbd.MovePosition(tapetteTransform.position + tapetteTransform.right * speed);
+
+
                 }
 
                 if (upArrow)
                 {
-                    tapetteTransform.position += tapetteTransform.up * speed;
-                   
+                    //tapetteTransform.position += tapetteTransform.up * speed;
+                    rgbd.MovePosition(tapetteTransform.position + tapetteTransform.up * speed);
+
                 }
 
                 if (downArrow)
                 {
-                    tapetteTransform.position -= tapetteTransform.up * speed;
-               
+                    //tapetteTransform.position -= tapetteTransform.up * speed;
+                    rgbd.MovePosition(tapetteTransform.position + tapetteTransform.up * -speed);
+
+                }
+
+                if (slap)
+                {
+                    tapetteSlap.position = Vector2.MoveTowards(tapetteSlap.position, tapetteOmbreTransform.position, speed);
+                    if(tapetteSlap.position.x == tapetteOmbreTransform.position.x)
+                    {
+                        tapetteOmbre.enabled = false;
+                    }
                 }
 
             }
