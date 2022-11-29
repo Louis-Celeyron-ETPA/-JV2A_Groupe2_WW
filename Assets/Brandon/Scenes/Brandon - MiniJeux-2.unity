@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moustique: {fileID: 475308489}
-  speed: 0.2
+  speed: 0.45
   radius: 20
   direction: {x: 0, y: 0}
 --- !u!82 &475308491
@@ -1334,6 +1334,7 @@ MonoBehaviour:
   speed: 0.5
   slapSpeed: 0.7
   gameOver: 0
+  moustiqueKilled: 0
 --- !u!114 &1316399622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,6 +1513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moustique: {fileID: 475308490}
-  srMoustique: {fileID: 475308488}
+  tapette: {fileID: 1316399621}
+  moustiqueObject: {fileID: 475308487}
   tapetteSlap: {fileID: 1316399620}
   tapetteOmbreTransform: {fileID: 1426282462}
+  tapetteCollider: {fileID: 870592901}

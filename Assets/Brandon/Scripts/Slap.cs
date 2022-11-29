@@ -9,9 +9,11 @@ namespace Brandon
     {
 
         public Moustique moustique;
-        public SpriteRenderer srMoustique;
+        public Tapette tapette;
+        public GameObject moustiqueObject;
         public Transform tapetteSlap;
         public Transform tapetteOmbreTransform;
+        public Collider2D tapetteCollider;
 
         void Start()
         {
@@ -24,16 +26,24 @@ namespace Brandon
             
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerStay2D(Collider2D collision)
         {
             if(tapetteSlap.position.x == tapetteOmbreTransform.position.x)
             {
+
                 Moustique moustiqueTriggered = collision.GetComponent<Moustique>();
                 if (moustiqueTriggered != null)
                 {
-                
-                    Destroy(moustique);
+                    
+                    Destroy(moustiqueObject);
+                    tapette.moustiqueKilled = true;
 
+                }
+
+                else
+                {
+                    tapette.gameOver = true;
+                    Destroy(tapetteCollider);
                 }
             }
         }

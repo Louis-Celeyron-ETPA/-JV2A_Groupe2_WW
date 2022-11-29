@@ -22,6 +22,7 @@ namespace Brandon
         public float speed = 0.5f;
         public float slapSpeed = 0.7f;
         public bool gameOver = false;
+        public bool moustiqueKilled = false;
 
 
         // Start is called before the first frame update
@@ -37,14 +38,14 @@ namespace Brandon
             if (!gameOver)
             {
 
-                if (leftArrow)
+                if (leftArrow && tapetteSlap.position.x != tapetteOmbreTransform.position.x)
                 {
                     //tapetteTransform.position -= tapetteTransform.right * speed;
                     rgbd.MovePosition(tapetteTransform.position+tapetteTransform.right * -speed);
                     
                 }
 
-                if (rightArrow)
+                if (rightArrow && tapetteSlap.position.x != tapetteOmbreTransform.position.x)
                 {
                     //tapetteTransform.position += tapetteTransform.right * speed;
                     rgbd.MovePosition(tapetteTransform.position + tapetteTransform.right * speed);
@@ -52,14 +53,14 @@ namespace Brandon
 
                 }
 
-                if (upArrow)
+                if (upArrow && tapetteSlap.position.x != tapetteOmbreTransform.position.x)
                 {
                     //tapetteTransform.position += tapetteTransform.up * speed;
                     rgbd.MovePosition(tapetteTransform.position + tapetteTransform.up * speed);
 
                 }
 
-                if (downArrow)
+                if (downArrow && tapetteSlap.position.x != tapetteOmbreTransform.position.x)
                 {
                     //tapetteTransform.position -= tapetteTransform.up * speed;
                     rgbd.MovePosition(tapetteTransform.position + tapetteTransform.up * -speed);
@@ -73,6 +74,11 @@ namespace Brandon
                     {
                         tapetteOmbre.enabled = false;
                     }
+                }
+
+                if (moustiqueKilled)
+                {
+                    gameOver = true;
                 }
 
             }
