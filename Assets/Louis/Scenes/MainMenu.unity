@@ -174,7 +174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MainMenu
+  m_Text: Ethan - MiniJeux-1
 --- !u!222 &26270313
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -371,9 +371,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1671094428}
   - {fileID: 725826749}
   - {fileID: 1151242441}
-  - {fileID: 1671094428}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -690,55 +690,17 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: MainMenu
+    - m_Text: Ethan - MiniJeux-1
       m_Image: {fileID: 0}
-    - m_Text: Alban - MiniJeux-1
+    - m_Text: Ethan - MiniJeux-2
       m_Image: {fileID: 0}
-    - m_Text: Alban - MiniJeux-2
+    - m_Text: Ethan - MiniJeux-3
       m_Image: {fileID: 0}
-    - m_Text: Alban - MiniJeux-3
+    - m_Text: Sebastien - MiniJeux-1
       m_Image: {fileID: 0}
-    - m_Text: Aurelien - MiniJeux-1
+    - m_Text: Sebastien - MiniJeux-2
       m_Image: {fileID: 0}
-    - m_Text: Aurelien - MiniJeux-2
-      m_Image: {fileID: 0}
-    - m_Text: Aurelien - MiniJeux-3
-      m_Image: {fileID: 0}
-    - m_Text: Gabriel - MiniJeux-1
-      m_Image: {fileID: 0}
-    - m_Text: Gabriel - MiniJeux-2
-      m_Image: {fileID: 0}
-    - m_Text: Gabriel - MiniJeux-3
-      m_Image: {fileID: 0}
-    - m_Text: Hugo - MiniJeux-1
-      m_Image: {fileID: 0}
-    - m_Text: Hugo - MiniJeux-2
-      m_Image: {fileID: 0}
-    - m_Text: Hugo - MiniJeux-3
-      m_Image: {fileID: 0}
-    - m_Text: Kylian - MiniJeux-1
-      m_Image: {fileID: 0}
-    - m_Text: Kylian - MiniJeux-2
-      m_Image: {fileID: 0}
-    - m_Text: Kylian - MiniJeux-3
-      m_Image: {fileID: 0}
-    - m_Text: Lisa - MiniJeux-1
-      m_Image: {fileID: 0}
-    - m_Text: Lisa - MiniJeux-2
-      m_Image: {fileID: 0}
-    - m_Text: Lisa - MiniJeux-3
-      m_Image: {fileID: 0}
-    - m_Text: Maelle - MiniJeux-1
-      m_Image: {fileID: 0}
-    - m_Text: Maelle - MiniJeux-2
-      m_Image: {fileID: 0}
-    - m_Text: Maelle - MiniJeux-3
-      m_Image: {fileID: 0}
-    - m_Text: Orion - MiniJeux-1
-      m_Image: {fileID: 0}
-    - m_Text: Orion - MiniJeux-2
-      m_Image: {fileID: 0}
-    - m_Text: Orion - MiniJeux-3
+    - m_Text: Sebastien - MiniJeux-3
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -810,7 +772,7 @@ RectTransform:
   - {fileID: 1315202268}
   - {fileID: 992971923}
   m_Father: {fileID: 225266398}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -830,6 +792,8 @@ GameObject:
   - component: {fileID: 733886712}
   - component: {fileID: 733886715}
   - component: {fileID: 733886714}
+  - component: {fileID: 733886718}
+  - component: {fileID: 733886717}
   m_Layer: 0
   m_Name: ManagerManager
   m_TagString: Untagged
@@ -979,8 +943,34 @@ MonoBehaviour:
   dificultyManager: {fileID: 733886714}
   sceneManager: {fileID: 733886712}
   timeManager: {fileID: 733886715}
-  globalGameManager: {fileID: 0}
-  lifeManager: {fileID: 0}
+  globalGameManager: {fileID: 733886717}
+  lifeManager: {fileID: 733886718}
+--- !u!114 &733886717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733886711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380237b56207f554790f59b1ec001190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinigamesFinished: 0
+--- !u!114 &733886718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733886711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04dfe76a15430414091e3f7dc106bb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxLife: 0
 --- !u!1 &821737237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,7 +1436,7 @@ RectTransform:
   m_Children:
   - {fileID: 1160436042}
   m_Father: {fileID: 225266398}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2052,7 +2042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1671094428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2056,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 225266398}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}

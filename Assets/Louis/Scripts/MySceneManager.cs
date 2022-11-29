@@ -28,37 +28,16 @@ public class MySceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(dropdown.options[currentIndex].text);
     }
-    public void EndOfMinigame(MinigameRating mgRating)
+
+    public void LoadRandomScene()
     {
-        switch (mgRating)
+        var nextScene =  SceneManager.GetActiveScene().name;
+        while(nextScene ==  SceneManager.GetActiveScene().name)
         {
-            case MinigameRating.Fail:
-                break;
-            default:
-                ManagerManager.GlobalGameManager.MinigamesFinished++;
-                break;
+            nextScene = allScenes[Random.Range(0, allScenes.Count)];
         }
 
-        if (Consequence(mgRating))
-        {
-            var nextScene = SceneManager.GetActiveScene().name;
-            while(nextScene == SceneManager.GetActiveScene().name)
-            {
-                nextScene = allScenes[Random.Range(0, allScenes.Count)];
-            }
-
-            SceneManager.LoadScene(nextScene);
-        }
-        else
-        {
-            ManagerManager.GlobalGameManager.LoseGame();
-            //Load the lose scene
-        }
+        SceneManager.LoadScene(nextScene);
     }
-
-    public bool Consequence(MinigameRating mgRating)
-    {
-      return ManagerManager.TimeManager.Consequence(mgRating); 
-      return ManagerManager.LifeManager.Consequence(mgRating); 
-    }
+    
 }

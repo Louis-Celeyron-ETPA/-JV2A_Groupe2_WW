@@ -24,7 +24,7 @@ public class LifeManager : MonoBehaviour
 
     private void RemoveLife()
     {
-        
+        SetCurrentLife(currentLife-1);
     }
     
     private void SetCurrentLife(in int newValue)
