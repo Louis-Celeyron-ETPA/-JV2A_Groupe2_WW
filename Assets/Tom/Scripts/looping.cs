@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class looping : MonoBehaviour
 {
-    public transform Slide;
+    public Transform Slide;
     // Start is called before the first frame update
     void Start()
     {

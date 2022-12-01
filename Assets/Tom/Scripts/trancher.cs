@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class trancher : MonoBehaviour
 {
-    public transform Slide;
+    public Transform Slide;
     float speed = 2f;
     float height = 0.05f;
     // Start is called before the first frame update
@@ -27,4 +27,4 @@ public class trancher : MonoBehaviour
         }
     }
 }
-}
+
