@@ -18,14 +18,14 @@ namespace Osborne
             popSound = GetComponent<AudioSource>(); //detect audio source
         }
 
-        private void OnMouseDown()
-        {
+        //private void OnMouseDown()
+        //{
 
-            Destroy(gameObject);
-            balloonManager.OnBalloonPop(gameObject.tag);
-            popSound.Play();
+            //Destroy(gameObject);
+            //balloonManager.OnBalloonPop(gameObject.tag);
+            //popSound.Play();
 
-        }
+        //}
 
     }
 

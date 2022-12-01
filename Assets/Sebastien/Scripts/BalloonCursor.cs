@@ -23,11 +23,8 @@ public class BalloonCursor : MonoBehaviour
 
             if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info))
             {
-                var ball = info.transform.GetComponent<BalloonCollector>();
-                if (ball != null)
-                {
-                    //Debug.Log(ball.alacon);
-                }
+                    Destroy(gameObject);
+                    
             }
           }
         }
