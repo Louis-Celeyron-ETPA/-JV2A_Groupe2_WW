@@ -26,7 +26,10 @@ namespace Baptiste
         private GameObject newObject;
         private List<GameObject> margoulist;
         private int rm;
-
+        private float randY;
+        private bool sendReceiptLeft;
+        
+        public int ammo;
         public int score;
         public TMP_Text textScore;
         public GameObject baptiste;
@@ -44,32 +47,58 @@ namespace Baptiste
             receiptToSpawnList = new List<ReceiptBeer>();
             gameObjectList = new List<GameObject>();
             rm = -1;
+            sendReceiptLeft = false;
 
-            receiptToSpawnList.Add(new ReceiptBeer(0, 0.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 1f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 1.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 2f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 2.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 3f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 3.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 4f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 4.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(0, 5f));
             receiptToSpawnList.Add(new ReceiptBeer(0, 5.5f));
             receiptToSpawnList.Add(new ReceiptBeer(0, 6f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 6.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 7f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 7.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 8f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 8.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 9f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 9.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 10f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 10.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(0, 11f));
 
-            receiptToSpawnList.Add(new ReceiptBeer(1, 0.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 1f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 1.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 2f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 2.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 3f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 3.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 4f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 4.5f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 5f));
-            receiptToSpawnList.Add(new ReceiptBeer(1, 5.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 6.5f));
             receiptToSpawnList.Add(new ReceiptBeer(1, 6f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 6.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 7f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 7.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 8f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 8.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 9f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 9.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 10f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 10.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(1, 11f));
+
+            receiptToSpawnList.Add(new ReceiptBeer(2, 1f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 1.1f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 1.2f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 1.3f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 1.4f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 1.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 2.1f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 2.2f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 2.3f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 2.4f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 2.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.1f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.2f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.3f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.4f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.5f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.6f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.7f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.8f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 3.9f));
+            receiptToSpawnList.Add(new ReceiptBeer(2, 4f));
+
+            receiptToSpawnList.Add(new ReceiptBeer(3, 4f));
+            receiptToSpawnList.Add(new ReceiptBeer(3, 8f));
         }
 
         // Update is called once per frame
@@ -89,26 +118,35 @@ namespace Baptiste
                 if (currentTime > item.timeSpawn && !item.asAppeared)
                 {
                     item.asAppeared = true;
+                    randY = Random.Range(-4.5f, 6f);
                     if (item.behavior == 0)
                     {
                         newObject = Instantiate(receiptUp);
                         gameObjectList.Add(newObject);
+                        sendReceiptLeft = true;
                     }
                     else if (item.behavior == 1)
                     {
                         newObject = Instantiate(receiptDown);
                         gameObjectList.Add(newObject);
+                        sendReceiptLeft = true;
                     }
                     else if (item.behavior == 2)
                     {
-                        newObject = Instantiate(receiptLeft);
+                        newObject = Instantiate(receiptLeft, new Vector3(14, randY, 0), Quaternion.identity);
                         gameObjectList.Add(newObject);
                     }
                     else if (item.behavior == 3)
                     {
-                        newObject = Instantiate(beer);
+                        newObject = Instantiate(beer, new Vector3(14, randY, 0), Quaternion.identity);
                         gameObjectList.Add(newObject);
                     }
+                }
+                if (sendReceiptLeft)
+                {
+                    newObject = Instantiate(receiptLeft, new Vector3(14, randY, 0), Quaternion.identity);
+                    gameObjectList.Add(newObject);
+                    sendReceiptLeft = false;
                 }
             }
             foreach (GameObject item in gameObjectList)
@@ -119,7 +157,7 @@ namespace Baptiste
                     {
                         if (margou != null)
                         {
-                            if (item.transform.position.x > margou.transform.position.x - 0.3 && item.transform.position.x < margou.transform.position.x + 0.3 && item.transform.position.y > margou.transform.position.y - 0.7 && item.transform.position.y < margou.transform.position.y + 0.7)
+                            if (item.transform.position.x > margou.transform.position.x - 0.3 && item.transform.position.x < margou.transform.position.x + 0.3 && item.transform.position.y > margou.transform.position.y - 0.7 && item.transform.position.y < margou.transform.position.y + 0.7 && item != beer)
                             {
                                 {
                                     score += 200;
@@ -131,9 +169,16 @@ namespace Baptiste
                     }
                     if (item.transform.position.x > baptiste.transform.position.x - 0.3 && item.transform.position.x < baptiste.transform.position.x + 0.3 && item.transform.position.y > baptiste.transform.position.y - 0.7 && item.transform.position.y < baptiste.transform.position.y + 0.7)
                     {
-                        score -= 1000;
-                        rm = gameObjectList.IndexOf(item);
-                        Destroy(item);
+                        if (item == beer)
+                        {
+                            ammo = 15;
+                        }
+                        else
+                        {
+                            score -= 1000;
+                            rm = gameObjectList.IndexOf(item);
+                            Destroy(item);
+                        }
                     }
                     if (item.transform.position.x < -10)
                     {

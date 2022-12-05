@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using Baptiste;
 
 namespace Baptiste
@@ -10,10 +11,13 @@ namespace Baptiste
     {
         private GameObject newObject;
 
+        public TMP_Text textAmmo;
+        public int ammo;
         public float currentTime;
         public float lastFired;
         public List<GameObject> gameObjectList;
         public GameObject MargoulinProj;
+        public Scene3MainScript scene3MainScript;
         private int rm;
         // Start is called before the first frame update
         void Start()
@@ -26,6 +30,7 @@ namespace Baptiste
         // Update is called once per frame
         void Update()
         {
+            ammo = scene3MainScript.ammo;
             currentTime += Time.deltaTime;
 
             if (rm != -1)
@@ -63,11 +68,13 @@ namespace Baptiste
 
         public void FireMargoulin()
         {
-            if (currentTime - lastFired > 0.2f)
+            if (currentTime - lastFired > 0.2f && ammo > 0)
             {
+                scene3MainScript.ammo -= 1;
                 newObject = Instantiate(MargoulinProj, new Vector3(-7.5f, transform.position.y, 0), Quaternion.identity);
                 gameObjectList.Add(newObject);
                 lastFired = currentTime;
+                textAmmo.text = "x" + (ammo - 1);
             }
         }
     }
