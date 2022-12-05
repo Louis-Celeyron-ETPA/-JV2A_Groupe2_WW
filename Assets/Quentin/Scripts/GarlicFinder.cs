@@ -3,29 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GarlicFinder : MonoBehaviour
-
 {
-    // Start is called before the first frame update
-    public bool finded = false;
-    void Start()
+   
+    public int finded = 0;
+
+    public Collider garlicCollider;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
+        if (collision.gameObject.tag == "feuille")
+        {
+            finded++;
+        }
     }
 
-    /*void OnCollisionStay(Collision collisionInfo)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        // Debug-draw all contact points and normals
-        foreach (ContactPoint contact in collisionInfo.contsacts)
+    }
+
+    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "feuille")
         {
-            Debug.DrawRay(contact.point, contact.normal * 10, Color.white);
+            finded--;
         }
-    }*/
+    }
+
     void Update()
     {
+
        
-        if (finded == true)
+        if (finded <= 0)
         {
-            Debug.Log("Games end");
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
         }
     }
 }

@@ -18,7 +18,7 @@ public class Collision : MonoBehaviour
         
         if ( gameOver == true)
         {
-            Debug.Log("T'as perdu");
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
