@@ -85,6 +85,15 @@ namespace Brandon
             
         }
 
+        public void Slap()
+        {
+            tapetteSlap.position = Vector2.MoveTowards(tapetteSlap.position, tapetteOmbreTransform.position, slapSpeed);
+            if (tapetteSlap.position.x == tapetteOmbreTransform.position.x)
+            {
+                tapetteOmbre.enabled = false;
+            }
+        }
+
     }
 
 }
