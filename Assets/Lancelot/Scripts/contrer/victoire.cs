@@ -13,15 +13,6 @@ public class victoire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        {
-            {
-                if (Input.GetKey(KeyCode.D))
-                {
-                    Destroy(gameObject);
 
-                }
-            }
-        }
     }
-
 }

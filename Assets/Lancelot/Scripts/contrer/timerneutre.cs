@@ -12,6 +12,19 @@ public class timerneutre : MonoBehaviour
     }
     void Update()
     {
+        {
+            {
+                if (Input.GetKey(KeyCode.D))
+                {
+                    Destroy(GameObject.FindWithTag("defaite"));
+          
+                    GameObject.FindWithTag("GameOver").SetActive(true);
+
+
+                }
+            }
+        }
+
         if (timerIsRunning)
         {
             if (timeRemaining > 0)

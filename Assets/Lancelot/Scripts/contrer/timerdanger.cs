@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class timerdanger : MonoBehaviour
 {
-    public float timeRemaining = 18;
+    public float timeRemaining = 3;
     public bool timerIsRunning = false;
     private void Start()
     {
@@ -13,6 +13,18 @@ public class timerdanger : MonoBehaviour
     }
     void Update()
     {
+        {
+            {
+                if (Input.GetKey(KeyCode.D))
+                {
+                    Destroy(GameObject.FindWithTag("GameOver"));
+                    GameObject.FindWithTag("Success").SetActive(true);
+
+
+                }
+            }
+        }
+
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
@@ -26,6 +38,7 @@ public class timerdanger : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 Destroy(gameObject);
+                GameObject.FindWithTag("GameOver").SetActive(true);
             }
         }
     }

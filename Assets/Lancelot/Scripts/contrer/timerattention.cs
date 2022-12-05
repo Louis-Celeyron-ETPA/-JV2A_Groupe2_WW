@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class timerattention : MonoBehaviour
 {
-    public float timeRemaining = 15;
+    public float timeRemaining = 5;
     public bool timerIsRunning = false;
+
     private void Start()
     {
         // Starts the timer automatically
         timerIsRunning = true;
     }
     void Update()
+
     {
+        {
+            {
+                if (Input.GetKey(KeyCode.D))
+                {
+                    Destroy(GameObject.FindWithTag("defaite"));
+                    GameObject.FindWithTag("GameOver").SetActive(true);
+
+
+                }
+            }
+        }
+
         if (timerIsRunning)
         {
             if (timeRemaining > 0)

@@ -133,9 +133,11 @@ GameObject:
   m_Component:
   - component: {fileID: 516478491}
   - component: {fileID: 516478490}
+  - component: {fileID: 516478492}
+  - component: {fileID: 516478493}
   m_Layer: 0
-  m_Name: victoire (touche appuyer au bon moment)
-  m_TagString: Untagged
+  m_Name: victoire
+  m_TagString: Success
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,6 +209,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &516478492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516478489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a046b2da2dd20cb43b0ff51e5a6739f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &516478493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516478489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ea15eba73dd98478a2a6dffc2c7927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &551747053
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,10 +244,10 @@ GameObject:
   - component: {fileID: 551747055}
   - component: {fileID: 551747054}
   - component: {fileID: 551747057}
-  - component: {fileID: 551747058}
+  - component: {fileID: 551747059}
   m_Layer: 0
-  m_Name: attention (personnage change de position)
-  m_TagString: Untagged
+  m_Name: 'attention '
+  m_TagString: defaite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,9 +331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b187baee11a642c4a91a599463c0b607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 15
-  timerIsRunning: 0
---- !u!114 &551747058
+  timeRemaining: 5
+  timerIsRunning: 1
+--- !u!114 &551747059
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,7 +342,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 551747053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee499b8353b19f4ca83eb69b6a3cc4f, type: 3}
+  m_Script: {fileID: 11500000, guid: ac04a93983ffdba41bd3dc0882db62c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &885611455
@@ -424,10 +450,10 @@ GameObject:
   - component: {fileID: 1644285124}
   - component: {fileID: 1644285123}
   - component: {fileID: 1644285125}
-  - component: {fileID: 1644285126}
+  - component: {fileID: 1644285127}
   m_Layer: 0
-  m_Name: "danger (appuyer touche \xE0 ce moment)"
-  m_TagString: Untagged
+  m_Name: danger
+  m_TagString: defaite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,9 +537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9e6ed9ebce6f248b03c120c910182a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 18
-  timerIsRunning: 0
---- !u!114 &1644285126
+  timeRemaining: 3
+  timerIsRunning: 1
+--- !u!114 &1644285127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -522,7 +548,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1644285122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ea15eba73dd98478a2a6dffc2c7927, type: 3}
+  m_Script: {fileID: 11500000, guid: 5321a6d50e050a94781fb546a9eaf807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1929367898
@@ -535,9 +561,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1929367900}
   - component: {fileID: 1929367899}
+  - component: {fileID: 1929367901}
+  - component: {fileID: 1929367902}
   m_Layer: 0
-  m_Name: "defaite (touche appuyer trop t\xF4t/trop tard)"
-  m_TagString: Untagged
+  m_Name: 'defaite '
+  m_TagString: GameOver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -609,6 +637,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929367901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929367898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a046b2da2dd20cb43b0ff51e5a6739f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1929367902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929367898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee499b8353b19f4ca83eb69b6a3cc4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1950082229
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,10 +756,9 @@ GameObject:
   - component: {fileID: 2026020856}
   - component: {fileID: 2026020855}
   - component: {fileID: 2026020858}
-  - component: {fileID: 2026020859}
   m_Layer: 0
-  m_Name: neutre (image de base)
-  m_TagString: Untagged
+  m_Name: neutre
+  m_TagString: defaite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -793,15 +844,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeRemaining: 10
   timerIsRunning: 1
---- !u!114 &2026020859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026020854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee499b8353b19f4ca83eb69b6a3cc4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

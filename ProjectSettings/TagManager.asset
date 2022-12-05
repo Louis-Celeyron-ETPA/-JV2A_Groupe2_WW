@@ -7,6 +7,10 @@ TagManager:
   - Green
   - Red
   - Gold
+  - defaite
+  - victoire
+  - GameOver
+  - Success
   layers:
   - Default
   - TransparentFX
