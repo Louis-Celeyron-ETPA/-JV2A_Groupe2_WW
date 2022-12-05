@@ -44,6 +44,7 @@ namespace Gabriel
             if (errorCheck >= 3)
             {
                 Debug.Log("défaite");
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
             }
         }
 
@@ -53,6 +54,7 @@ namespace Gabriel
             if ((rythmNumber > 19) && (errorCheck < 3))
             {
                 Debug.Log("victoire !");
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
         }
     }

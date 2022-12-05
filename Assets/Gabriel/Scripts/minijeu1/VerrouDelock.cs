@@ -53,6 +53,7 @@ namespace Gabriel
             if (myVerrou >= nombreVerrou)
             {
                 Debug.Log("T'es vraiment trop fort toi dit donc");
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
         }
 

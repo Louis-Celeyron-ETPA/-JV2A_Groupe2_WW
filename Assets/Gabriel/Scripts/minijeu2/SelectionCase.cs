@@ -15,7 +15,7 @@ namespace Gabriel
         // Start is called before the first frame update
         void Start()
         {
-            transform.position = new Vector3(-8f, 5f, -10f);
+            transform.position = new Vector3(-8f, 4.5f, -10f);
         }
 
         // Update is called once per frame
@@ -24,7 +24,9 @@ namespace Gabriel
             if (currentLettre >= mesCases.nombreLettre)
             {
                 Debug.Log("Bravo à toi !");
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
+            Debug.Log(positionCurseur);
         }
 
         public void ValideCase()
@@ -46,7 +48,7 @@ namespace Gabriel
                 positionCurseur -= 1;
                 if (positionCurseur < 0) { positionCurseur = 3; }
                 didLeftInput = true;
-                transform.position = new Vector3(-8f + (positionCurseur) * 5f, 5f, -10f);
+                transform.position = new Vector3(-8f + (positionCurseur) * 5.3f, 4.5f, -10f);
             }
         }
 
@@ -57,7 +59,7 @@ namespace Gabriel
                 positionCurseur += 1;
                 if (positionCurseur > 3) { positionCurseur = 0; }
                 didRightInput = true;
-                transform.position = new Vector3(-8f + (positionCurseur) * 5f, 5f, -10f);
+                transform.position = new Vector3(-8f + (positionCurseur) * 5.3f, 4.5f, -10f);
             }
         }
 
