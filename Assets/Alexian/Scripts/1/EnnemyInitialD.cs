@@ -8,7 +8,6 @@ namespace Alexian{
         public Transform player;
         public Transform ennemy;
         public bool canMove;
-        public TEMPOTOUCHES difficulty;
         // Start is called before the first frame update
         void Start()
         {
@@ -23,7 +22,7 @@ namespace Alexian{
                 return;
             }
 
-            ennemy.position += Vector3.up * (0.055f + 0.02f * difficulty.difficulty);
+            ennemy.position += Vector3.up * (0.035f + 0.02f * ManagerManager.DifficultyManager.GetDifficulty());
 
             if (player.position.y >= 15 || ennemy.position.y >= 15)
             {

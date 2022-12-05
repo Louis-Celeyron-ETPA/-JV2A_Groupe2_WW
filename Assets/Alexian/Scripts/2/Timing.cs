@@ -12,7 +12,6 @@ namespace Alexian
         public FakeMove lampie;
         public PlayerHead headFalling;
         public EndScene end;
-        public TEMPOTOUCHES2 difficulty;
         public SpriteRenderer sr;
         public GameObject UI;
         private bool isShowing;
@@ -67,7 +66,7 @@ namespace Alexian
             if(gameStarted == true)
             {
                 currentTime += Time.deltaTime;
-                if (currentTime >= (timeMax - difficulty.difficulty))
+                if (currentTime >= (timeMax - ManagerManager.DifficultyManager.GetDifficulty()))
                 {
                     lampie.lampCreate();
                     headFalling.Falling();

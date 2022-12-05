@@ -39,6 +39,7 @@ namespace Alexian {
             isShowing = true;
             UI.SetActive(isShowing);
             text.text = "Défaite";
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
         }
 
         public void Victory()
@@ -48,6 +49,7 @@ namespace Alexian {
             isShowing = true;
             UI.SetActive(isShowing);
             text.text = "Victoire";
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
         }
     }
 }

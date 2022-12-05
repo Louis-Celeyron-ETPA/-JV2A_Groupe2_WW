@@ -287,6 +287,7 @@ PrefabInstance:
     - {fileID: 6461909354981032518, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
     - {fileID: 6461909355464505067, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
     - {fileID: 6461909355464505068, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
+    - {fileID: 6461909355215932975, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8012bfec89f242049bcb99029c82e12e, type: 3}
 --- !u!1 &230187944 stripped
 GameObject:
@@ -315,19 +316,6 @@ MonoBehaviour:
   canMove: 0
   end: {fileID: 1505913858}
   audios: {fileID: 828548753}
---- !u!114 &230187952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230187944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a21d91af39cadf45a92411185b1b91c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  difficulty: 1
 --- !u!114 &230187953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +325,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 230187944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e91d22c0a753c24492bb6028290bde1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   directions:
@@ -371,60 +359,6 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    onUp:
-      m_PersistentCalls:
-        m_Calls: []
-    onStayed:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &230187954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230187944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e91d22c0a753c24492bb6028290bde1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directions:
-    left:
-      m_PersistentCalls:
-        m_Calls: []
-    right:
-      m_PersistentCalls:
-        m_Calls: []
-    down:
-      m_PersistentCalls:
-        m_Calls: []
-    up:
-      m_PersistentCalls:
-        m_Calls: []
-  pointsMorts:
-    horizontal:
-      m_PersistentCalls:
-        m_Calls: []
-    vertical:
-      m_PersistentCalls:
-        m_Calls: []
-  action:
-    onPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -639,17 +573,3 @@ MonoBehaviour:
   player: {fileID: 230187945}
   ennemy: {fileID: 2063681226}
   canMove: 0
-  difficulty: {fileID: 2063681231}
---- !u!114 &2063681231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063681225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a21d91af39cadf45a92411185b1b91c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  difficulty: 1

@@ -28,7 +28,6 @@ namespace Alexian
             }
             if (other.gameObject.tag == "Finish")
             {
-                Debug.Log("Coucou");
                 loose.Defeat();
             }
         }

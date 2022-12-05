@@ -332,7 +332,6 @@ GameObject:
   - component: {fileID: 163879711}
   - component: {fileID: 163879712}
   - component: {fileID: 163879713}
-  - component: {fileID: 163879714}
   - component: {fileID: 163879715}
   - component: {fileID: 163879716}
   m_Layer: 0
@@ -440,7 +439,6 @@ MonoBehaviour:
   lampie: {fileID: 163879711}
   headFalling: {fileID: 163879713}
   end: {fileID: 163879715}
-  difficulty: {fileID: 163879714}
   sr: {fileID: 1357545650}
   UI: {fileID: 1357545645}
   canMove: {fileID: 163879713}
@@ -462,19 +460,6 @@ MonoBehaviour:
   end: {fileID: 163879715}
   right: 0
   left: 0
---- !u!114 &163879714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163879707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed0537de4c853d41999bb34841706e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  difficulty: 1
 --- !u!114 &163879715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +486,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 163879707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e91d22c0a753c24492bb6028290bde1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   directions:
@@ -510,7 +495,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 163879713}
           m_TargetAssemblyTypeName: Alexian.PlayerHead, Assembly-CSharp
-          m_MethodName: MoveLeft
+          m_MethodName: MoveRight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -525,7 +510,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 163879713}
           m_TargetAssemblyTypeName: Alexian.PlayerHead, Assembly-CSharp
-          m_MethodName: MoveRight
+          m_MethodName: MoveLeft
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -796,7 +781,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lamp: {fileID: 614343139}
-  difficulty: {fileID: 614343140}
   end: {fileID: 163879715}
 --- !u!4 &614343139
 Transform:
@@ -860,7 +844,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lamp: {fileID: 683622989}
-  difficulty: {fileID: 683622990}
   end: {fileID: 163879715}
 --- !u!4 &683622989
 Transform:
@@ -1352,7 +1335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lamp: {fileID: 986098951}
-  difficulty: {fileID: 986098952}
   end: {fileID: 163879715}
 --- !u!4 &986098951
 Transform:
@@ -2826,7 +2808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lamp: {fileID: 2473992250841785879}
-  difficulty: {fileID: 2473992250841785880}
   end: {fileID: 163879715}
 --- !u!4 &2473992250841785879 stripped
 Transform:

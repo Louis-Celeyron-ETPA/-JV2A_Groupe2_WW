@@ -32,10 +32,12 @@ namespace Alexian
             if (player.position.y > ennemy.position.y)
             {
                 text.text = "Victoire";
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
             else
             {
                 text.text = "Défaite";
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
             }
         }
     }

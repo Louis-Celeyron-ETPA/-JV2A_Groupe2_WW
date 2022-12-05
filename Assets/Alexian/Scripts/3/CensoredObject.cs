@@ -11,6 +11,7 @@ namespace Alexian
         public bool isMoving;
         public bool firstClick;
         public RectTransform rtImage;
+        public CursorRay cursor;
         // Start is called before the first frame update
         void Start()
         {
@@ -20,7 +21,7 @@ namespace Alexian
         // Update is called once per frame
         void Update()
         {
-            Debug.Log(sizeBlur.rect);
+
         }
 
         public void RandomBlur()
@@ -30,6 +31,9 @@ namespace Alexian
 
             var widthCensor = Random.Range(0, widthImage);
             var heightCensor = Random.Range(0, heightImage);
+
+            cursor.widthBlur = widthCensor;
+            cursor.heightBlur = heightCensor;
 
             var xPosition = Random.Range(-widthImage/2, widthImage/2);
             var yPosition = Random.Range(-heightImage/2, heightImage/2);
@@ -47,8 +51,6 @@ namespace Alexian
 
         private bool IsRectInRect(Rect rect)
         {
-            Debug.Log("Rect 1" + rect);
-            Debug.Log("Rect 2" + rtImage.rect);
             return rtImage.rect.Contains(rect.min) && rtImage.rect.Contains(rect.max);
         }
     }
