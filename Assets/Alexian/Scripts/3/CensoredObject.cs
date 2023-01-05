@@ -6,12 +6,11 @@ namespace Alexian
 {
     public class CensoredObject : MonoBehaviour
     {
-        public Transform positionObject;
         public RectTransform sizeBlur;
-        public bool isMoving;
-        public bool firstClick;
         public RectTransform rtImage;
         public CursorRay cursor;
+
+
         // Start is called before the first frame update
         void Start()
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Alexian
 {
@@ -9,11 +10,19 @@ namespace Alexian
         public CensoredObject censoredObject;
         public RectTransform cursorPlayer;
         public RectTransform cursorClick;
+
+        public TextMeshProUGUI text;
+        public GameObject UI;
+        public GameObject textUI;
+
         public float speed = 10f;
         public float widthBlur;
         public float heightBlur;
         public int count;
+
         public float currentTime;
+        public bool gameEnd;
+        public bool gameStarted;
 
         // Start is called before the first frame update
         void Start()
@@ -23,20 +32,41 @@ namespace Alexian
             {
                 count = 20;
             }
+            StartCoroutine(Launch());
         }
 
         // Update is called once per frame
         void Update()
         {
-            currentTime += Time.deltaTime;
             if (count == 0)
             {
-                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                Victory();
             }
-            else if(currentTime >= 15)
+        }
+        public IEnumerator Launch() 
+        {
+            for (int i = 1; i < 4; i++)
             {
-                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                yield return new WaitForSeconds(1);
+                text.text = i.ToString();
             }
+            yield return new WaitForSeconds(1);
+            text.text = "Retire !";
+            yield return new WaitForSeconds(1);
+            textUI.SetActive(false);
+            UI.SetActive(false);
+            gameEnd = false;
+            gameStarted = true;
+            StartCoroutine(InGame());
+        }
+        public IEnumerator InGame()
+        {
+            while(gameStarted == false)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            yield return new WaitForSeconds(15);
+            Defeat();
         }
         public void MoveUp()
         {
@@ -66,6 +96,38 @@ namespace Alexian
                     censoredObject.RandomBlur();
                     count -= 1;
                 }
+            }
+        }
+
+        public void Defeat()
+        {
+            if(gameEnd == false) 
+            {
+                gameEnd = true;
+                UI.SetActive(true);
+                textUI.SetActive(true);
+                text.text = "Défaite";
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public void Victory()
+        {
+            if (gameEnd == false)
+            {
+                gameEnd = true;
+                UI.SetActive(true);
+                textUI.SetActive(true);
+                text.text = "Victoire";
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+            }
+            else
+            {
+                return;
             }
         }
     }

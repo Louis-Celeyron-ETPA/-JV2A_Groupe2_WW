@@ -6,16 +6,17 @@ using TMPro;
 namespace Alexian {
     public class EndScene : MonoBehaviour
     {
-        public PlayerHead canMove;
-        public bool gameEnd = true;
-        public float gameTime;
         public TextMeshProUGUI text;
         public GameObject UI;
-        private bool isShowing;
+        public PlayerHead canMove;
+
+        public bool gameEnd = true;
+        public Timing timing;
+
         // Start is called before the first frame update
         void Start()
         {
-
+            StartCoroutine(InGame());
         }
 
         // Update is called once per frame
@@ -25,19 +26,13 @@ namespace Alexian {
             {
                 return;
             }
-            gameTime += Time.deltaTime;
-            if (gameTime >= 20)
-            {
-                Victory();
-            }
         }
 
         public void Defeat()
         {
             gameEnd = true;
             canMove.canMove = false;
-            isShowing = true;
-            UI.SetActive(isShowing);
+            UI.SetActive(true);
             text.text = "Défaite";
             ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
         }
@@ -46,10 +41,19 @@ namespace Alexian {
         {
             gameEnd = true;
             canMove.canMove = false;
-            isShowing = true;
-            UI.SetActive(isShowing);
+            UI.SetActive(true);
             text.text = "Victoire";
             ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+        }
+
+        public IEnumerator InGame()
+        {
+            while (timing.gameStarted == false)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            yield return new WaitForSeconds(20);
+            Victory();
         }
     }
 }
