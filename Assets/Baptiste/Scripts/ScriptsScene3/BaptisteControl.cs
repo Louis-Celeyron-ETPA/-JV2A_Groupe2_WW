@@ -15,7 +15,7 @@ namespace Baptiste
         public int ammo;
         public float currentTime;
         public float lastFired;
-        public List<GameObject> gameObjectList;
+        public List<GameObject> projectileList;
         public GameObject MargoulinProj;
         public Scene3MainScript scene3MainScript;
         private int rm;
@@ -23,7 +23,7 @@ namespace Baptiste
         void Start()
         {
             lastFired = 0;
-            gameObjectList = new List<GameObject>();
+            projectileList = new List<GameObject>();
             rm = -1;
         }
 
@@ -35,17 +35,20 @@ namespace Baptiste
 
             if (rm != -1)
             {
-                gameObjectList.RemoveAt(rm);
+                projectileList.RemoveAt(rm);
                 rm = -1;
             }
 
-            foreach (GameObject item in gameObjectList)
+            foreach (GameObject item in projectileList)
             {
-                item.transform.position += Vector3.right * 0.2f;
-                if (item.transform.position.x > 10)
+                if (item != null)
                 {
-                    rm = gameObjectList.IndexOf(item);
-                    Destroy(item);
+                    item.transform.position += Vector3.right * 0.2f;
+                    if (item.transform.position.x > 10)
+                    {
+                        rm = projectileList.IndexOf(item);
+                        Destroy(item);
+                    }
                 }
             }
         }
@@ -68,11 +71,11 @@ namespace Baptiste
 
         public void FireMargoulin()
         {
-            if (currentTime - lastFired > 0.2f && ammo > 0)
+            if (currentTime - lastFired > 0.3f && ammo > 0)
             {
                 scene3MainScript.ammo -= 1;
                 newObject = Instantiate(MargoulinProj, new Vector3(-7.5f, transform.position.y, 0), Quaternion.identity);
-                gameObjectList.Add(newObject);
+                projectileList.Add(newObject);
                 lastFired = currentTime;
                 textAmmo.text = "x" + (ammo - 1);
             }
