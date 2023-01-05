@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -235,7 +235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  subject: {fileID: 254925396}
 --- !u!114 &254925399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,13 +251,13 @@ MonoBehaviour:
     left:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 254925398}
-          m_TargetAssemblyTypeName: Osborne.BalloonMouvement, Assembly-CSharp
-          m_MethodName: MoveLeft
+        - m_Target: {fileID: 254925394}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -267,13 +266,13 @@ MonoBehaviour:
     right:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 254925398}
-          m_TargetAssemblyTypeName: Osborne.BalloonMouvement, Assembly-CSharp
-          m_MethodName: MoveRight
+        - m_Target: {fileID: 254925394}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -282,13 +281,13 @@ MonoBehaviour:
     down:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 254925398}
-          m_TargetAssemblyTypeName: Osborne.BalloonMouvement, Assembly-CSharp
-          m_MethodName: MoveDown
+        - m_Target: {fileID: 254925394}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -297,13 +296,13 @@ MonoBehaviour:
     up:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 254925398}
-          m_TargetAssemblyTypeName: Osborne.BalloonMouvement, Assembly-CSharp
-          m_MethodName: MoveUp
+        - m_Target: {fileID: 254925394}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -312,92 +311,20 @@ MonoBehaviour:
   pointsMorts:
     horizontal:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 254925394}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     vertical:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 254925394}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   action:
     onPressed:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 254925394}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     onUp:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 254925394}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     onStayed:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 254925394}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 254925394}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &312576073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2989465677019622455, guid: ed3a8ae7b3996a643885610708ef1579, type: 3}
@@ -1192,7 +1119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2989465677019622452, guid: ed3a8ae7b3996a643885610708ef1579, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8
+      value: -4.87
       objectReference: {fileID: 0}
     - target: {fileID: 2989465677019622452, guid: ed3a8ae7b3996a643885610708ef1579, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1265,7 +1192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6094634756129300131, guid: b8cc75f96bd528643ab139286cc9b66b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.13
+      value: 4.15
       objectReference: {fileID: 0}
     - target: {fileID: 6094634756129300131, guid: b8cc75f96bd528643ab139286cc9b66b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1318,7 +1245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7188926390260768752, guid: 6381049634c1cdf4889bc56acff5cfa6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 7188926390260768752, guid: 6381049634c1cdf4889bc56acff5cfa6, type: 3}
       propertyPath: m_LocalPosition.y
