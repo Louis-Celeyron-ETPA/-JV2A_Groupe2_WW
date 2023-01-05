@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gabriel
 {
@@ -8,7 +9,7 @@ namespace Gabriel
     {
         public float timePass;
         public float timerMax;
-        public RectTransform rt;
+        public Image img;
         // Start is called before the first frame update
         void Start()
         {
@@ -19,7 +20,7 @@ namespace Gabriel
         void Update()
         {
             timePass += Time.deltaTime;
-            rt.sizeDelta = new Vector2((timerMax - timePass) * (100/timerMax), 100);
+            img.fillAmount = Mathf.Clamp(1 - (timePass / timerMax), 0, 1);
             if (timePass >= timerMax)
             {
                 ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);

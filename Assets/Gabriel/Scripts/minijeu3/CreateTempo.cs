@@ -11,7 +11,7 @@ namespace Gabriel
 
         public float delaisTempo;
         public int timerTempo;
-        private int noteNumber = 1;
+        public int noteNumber = 1;
         public CreateTempo self;
 
         public int rythmNumber = 0;
@@ -50,7 +50,10 @@ namespace Gabriel
 
         public void rythmAugmentation()
         {
-            rythmNumber++;
+            if (rythmNumber < noteNumber-1)
+            {
+                rythmNumber++;
+            }
             if ((rythmNumber > 19) && (errorCheck < 3))
             {
                 Debug.Log("victoire !");
