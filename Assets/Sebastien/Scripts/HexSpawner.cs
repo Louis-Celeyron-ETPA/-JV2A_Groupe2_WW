@@ -10,7 +10,7 @@ namespace Osborne
 
         public GameObject hexagonPrefab;
 
-        private float spawnTime = 0f;
+        private float spawnTime = 1f;
 
 
         // Update is called once per frame
