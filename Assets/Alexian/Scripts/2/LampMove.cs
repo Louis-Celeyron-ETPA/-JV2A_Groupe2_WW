@@ -8,20 +8,24 @@ namespace Alexian
     {
         public Transform lamp;
         public EndScene end;
-        // Start is called before the first frame update
+        public Timing timing;
+
+        public float lampSpeed = 0.4f;
+
+
         void Start()
         {
 
         }
 
-        // Update is called once per frame
         void Update()
-        {
-            if (end.gameEnd == true)
+        { 
+            if (end.gameEnd == true || timing.gameStarted == false)
             {
                 return;
             }
-            lamp.position += Vector3.forward * -0.4f * ManagerManager.DifficultyManager.GetDifficulty();
+            var speed = Vector3.back * lampSpeed * ManagerManager.DifficultyManager.GetDifficulty();
+            lamp.position += speed;
         }
 
         public void FakeLampMove() 
@@ -30,7 +34,7 @@ namespace Alexian
             {
                 return;
             }
-            transform.position += Vector3.forward * -0.4f * ManagerManager.DifficultyManager.GetDifficulty();
+            transform.position += Vector3.back * lampSpeed * ManagerManager.DifficultyManager.GetDifficulty();
         }
     }
 }

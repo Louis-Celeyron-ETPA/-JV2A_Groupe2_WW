@@ -8,15 +8,13 @@ namespace Alexian
     {
         public LampMove lamp;
         public EndScene end;
-        // Start is called before the first frame update
+        public Timing timing;
+
         void Start()
         {
-            
 
-            
         }
 
-        // Update is called once per frame
         void Update()
         {
             
@@ -28,7 +26,9 @@ namespace Alexian
             {
                 return;
             }
-            var justSpawnedLamp = Instantiate(lamp, new Vector3(16.7f, 11.1f, 750f), Quaternion.Euler(0, 0, 0));
+            var justSpawnedLamp = Instantiate(lamp, new Vector3(16.7f, 11.1f, 415f), Quaternion.Euler(0, 0, 0));
+            justSpawnedLamp.end = end;
+            justSpawnedLamp.timing = timing;
             justSpawnedLamp.FakeLampMove();
         }
     }

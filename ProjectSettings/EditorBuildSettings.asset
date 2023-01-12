@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Alexian/Scenes/Alexian - MiniJeux-1.unity
+    guid: d5939c2b24c23e647b173998c1a305d5
+  - enabled: 1
+    path: Assets/Alexian/Scenes/Alexian - MiniJeux-2.unity
+    guid: 96669b2e0e7fe6340be1068f61582b2b
+  - enabled: 1
+    path: Assets/Alexian/Scenes/Alexian - MiniJeux-3.unity
+    guid: e475edb47f4b463419d773836f7c2270
   m_configObjects: {}

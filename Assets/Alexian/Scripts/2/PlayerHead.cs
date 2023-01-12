@@ -6,24 +6,21 @@ namespace Alexian
 {
     public class PlayerHead : MonoBehaviour
     {
-        public bool canMove;
-        public int coin;
         public EndScene end;
+
+        public int coin;
+        public bool canMove;
         public bool right;
         public bool left;
-        // Start is called before the first frame update
+
         void Start()
         {
 
         }
 
-        // Update is called once per frame
         void Update()
         {
-            if(end.gameEnd == true)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
+
         }
 
         public void MoveLeft()

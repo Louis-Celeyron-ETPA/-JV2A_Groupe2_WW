@@ -14,13 +14,12 @@ namespace Alexian
 
         public float timeMax;
         public bool gameStarted = false;
-        // Start is called before the first frame update
+
         void Start()
         {
             StartCoroutine(Launch());
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (end.gameEnd == true)
@@ -28,6 +27,7 @@ namespace Alexian
                 return;
             }
         }
+
         public IEnumerator Launch()
         {
             for (int i = 1; i < 4; i++)
@@ -41,6 +41,8 @@ namespace Alexian
             UI.SetActive(false);
             end.gameEnd = false;
             gameStarted = true;
+            headFalling.canMove = true;
+            StartCoroutine(InGame());
             StartCoroutine(LampNew());
         }
 
@@ -56,6 +58,16 @@ namespace Alexian
                 lampie.lampCreate();
                 headFalling.Falling();
             }
+        }
+
+        public IEnumerator InGame()
+        {
+            while (gameStarted == false)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            yield return new WaitForSeconds(20);
+            end.Victory();
         }
     }
 }

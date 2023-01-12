@@ -11,7 +11,6 @@ namespace Alexian
         public Transform ennemy;
         public bool canMove;
         public Ending end;
-        public Music audios;
 
         void Start()
         {
@@ -25,7 +24,6 @@ namespace Alexian
             {
                 canMove = false;
                 end.EndGame();
-                audios.audios.Stop();
             }
         }
 
