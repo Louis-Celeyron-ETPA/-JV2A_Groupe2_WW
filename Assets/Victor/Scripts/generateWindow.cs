@@ -21,14 +21,16 @@ namespace victor
         {
 
             for (int i = 0; i < nombreColonne; i++)
+            {
                 for (int j = 0; j < nombreLigne; j++)
                 {
                     typeFenetre.Add(fenetreRandom);
 
-                    targetValidation fenetre =Instantiate(maFenetre, new Vector3(10.5f - i * 2, 8 - j*2, -0.5f), Quaternion.identity);
+                    targetValidation fenetre =Instantiate(maFenetre, new Vector3(12.5f - i * 4, 10.5f - j*4, -0.5f), Quaternion.identity);
                     fenetre.numeroFenetre = i + j*i;
                     toutesMesFenetres.Add(fenetre);
                 }
+            }
             var goodWindow = Random.Range(0, toutesMesFenetres.Count);
             toutesMesFenetres[goodWindow].isGood = true;
         }

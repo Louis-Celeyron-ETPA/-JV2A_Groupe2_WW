@@ -7,7 +7,7 @@ namespace victor
     {
         public RectTransform subject;
         public Camera mainCamera;
-        public targetValidation listfenetre;
+        //public targetValidation listfenetre;
 
         public float speed = 10f;
 
@@ -31,6 +31,8 @@ namespace victor
                 rectTransform.anchoredPosition.x / Camera.main.pixelWidth,
                 rectTransform.anchoredPosition.y / Camera.main.pixelHeight * -1,
                 Camera.main.nearClipPlane);
+
+            //Debug.Log(positionTemporaire); 
 
             if (positionTemporaire.x > 1)
             {
@@ -69,15 +71,17 @@ namespace victor
         }
         public void Action()
         {
+            Debug.Log("action");
             var rectTransform = (transform as RectTransform);
             var positionTemporaire = new Vector3(
                 rectTransform.anchoredPosition.x / Camera.main.pixelWidth,
-                rectTransform.anchoredPosition.y / Camera.main.pixelHeight * -1,
+                1+ rectTransform.anchoredPosition.y / Camera.main.pixelHeight,
                 Camera.main.nearClipPlane);
             var convertedPosition = Camera.main.ViewportToWorldPoint(positionTemporaire);
+            var positionDansLeMonde = new Vector3(convertedPosition.x, convertedPosition.y, convertedPosition.z);
+            Debug.Log(positionDansLeMonde);
 
-            var positionDansLeMonde = new Vector3(convertedPosition.x, -convertedPosition.y, convertedPosition.z);
-
+            Debug.DrawRay(positionDansLeMonde, Camera.main.transform.forward * 12);
             if (Physics.Raycast(positionDansLeMonde, Camera.main.transform.forward, out var info))
             {
                 var censoredWindow = info.transform.GetComponent<targetValidation>();
@@ -86,7 +90,7 @@ namespace victor
                 {
                     if (censoredWindow.isGood == true)
                     {
-                        Debug.Log("bien jouer FDP");
+                        Debug.Log("bien jouer");
                     }
                     else
                     {

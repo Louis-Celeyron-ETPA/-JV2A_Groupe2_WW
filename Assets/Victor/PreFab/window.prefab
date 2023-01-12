@@ -112,7 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numeroFenetre: 0
+  isGood: 0
   listFenetre: {fileID: 0}
+  mr: {fileID: 3575917844585821542}
 --- !u!54 &4704887639983344805
 Rigidbody:
   m_ObjectHideFlags: 0

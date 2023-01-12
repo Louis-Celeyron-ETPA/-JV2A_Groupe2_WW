@@ -5,8 +5,11 @@ namespace victor {
     public class targetValidation : MonoBehaviour
     {
         public int numeroFenetre;
-        public generateWindow listFenetre;
+
         public bool isGood;
+
+        public generateWindow listFenetre;
+        
         public MeshRenderer mr;
 
         // Start is called before the first frame update
@@ -18,15 +21,14 @@ namespace victor {
         // Update is called once per frame
         void Update()
         {
-
+            if (isGood == true)
+            {
+                mr.material.color = new Color (0,1f,0);
+            }
         }
         private void OnTriggerEnter(Collider other)
         {
-            
-            if (isGood == true)
-            {
-                Debug.Log("c la bonne");
-            }
+
         }
     }
 }
