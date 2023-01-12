@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 1565556415}
   - component: {fileID: 1565556414}
   m_Layer: 0
-  m_Name: boitesauxlettres 1
+  m_Name: BoitesAuxLettres
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 1823698170}
   - component: {fileID: 1823698169}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
