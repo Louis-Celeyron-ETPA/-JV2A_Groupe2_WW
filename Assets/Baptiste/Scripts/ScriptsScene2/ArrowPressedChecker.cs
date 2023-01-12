@@ -12,17 +12,21 @@ namespace Baptiste {
         public GameObject listArrowObject;
         public TMP_Text textScore;
 
+        private float timeLastPressed;
+        private float currentTime;
         private int rm;
         private List<GameObject> listArrowSpawn;
         // Start is called before the first frame update
         void Start()
         {
+            timeLastPressed = 0f;
             rm = -1;
         }
 
         // Update is called once per frame
         void Update()
         {
+            currentTime += Time.deltaTime;
             s1 = listArrowObject.GetComponent<Scene2MainScript>();
             listArrowSpawn = s1.gameObjectList;
 
@@ -37,19 +41,22 @@ namespace Baptiste {
 
         public void checkOnPress()
         {
-            foreach (GameObject item in listArrowSpawn)
+            if (currentTime - timeLastPressed > 0.2f)
             {
-                if (item.transform.position.y > transform.position.y - 1 && item.transform.position.y < transform.position.y + 1 && item.transform.position.x == transform.position.x)
+                timeLastPressed = currentTime;
+                foreach (GameObject item in listArrowSpawn)
                 {
-                    score = score + 500;
-                    textScore.text = "" + score;
-                    rm = listArrowSpawn.IndexOf(item);
-                    Destroy(item);
-                }
-                else if (item.transform.position.y < -6f)
-                {
-                    rm = listArrowSpawn.IndexOf(item);
-                    Destroy(item);
+                    if (item.transform.position.y > transform.position.y - 0.5 && item.transform.position.y < transform.position.y + 0.5 && item.transform.position.x == transform.position.x && item != null && rm == -1)
+                    {
+                        score = score + 500;
+                        textScore.text = "" + score;
+                        rm = listArrowSpawn.IndexOf(item);
+                        Destroy(item);
+                    }
+                    else if (item.transform.position.y == -6f && item != null)
+                    {
+                        score = score - 1000;
+                    }
                 }
             }
         }

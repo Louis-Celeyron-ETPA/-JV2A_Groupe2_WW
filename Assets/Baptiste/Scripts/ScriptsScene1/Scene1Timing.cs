@@ -22,8 +22,11 @@ namespace Baptiste {
 
         public GameObject mailManFront;
         public GameObject mailManBack;
+        public ThiccHandler myThiccHandler;
         public float currentTime;
 
+        private int difficulty;
+        private bool end;
         private Vector3 mailManHide;
         private Vector3 mailManShow;
 
@@ -32,7 +35,9 @@ namespace Baptiste {
         // Start is called before the first frame update
         void Start()
         {
+            difficulty = ManagerManager.DifficultyManager.GetDifficulty();
             listReturn = new List<MailManReturn>();
+            end = false;
 
             mailManHide = new Vector3(22f, 1f, 0f);
             mailManShow = new Vector3(6f, 1f, -2f);
@@ -75,6 +80,8 @@ namespace Baptiste {
             listReturn.Add(new MailManReturn(25f, 25.4f, false));
             listReturn.Add(new MailManReturn(25.4f, 25.8f, true));
             listReturn.Add(new MailManReturn(25.8f, 26.2f, false));
+            listReturn.Add(new MailManReturn(26.2f, 25.6f, true));
+            listReturn.Add(new MailManReturn(26.6f, 27f, false));
         }
 
         // Update is called once per frame
@@ -98,6 +105,52 @@ namespace Baptiste {
                     }
                 }
 
+            }
+
+            if (currentTime > 27 && !end)
+            {
+                if (difficulty == 1)
+                {
+                    if (myThiccHandler.score < 0)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else if (myThiccHandler.score > 3000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                    }
+                }
+                else if (difficulty == 2)
+                {
+                    if (myThiccHandler.score < 1500)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else if (myThiccHandler.score > 3000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                    }
+                }
+                else
+                {
+                    if (myThiccHandler.score < 3000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                }
+                end = true;
             }
         }
     }

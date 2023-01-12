@@ -7,11 +7,12 @@ using Baptiste;
 namespace Baptiste {
     public class ThiccHandler : MonoBehaviour
     {
-        private Vector3 omniThick;
-        private Vector3 omniThinn;
+        private Vector3 omniThickPosition;
+        private Vector3 omniThinnPosition;
         private bool twerking;
-        private int score;
+        public int score;
 
+        public GameObject omniThinn;
         public TMP_Text textScore;        
         public GameObject mailManBack;
 
@@ -19,8 +20,8 @@ namespace Baptiste {
         void Start()
         {
             score = 0;
-            omniThick = new Vector3(0f, 0f, 0f);
-            omniThinn = new Vector3(0f, -12f, 0f);
+            omniThickPosition = new Vector3(0f, 0f, 0f);
+            omniThinnPosition = new Vector3(0f, -12f, 0f);
         }
 
         // Update is called once per frame
@@ -39,13 +40,15 @@ namespace Baptiste {
 
         public void Twerking()
         {
-            transform.position = omniThick;
+            transform.position = omniThickPosition;
+            omniThinn.transform.position = omniThinnPosition;
             twerking = true;
         }
 
         public void NoTwerking()
         {
-            transform.position = omniThinn;
+            transform.position = omniThinnPosition;
+            omniThinn.transform.position = omniThickPosition;
             twerking = false;
         }
     }

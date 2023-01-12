@@ -456,6 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a8e2c901b717b4eb56b8c19b6d8cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  omniThinn: {fileID: 1044361546}
   textScore: {fileID: 71812693}
   mailManBack: {fileID: 1713830135}
 --- !u!1 &648237031
@@ -1041,6 +1043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mailManFront: {fileID: 648237031}
   mailManBack: {fileID: 1713830135}
+  myThiccHandler: {fileID: 247463064}
   currentTime: 0
 --- !u!1 &1953133541
 GameObject:

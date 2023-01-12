@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Baptiste/Scenes/Baptiste - MiniJeux-1.unity
+    guid: c2e0321df68d1814d84359fb684d2248
+  - enabled: 1
+    path: Assets/Baptiste/Scenes/Baptiste - MiniJeux-2.unity
+    guid: 57162f4fde08f8a45b69bf498f33a9b9
+  - enabled: 1
+    path: Assets/Baptiste/Scenes/Baptiste - MiniJeux-3.unity
+    guid: 963aa6de107a4484f9bab9e7bff3eb6f
   m_configObjects: {}
