@@ -42,6 +42,7 @@ namespace Brandon
                 {
                     //tapetteTransform.position -= tapetteTransform.right * speed;
                     rgbd.MovePosition(tapetteTransform.position+tapetteTransform.right * -speed);
+                    leftArrow = false;
                     
                 }
 
@@ -49,7 +50,7 @@ namespace Brandon
                 {
                     //tapetteTransform.position += tapetteTransform.right * speed;
                     rgbd.MovePosition(tapetteTransform.position + tapetteTransform.right * speed);
-
+                    rightArrow = false;
 
                 }
 
@@ -57,6 +58,7 @@ namespace Brandon
                 {
                     //tapetteTransform.position += tapetteTransform.up * speed;
                     rgbd.MovePosition(tapetteTransform.position + tapetteTransform.up * speed);
+                    upArrow = false;
 
                 }
 
@@ -64,6 +66,7 @@ namespace Brandon
                 {
                     //tapetteTransform.position -= tapetteTransform.up * speed;
                     rgbd.MovePosition(tapetteTransform.position + tapetteTransform.up * -speed);
+                    downArrow = false;
 
                 }
 

@@ -18,60 +18,36 @@ public class InputTemporaire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) == true)
-        {
-            //voleur.descending = true;
-            tapette.slap = true;
-        }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) == true)
-        {
-            tapette.upArrow = true;
-
-        }
-
-        if (Input.GetKeyUp(KeyCode.UpArrow) == true)
-        {
-            tapette.upArrow = false;
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow) == true)
-        {
-            tapette.downArrow = true;
-
-        }
-
-        if (Input.GetKeyUp(KeyCode.DownArrow) == true)
-        {
-            tapette.downArrow = false;
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow) == true)
-        {
-            tapette.leftArrow = true;
-
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftArrow) == true)
-        {
-            tapette.leftArrow = false;
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow) == true)
-        {
-            tapette.rightArrow = true;
-
-        }
-
-        if (Input.GetKeyUp(KeyCode.RightArrow) == true)
-        {
-            tapette.rightArrow = false;
-
-        }
     }
 
-    
+    public void VoleurDescending()
+    {
+        voleur.descending = true;
+    }
+
+    public void TapetteSlap()
+    {
+        tapette.slap = true;
+    }
+
+    public void TapetteUp()
+    {
+        tapette.upArrow = true;
+    }
+
+    public void TapetteDown()
+    {
+        tapette.downArrow = true;
+    }
+
+    public void TapetteRight()
+    {
+        tapette.rightArrow = true;
+    }
+
+    public void TapetteLeft()
+    {
+        tapette.leftArrow = true;
+    }
 }
