@@ -13,6 +13,7 @@ namespace Gabriel
         public int noteID;
 
         public CreateTempo IDchecker;
+        public SpriteRenderer monPope;
         // Start is called before the first frame update
         void Start()
         {
@@ -28,6 +29,8 @@ namespace Gabriel
             {
                 mr.material.color = Color.red;
                 IDchecker.rythmNumber++;
+                monPope.color = new Color(1f, 0.5f, 0.5f, 1);
+                Invoke("PopeColor", 0.2f); ;
                 IDchecker.errorCheck++;
                 tempoState++;
             }
@@ -41,6 +44,8 @@ namespace Gabriel
                 {
                     mr.material.color = Color.red;
                     IDchecker.errorCheck++;
+                    monPope.color = new Color(1f, 0.5f, 0.5f, 1);
+                    Invoke("PopeColor", 0.2f); ;
                     tempoState = 3;
                 }
             }
@@ -52,6 +57,11 @@ namespace Gabriel
                     tempoState = 3;
                 }
             }
+        }
+
+        public void PopeColor()
+        {
+            monPope.color = Color.white;
         }
     }
 }

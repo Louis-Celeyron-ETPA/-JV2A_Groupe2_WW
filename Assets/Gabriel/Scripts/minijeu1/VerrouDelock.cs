@@ -9,47 +9,47 @@ namespace Gabriel
         private List<int> sensVerrou = new List<int>();
         public int nombreVerrou;
 
-        public GameObject myVerrouBouton;
-        public GameObject myVerrouDroite;
-        public GameObject myVerrouGauche;
-        public GameObject myVerrouHaut;
-        public GameObject myVerrouBas;
+        public GameObject myVerrouPrefab;
+        public List<Sprite> mesSprites;
+        public List<Sprite> mesSpritesB;
+
+        public List<GameObject> mesVerrous;
         private int myVerrou = 0;
 
         private bool didLeftInput, didRightInput, didUpInput, didDownInput;
+
+        public Vector3 currentCameraPosition;
+        public Vector3 nextCameraPosition;
+        public float deplacementCamera;
         // Start is called before the first frame update
         void Start()
         {
-            for (int i = 0; i < nombreVerrou; i++)
+            for (float i = 0; i < nombreVerrou; i++)
             {
                 int verrouRandom = Random.Range(0, 5);
                 sensVerrou.Add(verrouRandom);
-                if (verrouRandom == 0)
-                {
-                    Instantiate(myVerrouBouton, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
-                }
-                else if (verrouRandom == 1)
-                {
-                    Instantiate(myVerrouDroite, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
-                }
-                else if (verrouRandom == 2)
-                {
-                    Instantiate(myVerrouGauche, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
-                }
-                else if (verrouRandom == 3)
-                {
-                    Instantiate(myVerrouHaut, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
-                }
-                else if (verrouRandom == 4)
-                {
-                    Instantiate(myVerrouBas, new Vector3(2, 2 - i, -13), Quaternion.Euler(0, 180, 0));
-                }
+                var monVerrou = Instantiate(myVerrouPrefab, new Vector3(2.2f, 2f - i / 1.5f, -15), Quaternion.Euler(0, 180, 0));
+                monVerrou.GetComponent<SpriteRenderer>().sprite = mesSprites[verrouRandom];
+                mesVerrous.Add(monVerrou);
             }
         }
 
         // Update is called once per frame
         void Update()
         {
+
+            if (deplacementCamera < 1)
+            {
+                Camera.main.transform.position = Vector3.Lerp(currentCameraPosition, nextCameraPosition, deplacementCamera);
+                if (myVerrou == 0)
+                {
+                    deplacementCamera += 0.01f;
+                }
+                else
+                {
+                    deplacementCamera += 0.05f;
+                }
+            }
             if (myVerrou >= nombreVerrou)
             {
                 Debug.Log("T'es vraiment trop fort toi dit donc");
@@ -63,7 +63,10 @@ namespace Gabriel
             {
                 if ((sensVerrou[myVerrou] == 0))
                 {
-                    transform.position += Vector3.down;
+                    currentCameraPosition = nextCameraPosition;
+                    nextCameraPosition += Vector3.down / 1.5f;
+                    deplacementCamera = 0;
+                    mesVerrous[myVerrou].GetComponent<SpriteRenderer>().sprite = mesSpritesB[sensVerrou[myVerrou]];
                     myVerrou++;
                 }
             }
@@ -74,7 +77,10 @@ namespace Gabriel
             {
                 if ((sensVerrou[myVerrou] == 1) && (didRightInput == false))
                 {
-                    transform.position += Vector3.down;
+                    currentCameraPosition = nextCameraPosition;
+                    nextCameraPosition += Vector3.down / 1.5f;
+                    deplacementCamera = 0;
+                    mesVerrous[myVerrou].GetComponent<SpriteRenderer>().sprite = mesSpritesB[sensVerrou[myVerrou]];
                     myVerrou++;
                     didRightInput = true;
                 }
@@ -86,7 +92,10 @@ namespace Gabriel
             {
                 if ((sensVerrou[myVerrou] == 2) && (didLeftInput == false))
                 {
-                    transform.position += Vector3.down;
+                    currentCameraPosition = nextCameraPosition;
+                    nextCameraPosition += Vector3.down / 1.5f;
+                    deplacementCamera = 0;
+                    mesVerrous[myVerrou].GetComponent<SpriteRenderer>().sprite = mesSpritesB[sensVerrou[myVerrou]];
                     myVerrou++;
                     didLeftInput = true;
                 }
@@ -98,7 +107,10 @@ namespace Gabriel
             {
                 if ((sensVerrou[myVerrou] == 3) && (didUpInput == false))
                 {
-                    transform.position += Vector3.down;
+                    currentCameraPosition = nextCameraPosition;
+                    nextCameraPosition += Vector3.down / 1.5f;
+                    deplacementCamera = 0;
+                    mesVerrous[myVerrou].GetComponent<SpriteRenderer>().sprite = mesSpritesB[sensVerrou[myVerrou]];
                     myVerrou++;
                     didUpInput = true;
                 }
@@ -110,7 +122,10 @@ namespace Gabriel
             {
                 if ((sensVerrou[myVerrou] == 4) && (didDownInput == false))
                 {
-                    transform.position += Vector3.down;
+                    currentCameraPosition = nextCameraPosition;
+                    nextCameraPosition += Vector3.down / 1.5f;
+                    deplacementCamera = 0;
+                    mesVerrous[myVerrou].GetComponent<SpriteRenderer>().sprite = mesSpritesB[sensVerrou[myVerrou]];
                     myVerrou++;
                     didDownInput = true;
                 }
