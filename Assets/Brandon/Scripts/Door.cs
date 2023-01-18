@@ -23,8 +23,7 @@ public class Door : MonoBehaviour
         if(open)
         {
             Debug.Log("je clic donc je m'ouvre");
-            doorTransform.rotation = Quaternion.Euler(0, -60, 0);
-            doorTransform.transform.position.Set(10.301622748f, 0.28945148f, 1.6208806f);
+
         }
     }
 }
