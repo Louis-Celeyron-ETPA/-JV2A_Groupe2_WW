@@ -9,6 +9,8 @@ public class InputTemporaire : MonoBehaviour
 
     public Voleur voleur;
     public Tapette tapette;
+    public Door door;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,5 +51,10 @@ public class InputTemporaire : MonoBehaviour
     public void TapetteLeft()
     {
         tapette.leftArrow = true;
+    }
+
+    public void OpenDoor()
+    {
+        door.open = true;
     }
 }
