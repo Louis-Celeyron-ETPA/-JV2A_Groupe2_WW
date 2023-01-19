@@ -320,6 +320,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258398585}
   m_CullTransparentMesh: 1
+--- !u!1 &318065560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318065562}
+  - component: {fileID: 318065561}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &318065561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318065560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directions:
+    left:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1980669846}
+          m_TargetAssemblyTypeName: Alexian.Move, Assembly-CSharp
+          m_MethodName: MoveLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    right:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1980669846}
+          m_TargetAssemblyTypeName: Alexian.Move, Assembly-CSharp
+          m_MethodName: MoveRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    down:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1980669846}
+          m_TargetAssemblyTypeName: Alexian.Move, Assembly-CSharp
+          m_MethodName: MoveDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    up:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1980669846}
+          m_TargetAssemblyTypeName: Alexian.Move, Assembly-CSharp
+          m_MethodName: MoveUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  pointsMorts:
+    horizontal:
+      m_PersistentCalls:
+        m_Calls: []
+    vertical:
+      m_PersistentCalls:
+        m_Calls: []
+  action:
+    onPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1980669846}
+          m_TargetAssemblyTypeName: Alexian.Move, Assembly-CSharp
+          m_MethodName: click
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onUp:
+      m_PersistentCalls:
+        m_Calls: []
+    onStayed:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!4 &318065562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318065560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -88.960365, y: 38.117226, z: -35.004047}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354705168
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,7 +973,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -959,9 +1093,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1980669845}
-  - component: {fileID: 1980669844}
-  - component: {fileID: 1980669843}
   - component: {fileID: 1980669842}
+  - component: {fileID: 1980669846}
+  - component: {fileID: 1980669847}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -983,134 +1117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sizeBlur: {fileID: 1005093427}
   rtImage: {fileID: 1260868810}
-  cursor: {fileID: 0}
---- !u!114 &1980669843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980669841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directions:
-    left:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1980669844}
-          m_TargetAssemblyTypeName: Alexian.CursorRay, Assembly-CSharp
-          m_MethodName: MoveLeft
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    right:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1980669844}
-          m_TargetAssemblyTypeName: Alexian.CursorRay, Assembly-CSharp
-          m_MethodName: MoveRight
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    down:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1980669844}
-          m_TargetAssemblyTypeName: Alexian.CursorRay, Assembly-CSharp
-          m_MethodName: MoveDown
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    up:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1980669844}
-          m_TargetAssemblyTypeName: Alexian.CursorRay, Assembly-CSharp
-          m_MethodName: MoveUp
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  pointsMorts:
-    horizontal:
-      m_PersistentCalls:
-        m_Calls: []
-    vertical:
-      m_PersistentCalls:
-        m_Calls: []
-  action:
-    onPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1980669844}
-          m_TargetAssemblyTypeName: Alexian.CursorRay, Assembly-CSharp
-          m_MethodName: click
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    onUp:
-      m_PersistentCalls:
-        m_Calls: []
-    onStayed:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &1980669844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980669841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5510181ca0117144b167b6322626616, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  censoredObject: {fileID: 0}
-  cursorPlayer: {fileID: 258398588}
-  cursorClick: {fileID: 250918298}
-  text: {fileID: 1851827935}
-  UI: {fileID: 354705168}
-  textUI: {fileID: 1851827933}
-  speed: 5
-  widthBlur: 0
-  heightBlur: 0
-  count: 20
-  currentTime: 0
-  gameEnd: 0
-  gameStarted: 0
+  move: {fileID: 1980669846}
 --- !u!4 &1980669845
 Transform:
   m_ObjectHideFlags: 0
@@ -1126,3 +1133,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1980669846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980669841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1105269b91d749547b78f111446c2310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorPlayer: {fileID: 258398588}
+  censoredObject: {fileID: 1980669842}
+  cursorClick: {fileID: 250918298}
+  game: {fileID: 1980669847}
+  widthBlur: 0
+  heightBlur: 0
+--- !u!114 &1980669847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980669841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7f95f41c7b6ff4d8634df3aec25777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1851827935}
+  ui: {fileID: 354705168}
+  textUI: {fileID: 1851827933}
+  count: 0
+  gameStarted: 0

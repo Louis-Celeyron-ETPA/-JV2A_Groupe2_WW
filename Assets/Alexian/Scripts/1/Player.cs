@@ -9,8 +9,9 @@ namespace Alexian
     {
         public Transform player;
         public Transform ennemy;
-        public bool canMove;
         public Ending end;
+        public bool canMove;
+        
 
         void Start()
         {

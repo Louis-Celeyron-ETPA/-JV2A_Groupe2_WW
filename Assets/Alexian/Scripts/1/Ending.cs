@@ -10,8 +10,8 @@ namespace Alexian
         public Transform player;
         public Transform ennemy;
         public TextMeshProUGUI text;
-
         public GameObject UI;
+
         private bool isShowing;
         // Start is called before the first frame update
         void Start()

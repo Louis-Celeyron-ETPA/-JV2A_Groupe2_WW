@@ -8,7 +8,7 @@ namespace Alexian
     {
         public RectTransform sizeBlur;
         public RectTransform rtImage;
-        public CursorRay cursor;
+        public Move move;
 
         // Start is called before the first frame update
         void Start()
@@ -30,8 +30,8 @@ namespace Alexian
             var widthCensor = Random.Range(0, widthImage);
             var heightCensor = Random.Range(0, heightImage);
 
-            cursor.widthBlur = widthCensor;
-            cursor.heightBlur = heightCensor;
+            move.widthBlur = widthCensor;
+            move.heightBlur = heightCensor;
 
             var xPosition = Random.Range(-widthImage/2, widthImage/2);
             var yPosition = Random.Range(-heightImage/2, heightImage/2);

@@ -54,7 +54,12 @@ namespace Alexian
             }
             while(end.gameEnd == false)
             {
-                yield return new WaitForSeconds(timeMax - ManagerManager.DifficultyManager.GetDifficulty());
+                var switchTime = ManagerManager.DifficultyManager.GetDifficulty();
+                if(ManagerManager.DifficultyManager.GetDifficulty() > 4)
+                {
+                    switchTime = 4;
+                }
+                yield return new WaitForSeconds(timeMax - switchTime);
                 lampie.lampCreate();
                 headFalling.Falling();
             }

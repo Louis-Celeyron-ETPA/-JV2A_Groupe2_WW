@@ -14,8 +14,6 @@ namespace Alexian
         public GameObject UI;
 
         private bool isShowing;
-        public float currentTime;
-        public float timeMax;
         // Start is called before the first frame update
         void Start()
         {

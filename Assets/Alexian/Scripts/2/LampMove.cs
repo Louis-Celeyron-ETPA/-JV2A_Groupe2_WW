@@ -25,6 +25,10 @@ namespace Alexian
                 return;
             }
             var speed = Vector3.back * lampSpeed * ManagerManager.DifficultyManager.GetDifficulty();
+            if(ManagerManager.DifficultyManager.GetDifficulty() > 4)
+            {
+                speed = Vector3.back * lampSpeed * 4;
+            }
             lamp.position += speed;
         }
 
@@ -34,7 +38,12 @@ namespace Alexian
             {
                 return;
             }
-            transform.position += Vector3.back * lampSpeed * ManagerManager.DifficultyManager.GetDifficulty();
+            var speed = Vector3.back * lampSpeed * ManagerManager.DifficultyManager.GetDifficulty();
+            if (ManagerManager.DifficultyManager.GetDifficulty() > 4)
+            {
+                speed = Vector3.back * lampSpeed * 4;
+            }
+            transform.position += speed;
         }
     }
 }

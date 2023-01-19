@@ -8,6 +8,7 @@ namespace Alexian{
         public Transform player;
         public Transform ennemy;
         public bool canMove;
+        public float speed;
         // Start is called before the first frame update
         void Start()
         {
@@ -21,8 +22,13 @@ namespace Alexian{
             {
                 return;
             }
-
-            ennemy.position += Vector3.up * (0.035f + 0.02f * ManagerManager.DifficultyManager.GetDifficulty());
+            speed = 0.01f + 0.015f * ManagerManager.DifficultyManager.GetDifficulty();
+            if(speed > 0.075f)
+            {
+                speed = 0.075f;
+            }
+            ennemy.position += Vector3.up * speed;
+            
 
             if (player.position.y >= 15 || ennemy.position.y >= 15)
             {
