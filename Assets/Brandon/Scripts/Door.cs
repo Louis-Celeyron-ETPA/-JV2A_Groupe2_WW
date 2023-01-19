@@ -2,28 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
-
+namespace Brandon
 {
-    public Transform doorTransform;
-    public bool open = false;
+    public class Door : MonoBehaviour
 
-    private Vector3 positionTarget = new Vector3(10f, 0f, 0f);
-
-
-    // Start is called before the first frame update
-    void Start()
     {
-        
-    }
+        public Transform doorTransform;
+        public bool open = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(open)
+
+        // Start is called before the first frame update
+        void Start()
         {
-            Debug.Log("je clic donc je m'ouvre");
 
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (open)
+            {
+                Debug.Log("je clic donc je m'ouvre");
+                doorTransform.rotation = Quaternion.Euler(0, -50, 0);
+            }
         }
     }
 }
