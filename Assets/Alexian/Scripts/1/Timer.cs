@@ -19,38 +19,32 @@ namespace Alexian
         // Start is called before the first frame update
         void Start()
         {
-
+            StartCoroutine(Launch());
         }
 
         // Update is called once per frame
         void Update()
         {
-            currentTime += Time.deltaTime;
-            if (currentTime >= timeMax)
+            
+        }
+
+        public IEnumerator Launch()
+        {
+            for (int i = 1; i < 4; i++)
             {
-                sr.enabled = false;
-                player.canMove = true;
-                ennemy.canMove = true;
-                isShowing = false;
-                UI.SetActive(isShowing);
-                Destroy(this);
+                yield return new WaitForSeconds(1);
+                ending.text.text = i.ToString();
             }
-            if (currentTime > 1)
-            {
-                ending.text.text = "1";
-            }
-            if (currentTime > 2)
-            {
-                ending.text.text = "2";
-            }
-            if (currentTime > 3)
-            {
-                ending.text.text = "3";
-            }
-            if (currentTime > 4)
-            {
-                ending.text.text = "Spam !";
-            }
+            yield return new WaitForSeconds(1);
+            ending.text.text = "Spam !";
+            yield return new WaitForSeconds(1);
+            UI.SetActive(false);
+            sr.enabled = false;
+            player.canMove = true;
+            ennemy.canMove = true;
+            isShowing = false;
+            UI.SetActive(isShowing);
+            Destroy(this);
         }
     }
 }

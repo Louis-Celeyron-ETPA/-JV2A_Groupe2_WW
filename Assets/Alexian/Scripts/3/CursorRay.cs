@@ -10,7 +10,6 @@ namespace Alexian
         public CensoredObject censoredObject;
         public RectTransform cursorPlayer;
         public RectTransform cursorClick;
-
         public TextMeshProUGUI text;
         public GameObject UI;
         public GameObject textUI;
@@ -19,8 +18,6 @@ namespace Alexian
         public float widthBlur;
         public float heightBlur;
         public int count;
-
-        public float currentTime;
         public bool gameEnd;
         public bool gameStarted;
 
@@ -70,22 +67,42 @@ namespace Alexian
         }
         public void MoveUp()
         {
+            if(gameStarted == false)
+            {
+                return;
+            }
             cursorPlayer.position += cursorPlayer.up * speed;
         }
         public void MoveDown()
         {
+            if (gameStarted == false)
+            {
+                return;
+            }
             cursorPlayer.position -= cursorPlayer.up * speed;
         }
         public void MoveRight()
         {
+            if (gameStarted == false)
+            {
+                return;
+            }
             cursorPlayer.position += cursorPlayer.right * speed;
         }
         public void MoveLeft()
         {
+            if (gameStarted == false)
+            {
+                return;
+            }
             cursorPlayer.position -= cursorPlayer.right * speed;
         }
         public void click()
         {
+            if (gameStarted == false)
+            {
+                return;
+            }
             var xBlur = censoredObject.sizeBlur.position.x;
             var yBlur = censoredObject.sizeBlur.position.y;
             
