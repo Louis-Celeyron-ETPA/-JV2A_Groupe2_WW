@@ -11,16 +11,22 @@ namespace Quentin
         // Start is called before the first frame update
         void Start()
         {
+            StartCoroutine(timeLeft());
+        }
 
+        IEnumerator timeLeft()
+        {
+            yield return new WaitForSeconds(7);
+
+            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             
-            Debug.Log("c'est une tete");
             if (collision.GetComponent<SpriteRenderer>().sprite.name == Wanted.sprite.name)
             {
-                Debug.Log("c'est une tete");
+            
                 game_over = true;
             }
         }
@@ -31,8 +37,9 @@ namespace Quentin
         {
             if (game_over == true)
             {
-                Debug.Log("C'est fini");
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
+
         }
     }
 }

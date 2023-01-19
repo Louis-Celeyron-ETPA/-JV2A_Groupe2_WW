@@ -1,42 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GarlicFinder : MonoBehaviour
+namespace Quentin
 {
-   
-    public int finded = 0;
 
-    public Collider garlicCollider;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class GarlicFinder : MonoBehaviour
     {
 
-        if (collision.gameObject.tag == "feuille")
+        public int finded = 0;
+
+        public Collider garlicCollider;
+
+        void Start()
         {
-            finded++;
+            StartCoroutine(timeWithoutGarlic());
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-    }
-
-    
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "feuille")
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            finded--;
+
+            if (collision.gameObject.tag == "feuille")
+            {
+                finded++;
+            }
         }
-    }
 
-    void Update()
-    {
-
-       
-        if (finded <= 0)
+        private void OnTriggerStay2D(Collider2D collision)
         {
-            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+        }
+
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "feuille")
+            {
+                finded--;
+            }
+        }
+
+        IEnumerator timeWithoutGarlic()
+        {
+            yield return new WaitForSeconds(15);
+            if (finded >= 0)
+            {
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+            }
+        }
+
+        void Update()
+        {
+
+
+            if (finded <= 0)
+            {
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+
+            }
         }
     }
 }

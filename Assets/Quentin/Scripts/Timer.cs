@@ -36,7 +36,6 @@ namespace Quentin
             {
                 time += Time.deltaTime;
                 transform.position += direction * speed;
-                //Vector3.MoveTowards (transform.position, destinationVector, speed);
                 if (time >= 0.7)
                 {
                     if (next != null)
