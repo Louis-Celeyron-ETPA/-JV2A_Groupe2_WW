@@ -1,52 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class move : MonoBehaviour
+namespace victor
 {
-
-    public Transform subject;
-    public float speed = 10f;
-    public float distanceRay = 10f;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Move : MonoBehaviour
     {
-        if (Physics.Raycast(subject.position, Vector3.down,1.1f)) 
-        {
 
-            speed = 0;
+        public Transform subject;
+        public float speed = 10f;
+        public float distanceRay = 10f;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            if (Physics.Raycast(subject.position, Vector3.down, 1.1f))
+            {
+
+                speed = 0;
+
+            }
 
         }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void MoveRight()
-    {
-        subject.position += subject.right * speed;
-        if (Physics.Raycast(subject.position, Vector3.down, distanceRay))
+        // Update is called once per frame
+        void Update()
         {
 
-            speed = 0;
-
         }
-    }
-    public void MoveLeft()
-    {
-        subject.position -= subject.right * speed;
-        if (Physics.Raycast(subject.position, Vector3.down, distanceRay))
+        public void MoveRight()
         {
+            subject.position += subject.right * speed;
+            if (Physics.Raycast(subject.position, Vector3.down, distanceRay))
+            {
 
-            speed = 0;
+                speed = 0;
 
+            }
         }
+        public void MoveLeft()
+        {
+            subject.position -= subject.right * speed;
+            if (Physics.Raycast(subject.position, Vector3.down, distanceRay))
+            {
+
+                speed = 0;
+
+            }
+        }
+
+
+
     }
-
-
-
 }

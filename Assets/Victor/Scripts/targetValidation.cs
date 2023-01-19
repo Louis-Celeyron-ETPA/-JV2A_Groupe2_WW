@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace victor {
-    public class targetValidation : MonoBehaviour
+    public class TargetValidation : MonoBehaviour
     {
         public int numeroFenetre;
 
         public bool isGood;
 
-        public generateWindow listFenetre;
+        public GenerateWindow listFenetre;
         
         public MeshRenderer mr;
 
         // Start is called before the first frame update
         void Awake()
         {
-            listFenetre = Camera.main.GetComponent<generateWindow>();
+            listFenetre = Camera.main.GetComponent<GenerateWindow>();
         }
 
         // Update is called once per frame

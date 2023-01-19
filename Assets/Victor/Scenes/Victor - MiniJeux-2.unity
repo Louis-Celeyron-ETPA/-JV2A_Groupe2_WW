@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subject: {fileID: 622186990}
-  speed: 0.01
+  speed: 0.1
   distanceRay: 1.1
 --- !u!114 &622186992
 MonoBehaviour:
