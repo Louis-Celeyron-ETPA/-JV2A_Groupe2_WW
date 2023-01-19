@@ -16,6 +16,8 @@ namespace Gabriel
         // Start is called before the first frame update
         void Start()
         {
+            nombreLettre += 2 * ManagerManager.DifficultyManager.GetDifficulty();
+
             for (int i = 0; i < nombreLettre; i++)
             {
                 int colorPick = Random.Range(0, 4);

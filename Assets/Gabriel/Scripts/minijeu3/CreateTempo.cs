@@ -27,6 +27,8 @@ namespace Gabriel
         void Start()
         {
             variableTimer = Random.Range(1, 3);
+
+            delaisTempo = 10* (3 - ManagerManager.DifficultyManager.GetDifficulty());
         }
 
         // Update is called once per frame

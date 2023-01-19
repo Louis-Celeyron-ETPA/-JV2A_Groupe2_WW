@@ -21,9 +21,15 @@ namespace Gabriel
         public Vector3 currentCameraPosition;
         public Vector3 nextCameraPosition;
         public float deplacementCamera;
+
+        [SerializeField]
+        private Transform monAnnonce;
         // Start is called before the first frame update
         void Start()
         {
+            nombreVerrou += ManagerManager.DifficultyManager.GetDifficulty();
+            //c'est fait exprès si ça dépasse sur le sol*
+
             for (float i = 0; i < nombreVerrou; i++)
             {
                 int verrouRandom = Random.Range(0, 5);
@@ -37,7 +43,7 @@ namespace Gabriel
         // Update is called once per frame
         void Update()
         {
-
+            monAnnonce.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, -18);
             if (deplacementCamera < 1)
             {
                 Camera.main.transform.position = Vector3.Lerp(currentCameraPosition, nextCameraPosition, deplacementCamera);

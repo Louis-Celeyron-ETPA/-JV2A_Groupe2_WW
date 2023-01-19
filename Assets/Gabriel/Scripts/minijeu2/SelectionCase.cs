@@ -12,21 +12,25 @@ namespace Gabriel
         public int currentLettre = 0;
 
         private bool didRightInput, didLeftInput;
+
+        public Transform outlineLettre;
         // Start is called before the first frame update
         void Start()
         {
             transform.position = new Vector3(-8f, 4.5f, -10f);
+            var monTransform = mesCases.listeDesLettres[currentLettre].transform;
+            outlineLettre.position = new Vector3(monTransform.position.x, monTransform.position.y, monTransform.position.z + 1);
         }
 
         // Update is called once per frame
         void Update()
         {
+
             if (currentLettre >= mesCases.nombreLettre)
             {
-                Debug.Log("Bravo à toi !");
                 ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
-            Debug.Log(positionCurseur);
+            
         }
 
         public void ValideCase()
@@ -37,6 +41,8 @@ namespace Gabriel
                 {
                     mesCases.listeDesLettres[currentLettre].mr.enabled = false;
                     currentLettre++;
+                    var monTransform = mesCases.listeDesLettres[currentLettre].transform;
+                    outlineLettre.position = new Vector3(monTransform.position.x, monTransform.position.y, monTransform.position.z + 1);
                 }
             }
         }
