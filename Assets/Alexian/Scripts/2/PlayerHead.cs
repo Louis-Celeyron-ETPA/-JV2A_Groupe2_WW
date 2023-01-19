@@ -8,10 +8,11 @@ namespace Alexian
     {
         public EndScene end;
 
-        public int coin;
         public bool canMove;
-        public bool right;
-        public bool left;
+
+        private int coin;
+        private bool right;
+        private bool left;
 
         void Start()
         {

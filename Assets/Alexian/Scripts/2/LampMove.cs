@@ -10,7 +10,7 @@ namespace Alexian
         public EndScene end;
         public Timing timing;
 
-        public float lampSpeed = 0.4f;
+        private float lampSpeed = 0.4f;
 
 
         void Start()
