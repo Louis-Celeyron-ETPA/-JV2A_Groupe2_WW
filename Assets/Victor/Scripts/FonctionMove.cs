@@ -6,29 +6,43 @@ namespace victor
 {
     public class FonctionMove : MonoBehaviour
     {
-        public RectTransform subject;
-        public Camera mainCamera;
-        public TimeManagerV time;
+        [SerializeField]
+        private RectTransform subject;//use if the subject is a sprite
 
+        [SerializeField]
+        private Transform subjectPhysic;//use if the subject is a 3D object
 
+        [SerializeField]
+        private Camera mainCamera;
+
+        [SerializeField]
+        private TimeManagerV time;
+
+        [SerializeField]
         private float speed = 10f;
-
-        public int windowShoot;
 
         [SerializeField]
         private GenerateWindow Window;
 
-        [SerializeField]
-        private TimeManagerV timer;
 
         private Vector3 positionTemporaire;
+        public int windowShoot;
 
 
         // Start is called before the first frame update
         void Start()
         {
             mainCamera = Camera.main;
+
+
             subject = transform as RectTransform;
+
+            if (Physics.Raycast(subjectPhysic.position, Vector3.down, 1.1f))
+            {
+
+                time.canMove = false;
+
+            }
         }
 
         // Update is called once per frame
@@ -58,43 +72,54 @@ namespace victor
             {
                 subject.anchoredPosition = new Vector3(subject.anchoredPosition.x, -mainCamera.pixelHeight);
             }
-
+            while (time.canMove == true)
+            {
+                subjectPhysic.position = new Vector3(0,0,0);
+            }
         }
 
         public void MoveUp()
         {
-            if(time.isActive == false)
+            if(time.canMove == false)
             {
                 subject.position += subject.up * speed;
             }
-            
         }
         public void MoveDown()
         {
-            if (time.isActive == false)
+            if (time.canMove == false)
             {
                 subject.position -= subject.up * speed;
             }
         }
         public void MoveRight()
         {
-            if (time.isActive == false)
+            if (time.canMove == false && subject != null)
             {
                 subject.position += subject.right * speed;
+            }
+            if (time.canMove == false && subjectPhysic != null)
+            {
+                subjectPhysic.position += subjectPhysic.right * speed;
             }
         }
         public void MoveLeft()
         {
-            if (time.isActive == false)
+            if (time.canMove == false && subject != null)
             {
                 subject.position -= subject.right * speed;
             }
+
+            if (time.canMove == false && subjectPhysic != null)
+            {
+                subjectPhysic.position -= subjectPhysic.right * speed;
+            }
+
         }
         public void Action()
         {
-            if (time.isActive == false)
+            if (time.canMove == false)
             {
-                Debug.Log("action");
                 var rectTransform = (transform as RectTransform);
                 var positionTemporaire = new Vector3(
                     rectTransform.anchoredPosition.x / Camera.main.pixelWidth,
@@ -121,12 +146,11 @@ namespace victor
                         else
                         {
                             Debug.Log("raté");
-                            timer.isLose = true;
+                            time.isLose = true;
                         }
                     }
                 }
             }
-            
         }
     }
 }

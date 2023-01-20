@@ -6,7 +6,8 @@ namespace victor
     public class PoolScript : MonoBehaviour
     {
 
-        public Transform positionPlateform;
+        [SerializeField]
+        private Transform positionPlateform;
 
 
         // Start is called before the first frame update
@@ -24,7 +25,7 @@ namespace victor
         private void OnTriggerEnter(Collider other)
         {
 
-            Debug.Log("TSu a gagner.");
+            Debug.Log("Tu a gagner.");
             return;
 
 

@@ -9,7 +9,7 @@ namespace victor
     {
 
         private float currentTime;
-        private float timeStart;
+        private float timeStart = 5;
 
         [SerializeField]
         private float timeMax;
@@ -35,7 +35,7 @@ namespace victor
         [SerializeField]
         private string miniJeu;
 
-        public bool isActive;
+        public bool canMove;
         public bool isWin = false;
         public bool isLose = false;
 
@@ -57,7 +57,7 @@ namespace victor
             {
                 textUI.SetActive(false);
                 ecranUI.SetActive(false);
-                isActive = false;
+                canMove = false;
             }
             if (currentTime > 1)
             {
@@ -89,7 +89,7 @@ namespace victor
             {
                 textUI.SetActive(true);
                 ecranUI.SetActive(true);
-                isActive = true;
+                canMove = true;
 
                 text.text = "Perdu!!!";
                 ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
@@ -98,7 +98,7 @@ namespace victor
             {
                 textUI.SetActive(true);
                 ecranUI.SetActive(true);
-                isActive = true;
+                canMove = true;
 
                 text.text = "Victoir!!!";
                 ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
