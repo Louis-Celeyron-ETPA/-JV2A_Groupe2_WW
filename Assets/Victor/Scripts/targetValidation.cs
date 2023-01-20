@@ -8,14 +8,13 @@ namespace victor {
 
         public bool isGood;
 
-        public GenerateWindow listFenetre;
-        
-        public MeshRenderer mr;
+        [SerializeField]
+        private MeshRenderer mr;
 
         // Start is called before the first frame update
         void Awake()
         {
-            listFenetre = Camera.main.GetComponent<GenerateWindow>();
+
         }
 
         // Update is called once per frame
@@ -25,10 +24,11 @@ namespace victor {
             {
                 mr.material.color = new Color (0,1f,0);
             }
+            if (isGood == false)
+            {
+                mr.material.color = new Color(0, 0, 1f);
+            }
         }
-        private void OnTriggerEnter(Collider other)
-        {
 
-        }
     }
 }

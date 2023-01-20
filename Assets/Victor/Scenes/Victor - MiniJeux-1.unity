@@ -211,7 +211,6 @@ GameObject:
   - component: {fileID: 153540264}
   - component: {fileID: 153540263}
   - component: {fileID: 153540262}
-  - component: {fileID: 153540266}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -297,25 +296,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &153540266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153540261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed26e9f0566f5de4f89dadc56b774dc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maFenetre: {fileID: 6077330846115017821, guid: ab380365faf56ce4fb9e1e588cb18b03, type: 3}
-  typeFenetre: 
-  toutesMesFenetres: []
-  nombreColonne: 3
-  nombreLigne: 3
-  nombreBonneFenetre: 3
-  fenetreRandom: 0
 --- !u!1 &564038914
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,8 +308,6 @@ GameObject:
   - component: {fileID: 564038917}
   - component: {fileID: 564038916}
   - component: {fileID: 564038915}
-  - component: {fileID: 564038919}
-  - component: {fileID: 564038920}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -421,44 +399,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &564038919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564038914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed26e9f0566f5de4f89dadc56b774dc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maFenetre: {fileID: 0}
-  typeFenetre: 
-  toutesMesFenetres: []
-  nombreColonne: 0
-  nombreLigne: 0
-  nombreBonneFenetre: 0
-  fenetreRandom: 0
---- !u!114 &564038920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564038914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed26e9f0566f5de4f89dadc56b774dc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maFenetre: {fileID: 0}
-  typeFenetre: 
-  toutesMesFenetres: []
-  nombreColonne: 0
-  nombreLigne: 0
-  nombreBonneFenetre: 0
-  fenetreRandom: 0
 --- !u!1 &1322250544
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,11 +491,9 @@ MonoBehaviour:
   subject: {fileID: 1322250545}
   mainCamera: {fileID: 1492534337}
   time: {fileID: 1601400960}
-  speed: 10
-  inAction: 0
-  canMove: 0
   windowShoot: 0
   Window: {fileID: 153540261}
+  timer: {fileID: 0}
 --- !u!1 &1455776787
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +724,7 @@ GameObject:
   - component: {fileID: 1601400959}
   - component: {fileID: 1601400958}
   - component: {fileID: 1601400960}
+  - component: {fileID: 1601400961}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -922,16 +861,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216996e1c9be30b49a8b9e45cf869fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTime: 0
-  timeStart: 0
-  timeMax: 4
-  mainActor: {fileID: 1322250544}
+  timeMax: 20
   UI: {fileID: 564038914}
   textUI: {fileID: 1455776787}
   ecranUI: {fileID: 66451756}
   text: {fileID: 1455776788}
-  isActive: 0
+  target: {fileID: 1322250548}
+  window: {fileID: 1601400961}
   miniJeu: Vise!!
+  isActive: 0
+  isWin: 0
+  isLose: 0
+--- !u!114 &1601400961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601400957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed26e9f0566f5de4f89dadc56b774dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maFenetre: {fileID: 5987317396455342580, guid: ab380365faf56ce4fb9e1e588cb18b03, type: 3}
+  toutesMesFenetres: []
+  nombreColonne: 3
+  nombreLigne: 3
+  nombreBonneFenetre: 0
 --- !u!1 &1896709298
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1601400957}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1896709301

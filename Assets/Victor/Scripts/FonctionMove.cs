@@ -4,20 +4,22 @@ using UnityEngine;
 
 namespace victor
 {
-    public class Fonctionmov : MonoBehaviour
+    public class FonctionMove : MonoBehaviour
     {
         public RectTransform subject;
         public Camera mainCamera;
-        public TimeManager time;
+        public TimeManagerV time;
 
 
-        public float speed = 10f;
-
-        public bool inAction = false;
-        public bool canMove = false;
+        private float speed = 10f;
 
         public int windowShoot;
-        public GameObject Window;
+
+        [SerializeField]
+        private GenerateWindow Window;
+
+        [SerializeField]
+        private TimeManagerV timer;
 
         private Vector3 positionTemporaire;
 
@@ -111,19 +113,15 @@ namespace victor
                     {
                         if (censoredWindow.isGood == true)
                         {
-                            Debug.Log("bien jouer");
+                            censoredWindow.isGood = false;
                             windowShoot += 1;
+                            Debug.Log(windowShoot);
 
-                            //if (windowShoot == Window.nombreBonneFenetre)
-                            //{
-                                //ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
-                            //}
-                                
                         }
                         else
                         {
-                            Debug.Log("perdu");
-                            ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                            Debug.Log("raté");
+                            timer.isLose = true;
                         }
                     }
                 }
