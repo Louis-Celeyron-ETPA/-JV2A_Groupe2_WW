@@ -9,6 +9,8 @@ namespace Osborne
         public bool score;
         Rigidbody myRigidbody;
 
+        public bool isGood = false;
+
         private void Start()
         {
             myRigidbody = GetComponent<Rigidbody>();
@@ -19,6 +21,14 @@ namespace Osborne
             if (triggerCollider.tag == "Ball")
             {
                 Destroy(triggerCollider.gameObject);
+                if (isGood == true)
+                {
+                    ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                }
+                else
+                {
+                    ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                }
             }
         }
     }

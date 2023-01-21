@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Osborne
 {
-
     public class BalloonCursorMouvement : MonoBehaviour
     {
 
@@ -15,7 +14,9 @@ namespace Osborne
         [SerializeField] AudioSource popSound;
         [SerializeField] float speed = 1f;
 
-    // Update is called once per frame
+        public bool isGood = false;
+
+        // Update is called once per frame
         void Update()
         {
             transform.position += new Vector3(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed, 0);
@@ -32,6 +33,8 @@ namespace Osborne
                     myBalloon = null;
                 }
             }
+
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.5f, 8.5f), Mathf.Clamp(transform.position.y, -4, 6), transform.position.z);
         }
 
         public void BalloonHit()
@@ -39,12 +42,21 @@ namespace Osborne
             if (myBalloon != null)
             {
                 Destroy(myBalloon);
-                balloonManager.OnBalloonPop(gameObject.tag);
-                //popSound.Play();
+                balloonManager.OnBalloonPop(myBalloon.tag);
+                popSound.Play();
+
+                if (isGood == true)
+                {
+                    ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                }
+                else
+                {
+                    ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                }
             }
 
             
-            /*if (myBalloon = 0)
+            /*
             {
                 ManagerManager.LifeManager.GetCurrentLife();
             }*/

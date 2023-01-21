@@ -20,14 +20,13 @@ namespace Osborne
 
             if (color == "Gold")
             {
-                balloons *= 2;
+                balloons += 2;
             }
 
             if (color == "Red")
             {
                 balloons--;
             }
-
             balloonsText.text = "BALLOONS:" + balloons;
 
         }
