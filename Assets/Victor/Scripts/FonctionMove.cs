@@ -10,9 +10,6 @@ namespace victor
         private RectTransform subject;//use if the subject is a sprite
 
         [SerializeField]
-        private Transform subjectPhysic;//use if the subject is a 3D object
-
-        [SerializeField]
         private Camera mainCamera;
 
         [SerializeField]
@@ -33,16 +30,7 @@ namespace victor
         void Start()
         {
             mainCamera = Camera.main;
-
-
             subject = transform as RectTransform;
-
-            if (Physics.Raycast(subjectPhysic.position, Vector3.down, 1.1f))
-            {
-
-                time.canMove = false;
-
-            }
         }
 
         // Update is called once per frame
@@ -72,10 +60,7 @@ namespace victor
             {
                 subject.anchoredPosition = new Vector3(subject.anchoredPosition.x, -mainCamera.pixelHeight);
             }
-            while (time.canMove == true)
-            {
-                subjectPhysic.position = new Vector3(0,0,0);
-            }
+
         }
 
         public void MoveUp()
@@ -98,10 +83,6 @@ namespace victor
             {
                 subject.position += subject.right * speed;
             }
-            if (time.canMove == false && subjectPhysic != null)
-            {
-                subjectPhysic.position += subjectPhysic.right * speed;
-            }
         }
         public void MoveLeft()
         {
@@ -109,12 +90,6 @@ namespace victor
             {
                 subject.position -= subject.right * speed;
             }
-
-            if (time.canMove == false && subjectPhysic != null)
-            {
-                subjectPhysic.position -= subjectPhysic.right * speed;
-            }
-
         }
         public void Action()
         {
@@ -140,13 +115,10 @@ namespace victor
                         {
                             censoredWindow.isGood = false;
                             windowShoot += 1;
-                            Debug.Log(windowShoot);
-
                         }
                         else
                         {
-                            Debug.Log("raté");
-                            time.isLose = true;
+                            time.isLoose = true;
                         }
                     }
                 }

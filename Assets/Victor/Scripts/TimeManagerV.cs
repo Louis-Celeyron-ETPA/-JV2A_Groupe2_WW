@@ -9,13 +9,10 @@ namespace victor
     {
 
         private float currentTime;
-        private float timeStart = 5;
+        private float timeStart = 4;
 
         [SerializeField]
         private float timeMax;
-
-        [SerializeField]
-        private GameObject UI;
 
         [SerializeField]
         private GameObject textUI;
@@ -35,57 +32,58 @@ namespace victor
         [SerializeField]
         private string miniJeu;
 
-        public bool canMove;
+        public bool canMove = true;
         public bool isWin = false;
-        public bool isLose = false;
+        public bool isLoose = false;
 
 
         // Start is called before the first frame update
         void Start()
         {
 
-            timeMax = timeMax / ManagerManager.DifficultyManager.GetDifficulty(); //the time max diminish at with Difficulty
+            timeMax = timeMax / ManagerManager.DifficultyManager.GetDifficulty(); //the time max diminish with Difficulty
 
         }
-
 
         // Update is called once per frame
         void Update()
         {
             currentTime += Time.deltaTime;
-            if (currentTime >= timeStart)
+            if (currentTime >= timeStart && isWin == false)
             {
                 textUI.SetActive(false);
                 ecranUI.SetActive(false);
                 canMove = false;
             }
-            if (currentTime > 1)
+            if (currentTime > 0)
             {
                 text.text = "3";
             }
-            if (currentTime > 2)
+            if (currentTime > 1)
             {
                 text.text = "2";
             }
-            if (currentTime > 3)
+            if (currentTime > 2)
             {
                 text.text = "1";
             }
-            if (currentTime > 5)
+            if (currentTime > 3)
             {
                 text.text = miniJeu;
             }
-            if (currentTime >= timeMax)
+            if (currentTime >= timeMax && isWin == false)
             {
-                isLose = true;
+                isLoose = true;
             }
-
-            if (target.windowShoot == window.nombreBonneFenetre)
+            if (target && window)
             {
-                isWin = true;
-                Debug.Log(window.nombreBonneFenetre);
+                if (target.windowShoot == window.nombreBonneFenetre)
+                {
+                    isWin = true;
+                    Debug.Log(window.nombreBonneFenetre);
+                }
             }
-            if (isLose == true)
+            if (isLoose == true)
             {
                 textUI.SetActive(true);
                 ecranUI.SetActive(true);
@@ -99,17 +97,10 @@ namespace victor
                 textUI.SetActive(true);
                 ecranUI.SetActive(true);
                 canMove = true;
-
-                text.text = "Victoir!!!";
+                text.text = "Victoire!!!";
                 ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
-
-
-
-
-
         }
     }
-
 }
 
