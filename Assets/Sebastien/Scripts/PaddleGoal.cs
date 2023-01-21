@@ -7,7 +7,7 @@ namespace Osborne
     public class PaddleGoal : MonoBehaviour
     {
         public bool score;
-        Rigidbody myRigidbody;
+        public Rigidbody myRigidbody;
 
         public bool isGood = false;
 
@@ -28,6 +28,8 @@ namespace Osborne
                 else
                 {
                     ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    ManagerManager.LifeManager.GetCurrentLife();
+                    ManagerManager.DifficultyManager.GetDifficulty();
                 }
             }
         }

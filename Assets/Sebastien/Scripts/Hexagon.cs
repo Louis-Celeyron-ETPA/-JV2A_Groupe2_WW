@@ -32,6 +32,8 @@ namespace Osborne
                 else
                 {
                     ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    ManagerManager.LifeManager.GetCurrentLife();
+                    ManagerManager.DifficultyManager.GetDifficulty();
                 }
             }
 

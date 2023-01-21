@@ -928,5 +928,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon
       objectReference: {fileID: 0}
+    - target: {fileID: 8942930175572570229, guid: a338419ff3937a14cb556f1e2c9a66b1, type: 3}
+      propertyPath: isGood
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a338419ff3937a14cb556f1e2c9a66b1, type: 3}

@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 254925398}
   - component: {fileID: 254925397}
   - component: {fileID: 254925399}
+  - component: {fileID: 254925400}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -279,7 +280,7 @@ MonoBehaviour:
   balloonManager: {fileID: 254925399}
   popSound: {fileID: 0}
   speed: 0.2
-  isGood: 0
+  isGood: 1
 --- !u!114 &254925399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +294,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balloonsText: {fileID: 411808501}
+--- !u!114 &254925400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254925394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65578d27411d8944a0a6e22e65dae43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDifficulty: 9
+  minDifficulty: 0
 --- !u!4 &312576074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2472874345654365830, guid: ed3a8ae7b3996a643885610708ef1579, type: 3}
@@ -362,17 +377,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 230
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'ECLATER LES BALLONS!
-
-
-    OBTENIR UN SCORE DE 20 POUR GAGNER.'
+  m_Text: " ECLATER LES BALLONS!\n\n (FLECHES + CLICK GAUCHE) "
 --- !u!222 &411808502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -926,7 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8510ba1fb419eb247b5a36885baa6de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 3
+  delay: 2
   greenPrefab: {fileID: 4125927598267794655, guid: 6381049634c1cdf4889bc56acff5cfa6, type: 3}
   redPrefab: {fileID: 709973467139930743, guid: 63df697b52a370f4983d725639fc55f6, type: 3}
   goldPrefab: {fileID: 2472874345654365829, guid: ed3a8ae7b3996a643885610708ef1579, type: 3}

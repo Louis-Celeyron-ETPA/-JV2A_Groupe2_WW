@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
 
 namespace Osborne
 {
@@ -52,14 +51,13 @@ namespace Osborne
                 else
                 {
                     ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    ManagerManager.LifeManager.GetCurrentLife();
+                    ManagerManager.DifficultyManager.GetDifficulty();
                 }
             }
-
             
-            /*
-            {
-                ManagerManager.LifeManager.GetCurrentLife();
-            }*/
+            
+       
         }
 
     }
