@@ -11,10 +11,10 @@ namespace Brandon
         public List<Transform> characters;
         public GameObject target;
         public GameObject exit;
-        private Transform characterTransform, targetPosition;
+        private Transform characterTransform, targetPosition, previousCharacterTransform;
         public float speed;
         public bool gameOver = false;
-        private bool characterStop = false;
+        private bool characterChanged = false;
 
 
         // Start is called before the first frame update
@@ -28,15 +28,14 @@ namespace Brandon
         {
             if (!gameOver)
             {
-                if (characterTransform.position != targetPosition.position && !characterStop)
+                if (characterTransform.position != targetPosition.position)
                 {
                     MoveCharacter();
                 }
                 else if (characterTransform.position == targetPosition.position)
                 {
-                    characterStop = true;
-                    StartCoroutine(CharacterWait());
-                    StartCoroutine(ChangeCharacter());
+                    characterChanged = false;
+                    StartCoroutine(CharacterOut());
                 }
 
 
@@ -59,18 +58,22 @@ namespace Brandon
 
         }
 
-        IEnumerator CharacterWait()
+        IEnumerator CharacterOut()
         {
-            yield return new WaitForSeconds(2);
-            var previousCharacterTransform = characterTransform;
-            previousCharacterTransform.position = Vector3.MoveTowards(previousCharacterTransform.position, exit.transform.position, speed);
-            
-        }
+            yield return new WaitForSeconds(Random.Range(1,3));
+            if(!characterChanged)
+            {
+                previousCharacterTransform = characterTransform;
+                ChooseCharacter();
+                characterChanged = true;
+            }
 
-        IEnumerator ChangeCharacter()
-        {
-            yield return new WaitForSeconds(4);
-            ChooseCharacter();
+            if (previousCharacterTransform != characterTransform)
+            {
+                previousCharacterTransform.position = Vector3.MoveTowards(previousCharacterTransform.position, exit.transform.position, speed);
+                
+            }
+            
         }
     }
 }
