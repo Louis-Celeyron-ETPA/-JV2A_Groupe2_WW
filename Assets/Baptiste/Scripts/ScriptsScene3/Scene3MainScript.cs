@@ -28,6 +28,7 @@ namespace Baptiste
         private int rm;
         private float randY;
         private bool sendReceiptLeft;
+        private int difficulty;
         
         public int ammo;
         public int score;
@@ -44,10 +45,14 @@ namespace Baptiste
         // Start is called before the first frame update
         void Start()
         {
+            difficulty = ManagerManager.DifficultyManager.GetDifficulty();
             receiptToSpawnList = new List<ReceiptBeer>();
             gameObjectList = new List<GameObject>();
             rm = -1;
             sendReceiptLeft = false;
+            ammo = 30 - (difficulty * 5);
+            baptisteController.ammo = 30 - (difficulty * 5);
+            baptisteController.textAmmo.text = "x" + (ammo);
 
             receiptToSpawnList.Add(new ReceiptBeer(0, 5f));
             receiptToSpawnList.Add(new ReceiptBeer(0, 6f));
@@ -179,8 +184,8 @@ namespace Baptiste
                         if (item.name == "Beer(Clone)")
                         {
                             score += 500;
-                            ammo = 15;
-                            baptisteController.ammo = 15;
+                            ammo = 30 - (difficulty * 5);
+                            baptisteController.ammo = 30 - (difficulty * 5);
                             baptisteController.textAmmo.text = "x" + (ammo);
                         }
                         else
@@ -198,8 +203,56 @@ namespace Baptiste
                     }
                 }
             }
-
             textScore.text = "" + score;
+            
+            if (currentTime > 27f)
+            {
+                if (difficulty == 1)
+                {
+                    if (score < 0)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else if (score > 4000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                    }
+                }
+                else if (difficulty == 2)
+                {
+                    if (score < 4000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else if (score > 8000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                    }
+                }
+                else
+                {
+                    if (score < 8000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else if (score > 12000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                    }
+                }
+            }
         }
     }
 }

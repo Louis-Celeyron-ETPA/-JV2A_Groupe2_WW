@@ -30,6 +30,7 @@ namespace Baptiste
         public GameObject arrowRightFall;
         public GameObject arrowUpFall;
         public GameObject arrowDownFall;
+        public ArrowPressedChecker myArrowPressedChecker;
 
         public List<GameObject> gameObjectList;
         public List<ArrowSpawn> arrowToSpawnList;
@@ -37,8 +38,7 @@ namespace Baptiste
         void Start()
         {
             end = false;
-            //difficulty = ManagerManager.DifficultyManager.GetDifficulty();
-            difficulty = 3;
+            difficulty = ManagerManager.DifficultyManager.GetDifficulty();
             arrowToSpawnList = new List<ArrowSpawn>();
             gameObjectList = new List<GameObject>();
             
@@ -109,6 +109,8 @@ namespace Baptiste
             }
             if (difficulty > 2)
             {
+                //There might be some bug when on the highest difficulty level, it comes down to the way I handle the list in the ArrowPressedChecker script,
+                //I would have resolved it but it's a bug that only happen on the school computers, so I'm at a bit of a loss
                 arrowToSpawnList.Add(new ArrowSpawn(2.25f, "Up"));
                 arrowToSpawnList.Add(new ArrowSpawn(3.25f, "Up"));
                 arrowToSpawnList.Add(new ArrowSpawn(4.25f, "Down"));
@@ -211,6 +213,55 @@ namespace Baptiste
                 if (item != null)
                 {
                     item.transform.position -= Vector3.up * 0.05f;
+                }
+            }
+
+            if (currentTime > 34f)
+            {
+                if (difficulty == 1)
+                {
+                    if (myArrowPressedChecker.score < 5000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else if (myArrowPressedChecker.score > 12000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                    }
+                }
+                else if (difficulty == 2)
+                {
+                    if (myArrowPressedChecker.score < 10000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else if (myArrowPressedChecker.score > 24000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                    }
+                }
+                else
+                {
+                    if (myArrowPressedChecker.score < 30000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
+                    else if (myArrowPressedChecker.score > 55000)
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Perfect);
+                    }
+                    else
+                    {
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+                    }
                 }
             }
         }
