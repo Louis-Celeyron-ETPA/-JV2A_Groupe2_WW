@@ -8,7 +8,7 @@ namespace Osborne
 
     public class BalloonManager : MonoBehaviour
     {
-        int balloons = 0;
+        public int balloons = 0;
         [SerializeField] Text balloonsText;
 
         public void OnBalloonPop(string color)

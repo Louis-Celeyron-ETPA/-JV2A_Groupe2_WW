@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Osborne
 {
@@ -9,13 +10,20 @@ namespace Osborne
 
         private GameObject myBalloon;
         public BalloonManager balloonManager;
+        public int balloons = 0;
 
+        [SerializeField] Text balloonsText;
         [SerializeField] AudioSource popSound;
         [SerializeField] float speed = 1f;
 
-        public bool isGood = false;
 
-        // Update is called once per frame
+        private void Start()
+        {
+           PlayerPrefs.SetString("currentScore", "0");
+        }
+
+
+
         void Update()
         {
             transform.position += new Vector3(Input.GetAxis("Horizontal") * speed, Input.GetAxis("Vertical") * speed, 0);
@@ -36,6 +44,7 @@ namespace Osborne
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.5f, 8.5f), Mathf.Clamp(transform.position.y, -4, 6), transform.position.z);
         }
 
+
         public void BalloonHit()
         {
             if (myBalloon != null)
@@ -44,20 +53,19 @@ namespace Osborne
                 balloonManager.OnBalloonPop(myBalloon.tag);
                 popSound.Play();
 
-                if (isGood == true)
+                if (balloons == 20)
                 {
+                    PlayerPrefs.SetString("currentScore", balloonsText.text);
                     ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
                 }
-                else
+                else if (myBalloon.tag == "Red")
                 {
                     ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
                     ManagerManager.LifeManager.GetCurrentLife();
                     ManagerManager.DifficultyManager.GetDifficulty();
                 }
             }
-            
-            
-       
+
         }
 
     }
