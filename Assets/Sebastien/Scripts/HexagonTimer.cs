@@ -9,7 +9,7 @@ namespace osborne
     public class HexagonTimer : MonoBehaviour
     {
         // Start is called before the first frame update
-        public float timeRemaining = 20;
+        public float timeRemaining = 30;
         public bool timeIsRunning = false;
         public TextMeshProUGUI timeText;
 
@@ -29,6 +29,18 @@ namespace osborne
                 }
             }
             DisplayTime(timeRemaining);
+
+            if (timeIsRunning == true)
+            {
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
+            }
+            else
+            {
+                Debug.Log("Failed");
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                ManagerManager.LifeManager.GetCurrentLife();
+                ManagerManager.DifficultyManager.GetDifficulty();
+            }
         }
 
 

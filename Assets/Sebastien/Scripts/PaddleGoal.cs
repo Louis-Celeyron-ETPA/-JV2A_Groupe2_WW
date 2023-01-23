@@ -27,6 +27,7 @@ namespace Osborne
                 }
                 else
                 {
+                    Debug.Log("Failed");
                     ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
                     ManagerManager.LifeManager.GetCurrentLife();
                     ManagerManager.DifficultyManager.GetDifficulty();

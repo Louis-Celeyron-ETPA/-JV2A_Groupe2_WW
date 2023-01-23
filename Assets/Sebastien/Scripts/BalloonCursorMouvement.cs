@@ -60,6 +60,7 @@ namespace Osborne
                 }
                 else if (myBalloon.tag == "Red")
                 {
+                    Debug.Log("Failed");
                     ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
                     ManagerManager.LifeManager.GetCurrentLife();
                     ManagerManager.DifficultyManager.GetDifficulty();
