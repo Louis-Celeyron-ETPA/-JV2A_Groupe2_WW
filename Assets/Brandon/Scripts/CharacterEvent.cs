@@ -64,6 +64,11 @@ namespace Brandon
             {
                 StartCoroutine(ExitCharacter());
             }
+
+            else
+            {
+                StopCoroutine(ExitCharacter());
+            }
         }
 
         IEnumerator ExitCharacter()
