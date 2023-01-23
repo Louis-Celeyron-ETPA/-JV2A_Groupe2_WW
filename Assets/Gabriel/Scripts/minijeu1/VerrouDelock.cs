@@ -6,25 +6,30 @@ namespace Gabriel
 {
     public class VerrouDelock : MonoBehaviour
     {
+        //liste des inputs à faire
         private List<int> sensVerrou = new List<int>();
-        public int nombreVerrou;
 
-        public GameObject myVerrouPrefab;
-        public List<Sprite> mesSprites;
-        public List<Sprite> mesSpritesB;
-
-        public List<GameObject> mesVerrous;
+        [SerializeField]
+        private int nombreVerrou;
+        //prefabs avec les sprites associés (état fermé et ouvert)
+        [SerializeField]
+        private GameObject myVerrouPrefab;
+        [SerializeField]
+        private List<Sprite> mesSprites, mesSpritesB;
+        [SerializeField]
+        private List<GameObject> mesVerrous;
+        //verrou actuel
         private int myVerrou = 0;
 
         private bool didLeftInput, didRightInput, didUpInput, didDownInput;
 
-        public Vector3 currentCameraPosition;
-        public Vector3 nextCameraPosition;
-        public float deplacementCamera;
+        [SerializeField]
+        private Vector3 currentCameraPosition, nextCameraPosition;
+        [SerializeField]
+        private float deplacementCamera;
 
         [SerializeField]
         private Transform monAnnonce;
-        // Start is called before the first frame update
         void Start()
         {
             nombreVerrou += ManagerManager.DifficultyManager.GetDifficulty();
@@ -40,10 +45,11 @@ namespace Gabriel
             }
         }
 
-        // Update is called once per frame
         void Update()
         {
+            //le "déverouille!" suit la caméra
             monAnnonce.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, -18);
+            //les déplacements de caméra
             if (deplacementCamera < 1)
             {
                 Camera.main.transform.position = Vector3.Lerp(currentCameraPosition, nextCameraPosition, deplacementCamera);
@@ -56,9 +62,9 @@ namespace Gabriel
                     deplacementCamera += 0.05f;
                 }
             }
+            //la victoire
             if (myVerrou >= nombreVerrou)
             {
-                Debug.Log("T'es vraiment trop fort toi dit donc");
                 ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
             }
         }

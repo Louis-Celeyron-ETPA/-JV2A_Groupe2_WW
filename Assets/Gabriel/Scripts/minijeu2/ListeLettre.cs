@@ -7,12 +7,15 @@ namespace Gabriel
     public class ListeLettre : MonoBehaviour
     {
         public List<int> couleurLettre = new List<int>();
-
         public List<MesLettres> listeDesLettres = new List<MesLettres>();
 
-        public List<Material> textureDispo = new List<Material>();
+        [SerializeField]
+        private List<Material> textureDispo = new List<Material>();
+
         public int nombreLettre;
-        public MesLettres maLettre;
+
+        [SerializeField]
+        private MesLettres maLettre;
         // Start is called before the first frame update
         void Start()
         {

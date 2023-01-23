@@ -595,76 +595,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &1212991195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2816854470374245865, guid: c998927c891c6984fb85d7b2e7a9ef19, type: 3}
-  m_PrefabInstance: {fileID: 2816854469171217202}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1212991196 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2816854470374245870, guid: c998927c891c6984fb85d7b2e7a9ef19, type: 3}
   m_PrefabInstance: {fileID: 2816854469171217202}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212991195}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae4d9649456a3945bc1325cec924ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1212991201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212991195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directions:
-    left:
-      m_PersistentCalls:
-        m_Calls: []
-    right:
-      m_PersistentCalls:
-        m_Calls: []
-    down:
-      m_PersistentCalls:
-        m_Calls: []
-    up:
-      m_PersistentCalls:
-        m_Calls: []
-  pointsMorts:
-    horizontal:
-      m_PersistentCalls:
-        m_Calls: []
-    vertical:
-      m_PersistentCalls:
-        m_Calls: []
-  action:
-    onPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1212991196}
-          m_TargetAssemblyTypeName: Gabriel.CreateTempo, Assembly-CSharp
-          m_MethodName: rythmAugmentation
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    onUp:
-      m_PersistentCalls:
-        m_Calls: []
-    onStayed:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &1241455225
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +733,92 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &1537182805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537182807}
+  - component: {fileID: 1537182806}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1537182806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537182805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directions:
+    left:
+      m_PersistentCalls:
+        m_Calls: []
+    right:
+      m_PersistentCalls:
+        m_Calls: []
+    down:
+      m_PersistentCalls:
+        m_Calls: []
+    up:
+      m_PersistentCalls:
+        m_Calls: []
+  pointsMorts:
+    horizontal:
+      m_PersistentCalls:
+        m_Calls: []
+    vertical:
+      m_PersistentCalls:
+        m_Calls: []
+  action:
+    onPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1212991196}
+          m_TargetAssemblyTypeName: Gabriel.CreateTempo, Assembly-CSharp
+          m_MethodName: rythmAugmentation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onUp:
+      m_PersistentCalls:
+        m_Calls: []
+    onStayed:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!4 &1537182807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537182805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1927516, y: 2.6358974, z: -9.5649805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822522015
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822522015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14076519, y: 0.64, z: 0}
+  m_LocalPosition: {x: 0.14076519, y: 0.64, z: -5}
   m_LocalScale: {x: 1.7248, y: 1.7248, z: 1.7248}
   m_ConstrainProportionsScale: 0
   m_Children: []

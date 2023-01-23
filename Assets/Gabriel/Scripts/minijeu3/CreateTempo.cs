@@ -6,22 +6,26 @@ namespace Gabriel
 {
     public class CreateTempo : MonoBehaviour
     {
-        public int tempoTotal;
+        [SerializeField]
+        private int tempoTotal, timerTempo, variableTimer;
+
+
+        [SerializeField]
+        private float delaisTempo;
+        [SerializeField]
+        private CreateTempo self;
+
+        private int noteNumber = 1;
         public int errorCheck;
-
-        public float delaisTempo;
-        public int timerTempo;
-        public int noteNumber = 1;
-        public CreateTempo self;
-
         public int rythmNumber = 0;
 
-        public int variableTimer;
+        [SerializeField]
+        private TempoRythm maNote;
 
-        public TempoRythm maNote;
-
-        public List<Sprite> MCpopePV;
-        public SpriteRenderer MCpope;
+        [SerializeField]
+        private List<Sprite> MCpopePV;
+        [SerializeField]
+        private SpriteRenderer MCpope;
 
         // Start is called before the first frame update
         void Start()

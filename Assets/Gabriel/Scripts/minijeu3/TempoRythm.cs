@@ -6,12 +6,12 @@ namespace Gabriel
 {
     public class TempoRythm : MonoBehaviour
     {
-
-        public float vitesseRythm;
-        public int tempoState;
-        public MeshRenderer mr;
-        public int noteID;
-
+        [SerializeField]
+        private float vitesseRythm;
+        public int tempoState, noteID;
+        [SerializeField]
+        private MeshRenderer mr;
+        [SerializeField]
         public CreateTempo IDchecker;
         public SpriteRenderer monPope;
         // Start is called before the first frame update

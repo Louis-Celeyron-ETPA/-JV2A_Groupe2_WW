@@ -497,6 +497,164 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &641152834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641152836}
+  - component: {fileID: 641152835}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &641152835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641152834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directions:
+    left:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1492534339}
+          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
+          m_MethodName: VerrouLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    right:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1492534339}
+          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
+          m_MethodName: VerrouDroite
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    down:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1492534339}
+          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
+          m_MethodName: VerrouBas
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    up:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1492534339}
+          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
+          m_MethodName: VerrouHaut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  pointsMorts:
+    horizontal:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1492534339}
+          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
+          m_MethodName: ResetInputH
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    vertical:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1492534339}
+          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
+          m_MethodName: ResetInputV
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  action:
+    onPressed:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1492534339}
+          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
+          m_MethodName: VerrouCentre
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onUp:
+      m_PersistentCalls:
+        m_Calls: []
+    onStayed:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!4 &641152836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641152834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5845058, y: 0.068923846, z: -9.506886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &971486217
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,7 +987,6 @@ GameObject:
   - component: {fileID: 1492534337}
   - component: {fileID: 1492534336}
   - component: {fileID: 1492534339}
-  - component: {fileID: 1492534340}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -934,132 +1091,6 @@ MonoBehaviour:
   nextCameraPosition: {x: 2, y: 2, z: -20}
   deplacementCamera: 0
   monAnnonce: {fileID: 2131098771}
---- !u!114 &1492534340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492534335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2ad937c589ee941943ab66a6ff27ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  directions:
-    left:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1492534339}
-          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
-          m_MethodName: VerrouLeft
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    right:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1492534339}
-          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
-          m_MethodName: VerrouDroite
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    down:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1492534339}
-          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
-          m_MethodName: VerrouBas
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    up:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1492534339}
-          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
-          m_MethodName: VerrouHaut
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  pointsMorts:
-    horizontal:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1492534339}
-          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
-          m_MethodName: ResetInputH
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    vertical:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1492534339}
-          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
-          m_MethodName: ResetInputV
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  action:
-    onPressed:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1492534339}
-          m_TargetAssemblyTypeName: Gabriel.VerrouDelock, Assembly-CSharp
-          m_MethodName: VerrouCentre
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    onUp:
-      m_PersistentCalls:
-        m_Calls: []
-    onStayed:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &1658360776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,8 +1181,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658360776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6794, y: -7.2346, z: 4.26}
-  m_LocalScale: {x: 34.35256, y: 5.5692, z: 36.65727}
+  m_LocalPosition: {x: 2.6794, y: -14.1495, z: 4.26}
+  m_LocalScale: {x: 34.35256, y: 19.399195, z: 36.65727}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

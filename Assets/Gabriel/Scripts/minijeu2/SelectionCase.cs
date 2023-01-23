@@ -6,14 +6,16 @@ namespace Gabriel
 {
     public class SelectionCase : MonoBehaviour
     {
-
-        public ListeLettre mesCases;
-        public int positionCurseur;
-        public int currentLettre = 0;
+        [SerializeField]
+        private ListeLettre mesCases;
+        [SerializeField]
+        private int positionCurseur;
+        private int currentLettre = 0;
 
         private bool didRightInput, didLeftInput;
 
-        public Transform outlineLettre;
+        [SerializeField]
+        private Transform outlineLettre;
         // Start is called before the first frame update
         void Start()
         {
