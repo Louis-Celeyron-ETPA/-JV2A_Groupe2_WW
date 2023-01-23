@@ -9,17 +9,11 @@ namespace Quentin
 
 
     {
-        // Start is called before the first frame update
+       
         public Transform MyTransform;
         public float speed = 0.9f;
 
-        private void Start()
-        {
-            
-
-
-
-        }
+        
         public void MoveUp()
         {
             MyTransform.position += MyTransform.up * speed / 2;
@@ -38,10 +32,6 @@ namespace Quentin
         }
 
 
-        private void Update()
-        {
-
-
-        }
+       
     }
 }

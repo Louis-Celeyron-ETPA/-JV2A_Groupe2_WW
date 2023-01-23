@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Quentin
 {
-    public class movedirection : MonoBehaviour
+    public class MoveDirection : MonoBehaviour
     {
         public Transform Mytransform;
         public Transform Followtransform;
