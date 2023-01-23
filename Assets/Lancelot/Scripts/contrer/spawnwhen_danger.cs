@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
+// test avec Coroutine infractueux. 
 public class spawnwhen_danger : MonoBehaviour
 {
     void Start()

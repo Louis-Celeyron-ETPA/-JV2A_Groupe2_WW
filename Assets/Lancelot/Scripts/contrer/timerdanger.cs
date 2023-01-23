@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class timerdanger : MonoBehaviour
+public class Timerdanger : MonoBehaviour
 {
     public float timeRemaining = 3;
     public bool timerIsRunning = false;
@@ -39,6 +39,7 @@ public class timerdanger : MonoBehaviour
                 timerIsRunning = false;
                 Destroy(gameObject);
                 GameObject.FindWithTag("GameOver").SetActive(true);
+                ManagerManager.GlobalGameManager.EndOfMinigame(MiniGameRating.Fail);
             }
         }
     }

@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+// test avec Coroutine infractueux. 
 
-public class spawnwhen_attention : MonoBehaviour
+public class Spawnwhen_Attention : MonoBehaviour
 {
     void Start()
     {
@@ -20,5 +21,7 @@ public class spawnwhen_attention : MonoBehaviour
         gameObject.SetActive(true);
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine : " + Time.time);
+        ManagerManager.GlobalGameManager.EndOfMinigame(MiniGameRating.Fail);
+        ManagerManager.LifeManager.GetCurrentLife();
     }
 }

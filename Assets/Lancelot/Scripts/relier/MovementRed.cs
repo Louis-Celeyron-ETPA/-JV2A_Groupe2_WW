@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+// vieux code avant input manager pour bouger les carrés rouges.
 public class MovementRed : MonoBehaviour
 {
     public Transform myTransform;
