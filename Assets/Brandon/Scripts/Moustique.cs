@@ -18,6 +18,23 @@ namespace Brandon
         void Start()
         {
             LaunchMovement();
+
+            int difficulty = ManagerManager.DifficultyManager.GetDifficulty();
+
+            if (difficulty == 1)
+            {
+                speed = 0.2f;
+            }
+
+            else if (difficulty == 2)
+            {
+                speed = 0.3f;
+            }
+
+            else if (difficulty == 3)
+            {
+                speed = 0.5f;
+            }
         }
 
         // Update is called once per frame

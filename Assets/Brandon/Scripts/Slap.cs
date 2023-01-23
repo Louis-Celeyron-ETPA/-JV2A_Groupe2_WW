@@ -28,22 +28,26 @@ namespace Brandon
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if(tapetteSlap.position.x == tapetteOmbreTransform.position.x)
+            if (!tapette.gameOver)
             {
-
-                Moustique moustiqueTriggered = collision.GetComponent<Moustique>();
-                if (moustiqueTriggered != null)
+                if (tapetteSlap.position.x == tapetteOmbreTransform.position.x)
                 {
-                    
-                    Destroy(moustiqueObject);
-                    tapette.moustiqueKilled = true;
 
-                }
+                    Moustique moustiqueTriggered = collision.GetComponent<Moustique>();
+                    if (moustiqueTriggered != null && !tapette.gameOver)
+                    {
 
-                else
-                {
-                    tapette.gameOver = true;
-                    Destroy(tapetteCollider);
+                        Destroy(moustiqueObject);
+                        tapette.moustiqueKilled = true;
+
+                    }
+
+                    else
+                    {
+                        tapette.gameOver = true;
+                        Destroy(tapetteCollider);
+                        ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
+                    }
                 }
             }
         }

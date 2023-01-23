@@ -82,6 +82,7 @@ namespace Brandon
                 if (moustiqueKilled)
                 {
                     gameOver = true;
+                    ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Success);
                 }
 
             }

@@ -21,7 +21,22 @@ namespace Brandon
         // Start is called before the first frame update
         void Start()
         {
-            
+            int difficulty = ManagerManager.DifficultyManager.GetDifficulty();
+
+            if (difficulty == 1)
+            {
+                speed = 0.1f;
+            }
+
+            else if (difficulty == 2)
+            {
+                speed = 0.3f;
+            }
+
+            else if (difficulty == 3)
+            {
+                speed = 0.5f;
+            }
         }
 
         // Update is called once per frame
@@ -48,6 +63,7 @@ namespace Brandon
             else
             {
                 spotVoleur.enabled = true;
+                ManagerManager.GlobalGameManager.EndOfMinigame(MinigameRating.Fail);
             }
             
             

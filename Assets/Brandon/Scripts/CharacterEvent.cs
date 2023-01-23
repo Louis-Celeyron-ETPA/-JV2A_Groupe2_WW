@@ -35,7 +35,7 @@ namespace Brandon
                 else if (characterTransform.position == targetPosition.position)
                 {
                     characterChanged = false;
-                    StartCoroutine(CharacterOut());
+                    CharacterOut();
                 }
 
 
@@ -58,7 +58,15 @@ namespace Brandon
 
         }
 
-        IEnumerator CharacterOut()
+        void CharacterOut()
+        {
+            if (characterTransform.position == targetPosition.position)
+            {
+                StartCoroutine(ExitCharacter());
+            }
+        }
+
+        IEnumerator ExitCharacter()
         {
             yield return new WaitForSeconds(Random.Range(1,3));
             if(!characterChanged)
