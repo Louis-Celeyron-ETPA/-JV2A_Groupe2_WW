@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Brandon/Scenes/Brandon - MiniJeux-2.unity
+    guid: e6638b3d7bdbe4e4fbc3cb80ae6611a0
   m_configObjects: {}
